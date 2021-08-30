@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:Junior/details_page/components/novel_data.dart';
 import 'package:Junior/homepage/body.dart';
 import 'package:Junior/model/novel.dart';
@@ -12,7 +10,7 @@ class Buttons extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         EditButton(
-          innerText: 'Update Details',
+          innerText: 'UPDATE DETAILS',
           buttonColor: Color.fromRGBO(50, 155, 196, 1.0),
           textColor: Colors.white,
           onPressed: () {
@@ -20,20 +18,33 @@ class Buttons extends StatelessWidget {
               NovelData.novel.lastEdited = DateTime.now();
               saveNovelList(novelList);
             }
+
+            Navigator.pop(context);
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => HomePage()),
+            );
           },
         ),
         SizedBox(height: 10),
         EditButton(
-          innerText: 'Delete Novel',
-          buttonColor: Color.fromRGBO(182, 47, 47, 1.0),
+          innerText: 'DELETE NOVEL',
+          buttonColor: Color.fromRGBO(182, 47, 58, 1.0),
           textColor: Colors.white,
           onPressed: () {
-            print('delet');
+            novelList.remove(NovelData.novel);
+            saveNovelList(novelList);
+
+            Navigator.pop(context);
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => HomePage()),
+            );
           },
         ),
         SizedBox(height: 10),
         EditButton(
-          innerText: 'Go Back',
+          innerText: 'GO BACK',
           buttonColor: Color.fromRGBO(142, 142, 142, 1.0),
           textColor: Colors.white,
           onPressed: () {

@@ -1,4 +1,5 @@
 import 'package:Junior/details_page/body.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:Junior/model/novel.dart';
 import 'package:Junior/theme.dart';
 import 'package:flutter/material.dart';
@@ -70,14 +71,16 @@ class RatingAndLink extends StatelessWidget {
                     style: TextStyle(color: linkColor, fontSize: 16)),
                 SizedBox(width: 5),
                 Icon(
-                  Icons.article_rounded,
+                  Icons.launch,
                   color: Colors.white,
                   size: 18,
                 ),
               ],
             ),
           ),
-          onTap: () {},
+          onTap: () {
+            launch(link);
+          },
         ),
       ));
     }
