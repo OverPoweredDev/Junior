@@ -70,6 +70,9 @@ class ChapterInputField extends StatelessWidget {
           color: Color.fromRGBO(255, 255, 255, 0.2),
           borderRadius: BorderRadius.circular(5)),
       child: TextField(
+        controller: TextEditingController()
+          ..text = (chapterNum == '0') ? '' : chapterNum,
+        style: TextStyle(color: Colors.white),
         keyboardType: TextInputType.number,
         decoration: InputDecoration(
           isDense: true,
@@ -79,8 +82,6 @@ class ChapterInputField extends StatelessWidget {
           errorBorder: InputBorder.none,
           disabledBorder: InputBorder.none,
           contentPadding: EdgeInsets.all(5),
-          hintText: (chapterNum == '0') ? '' : chapterNum,
-          hintStyle: TextStyle(color: Colors.white),
         ),
         onChanged: onTextChanged,
       ),

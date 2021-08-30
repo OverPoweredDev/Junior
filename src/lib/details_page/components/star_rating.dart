@@ -34,7 +34,7 @@ class _StarRatingState extends State<StarRating> {
 
   @override
   Widget build(BuildContext context) {
-    final color = Theme.of(context).accentColor;
+    final color = Colors.amber;
     final size = 36.0;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

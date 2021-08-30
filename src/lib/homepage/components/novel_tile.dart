@@ -59,42 +59,32 @@ class RatingAndLink extends StatelessWidget {
   Widget build(BuildContext context) {
     List<Widget> children = [];
     if (link != '') {
-      children.add(
-          Material(
-            color: Colors.transparent,
-            child: InkWell(
-              child: Padding(
-                padding:
-                EdgeInsets.only(top: 5, bottom: 5, right: 10),
-                child: Row(
-                  children: [
-                    Text('Link to Current Chapter',
-                        style: TextStyle(
-                            color: linkColor, fontSize: 16)),
-                    SizedBox(width: 5),
-                    Icon(
-                      Icons.article_rounded,
-                      color: Colors.white,
-                      size: 18,
-                    ),
-                  ],
+      children.add(Material(
+        color: Colors.transparent,
+        child: InkWell(
+          child: Padding(
+            padding: EdgeInsets.only(top: 5, bottom: 5, right: 10),
+            child: Row(
+              children: [
+                Text('Link to Current Chapter',
+                    style: TextStyle(color: linkColor, fontSize: 16)),
+                SizedBox(width: 5),
+                Icon(
+                  Icons.article_rounded,
+                  color: Colors.white,
+                  size: 18,
                 ),
-              ),
-              onTap: () {},
+              ],
             ),
-          )
-      );
+          ),
+          onTap: () {},
+        ),
+      ));
     }
 
     if (rating != 0) {
       children.add(
-          IconTheme(
-            data: IconThemeData(
-              color: Colors.amber,
-              size: 18,
-            ),
-            child: StarDisplay(value: rating),
-          )
+        StarDisplay(value: rating),
       );
     }
 
@@ -116,8 +106,7 @@ class StarDisplayWidget extends StatelessWidget {
     this.value = 0,
     @required this.filledStar,
     @required this.unfilledStar,
-  })
-      : assert(value != null),
+  })  : assert(value != null),
         super(key: key);
 
   @override
@@ -134,11 +123,14 @@ class StarDisplayWidget extends StatelessWidget {
 class StarDisplay extends StarDisplayWidget {
   const StarDisplay({Key key, int value = 0})
       : super(
-    key: key,
-    value: value,
-    filledStar: const Icon(Icons.star),
-    unfilledStar: const Icon(Icons.star_border),
-  );
+          key: key,
+          value: value,
+          filledStar: const Icon(
+            Icons.star,
+            color: Colors.amber,
+          ),
+          unfilledStar: const Icon(Icons.star_outlined),
+        );
 }
 
 class NovelNotes extends StatelessWidget {
@@ -151,7 +143,8 @@ class NovelNotes extends StatelessWidget {
     if (notes == '') {
       return Container();
     } else {
-      return Text(notes,
+      return Text(
+        notes,
         style: TextStyle(color: textColor, fontSize: 16),
         textAlign: TextAlign.left,
       );
@@ -174,8 +167,7 @@ class DetailsButton extends StatelessWidget {
           Navigator.pop(context);
           Navigator.push(
             context,
-            MaterialPageRoute(
-                builder: (context) => DetailsPage(novel: novel)),
+            MaterialPageRoute(builder: (context) => DetailsPage(novel: novel)),
           );
         },
         child: Container(
@@ -188,9 +180,7 @@ class DetailsButton extends StatelessWidget {
           width: double.infinity,
           child: Text('Update Details',
               style: TextStyle(
-                  fontSize: 16,
-                  color: linkColor,
-                  fontWeight: FontWeight.bold),
+                  fontSize: 16, color: linkColor, fontWeight: FontWeight.bold),
               textAlign: TextAlign.center),
         ),
       ),
