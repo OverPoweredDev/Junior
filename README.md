@@ -2,7 +2,8 @@
 
 # Junior
 
-A novel bookmarking app specialised for online webnovels
+A novel bookmarking app specialised for online webnovels. Initially inspired by [this thread]() on r/noveltranslations, I wanted to create a novel managing app
+that can handle more data than any notes taker, while also looking way better and still being as easy to use.
 
 ### Table of Contents
 
@@ -13,7 +14,11 @@ A novel bookmarking app specialised for online webnovels
     - [Contributing](#contributing)
 - [Other Stuff](#other-stuff)
 
+<br>
+
 ### Installation
+
+<br>
 
 ### Development
 
@@ -23,36 +28,22 @@ to Contribution Guidelines so do check it out if you're helping out!
 #### Navigation
 
 ```
-Junior
-├── assets
+Junior/
+├── assets/
 │   └── banner.png
 ├── README.md
-└── src
+└── src/
     ├── android/..
     ├── build/..
-    ├── assets
-    │   └── icon.jpg
-    ├── test
-    │   └── widget_test.dart
-    ├── lib
-    │   ├── details_page
+    ├── assets/..
+    ├── test/..
+    ├── lib/
+    │   ├── details_page/
     │   │   ├── body.dart
-    │   │   └── components
-    │   │       ├── buttons.dart
-    │   │       ├── chapter_progress.dart
-    │   │       ├── complete_checkbox.dart
-    │   │       ├── novel_data.dart
-    │   │       ├── novel_link.dart
-    │   │       ├── novel_notes.dart
-    │   │       ├── novel_title.dart
-    │   │       └── star_rating.dart
-    │   ├── homepage
+    │   │   └── components/..
+    │   ├── homepage/
     │   │   ├── body.dart
-    │   │   └── components
-    │   │       ├── add_novel_button.dart
-    │   │       ├── novel_tile.dart
-    │   │       ├── searchbar.dart
-    │   │       └── title.dart
+    │   │   └── components/..
     │   ├── model
     │   │   └── novel.dart
     │   ├── main.dart
@@ -68,6 +59,8 @@ contains application data like the icon and all.
 I've divided the application into subdirectories the way it makes sense to me. `main.dart` runs the entire thing, `theme.dart` contains constants for commonly
 used colors and more. The only model is `novel.dart`, which contains code for the Novel class, its attributes and all methods involving reading and writing to
 memory.
+
+<br>
 
 ```
 flutter_screen
@@ -85,9 +78,15 @@ super easy to re-arrange stuff later on.
 
 And that's about it for navigation! This is the layout that I feel is most intuitive and easy to work with tbh.
 
+<br>
+
 #### Getting Started
 
+<br>
+
 #### Contributing
+
+<br>
 
 ### Other Stuff
 
