@@ -38,7 +38,6 @@ class _HomePageState extends State<HomePage> {
   }
 
   void filterSearchResults(String query) {
-    print(query);
     List dummySearchList = [];
     dummySearchList.addAll(novelList);
     if (query.isNotEmpty) {
