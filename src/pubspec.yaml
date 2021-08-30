@@ -20,6 +20,15 @@ dev_dependencies:
     sdk: flutter
   integration_test:
     sdk: flutter
+  flutter_launcher_icons:
+
+flutter_icons:
+  android: true
+  ios: false
+  image_path: "assets/icon.jpg"
+  adaptive_icon_foreground: "assets/icon.jpg"
+  adaptive_icon_background: "#f4bb9e"
+  adaptive_icon_padding: true
 
 flutter:
   uses-material-design: true

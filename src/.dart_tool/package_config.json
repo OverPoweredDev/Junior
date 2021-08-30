@@ -122,6 +122,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "flutter_launcher_icons",
+      "rootUri": "file:///home/op/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_launcher_icons-0.8.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.3"
+    },
+    {
       "name": "flutter_test",
       "rootUri": "file:///home/op/snap/flutter/common/flutter/packages/flutter_test",
       "packageUri": "lib/",
@@ -144,6 +150,12 @@
       "rootUri": "file:///home/op/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/glob-1.2.0",
       "packageUri": "lib/",
       "languageVersion": "2.1"
+    },
+    {
+      "name": "image",
+      "rootUri": "file:///home/op/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/image-2.1.19",
+      "packageUri": "lib/",
+      "languageVersion": "2.0"
     },
     {
       "name": "integration_test",
@@ -246,6 +258,12 @@
       "rootUri": "file:///home/op/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/pedantic-1.10.0-nullsafety.3",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "petitparser",
+      "rootUri": "file:///home/op/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/petitparser-3.1.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
     },
     {
       "name": "platform",
@@ -428,6 +446,12 @@
       "languageVersion": "2.3"
     },
     {
+      "name": "xml",
+      "rootUri": "file:///home/op/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/xml-4.5.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
+    },
+    {
       "name": "yaml",
       "rootUri": "file:///home/op/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/yaml-2.2.1",
       "packageUri": "lib/",
@@ -440,7 +464,7 @@
       "languageVersion": "2.7"
     }
   ],
-  "generated": "2021-08-30T04:25:27.161650Z",
+  "generated": "2021-08-30T04:47:48.619077Z",
   "generator": "pub",
   "generatorVersion": "2.12.0-133.2.beta"
 }
