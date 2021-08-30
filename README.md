@@ -4,7 +4,7 @@
 
 A novel bookmarking app specialised for online webnovels
 
-### Table of Contents
+## Table of Contents
 
 - [Installation](#installation)
 - [Development](#development)
@@ -13,14 +13,14 @@ A novel bookmarking app specialised for online webnovels
     - [Contributing](#contributing)
 - [Other Stuff](#other-stuff)
 
-### Installation
+## Installation
 
-### Development
+## Development
 
 I intend to make this a proper open-source project so the following sections are about developing and modifying the existing app. There's stuff from Navigation
 to Contribution Guidelines so do check it out if you're helping out!
 
-#### Navigation
+### Navigation
 
 ```
 Junior
@@ -85,11 +85,11 @@ super easy to re-arrange stuff later on.
 
 And that's about it for navigation! This is the layout that I feel is most intuitive and easy to work with tbh.
 
-#### Getting Started
+### Getting Started
 
-#### Contributing
+### Contributing
 
-### Other Stuff
+## Other Stuff
 
 Stuff I need to add or attribute but didn't get a place in the section before
 
