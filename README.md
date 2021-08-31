@@ -1,6 +1,12 @@
 ![banner](https://github.com/OverPoweredDev/Junior/blob/master/misc/banner.png)
 
-# Junior
+
+![Dart](https://img.shields.io/badge/Dart-blue?style=for-the-badge&logo=dart&logoColor=white)
+![Flutter](https://img.shields.io/badge/Flutter-lightblue?style=for-the-badge&logo=flutter&logoColor=darkblue)
+![PR](https://img.shields.io/badge/PRs-welcome-red?style=for-the-badge)
+![OpenSource](https://img.shields.io/badge/Open%20Source-greun?style=for-the-badge)
+![Android](https://img.shields.io/badge/Android-lightgreen?style=for-the-badge&logo=android&logoColor=darkgreen)
+![Follow_Me](https://img.shields.io/github/followers/OverPoweredDev?style=for-the-badge)
 
 <img align="right" width="200" src="https://github.com/OverPoweredDev/Junior/blob/master/misc/Junior_demo.gif" alt="Junior demo">
 
