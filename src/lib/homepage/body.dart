@@ -1,4 +1,3 @@
-import 'package:Junior/details_page/components/novel_data.dart';
 import 'package:Junior/homepage/components/add_novel_button.dart';
 import 'package:Junior/homepage/components/novel_tile.dart';
 import 'package:Junior/homepage/components/searchbar.dart';
@@ -18,6 +17,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   TextEditingController editingController;
+  String sortOption = 'Sort';
 
   List searchList = [];
   List novelList = [];
@@ -40,18 +40,25 @@ class _HomePageState extends State<HomePage> {
   }
 
   void sortBy(String option) {
-    switch(option) {
-      case 'Alphabetically':
+    switch (option) {
+      case 'Alphabetical':
         novelList.sort((novel1, novel2) {
           return novel2.title.compareTo(novel1.title);
         });
         break;
       case 'Most Recent':
-        novelList.sort();
+        novelList.sort((novel1, novel2) {
+          return novel2.lastEdited.compareTo(novel1.lastEdited);
+        });
+        break;
+      case 'Rating':
+        novelList.sort((novel1, novel2) {
+          return novel2.novelRating.compareTo(novel1.novelRating);
+        });
         break;
     }
 
-    setState(() {});
+    setState(() {sortOption = option;});
   }
 
   void filterSearchResults(String query) {
@@ -96,7 +103,10 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 20),
             AddNovelButton(),
             SizedBox(height: 20),
-            SortOptions(sortBy),
+            SortOptions(
+              sortBy: sortBy,
+              sortOption: sortOption,
+            ),
             ListView.builder(
               //otherwise there's two Scrollables and we can't scroll the list
               physics: NeverScrollableScrollPhysics(),

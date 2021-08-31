@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 
 class SortOptions extends StatelessWidget {
   final Function(String option) sortBy;
+  final String sortOption;
 
-  SortOptions(this.sortBy);
+  SortOptions({this.sortBy, this.sortOption});
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class SortOptions extends StatelessWidget {
                 ),
                 SizedBox(width: 10),
                 Text(
-                  'Sort          ',
+                  sortOption,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 16,
@@ -41,7 +42,7 @@ class SortOptions extends StatelessWidget {
             onChanged: (String newValue) {
               sortBy(newValue);
             },
-            items: <String>['Alphabetically', 'Most Recent', 'Rating', 'Four']
+            items: <String>['Alphabetical', 'Most Recent', 'Rating']
                 .map<DropdownMenuItem<String>>((String value) {
               return DropdownMenuItem<String>(
                 value: value,
