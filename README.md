@@ -8,6 +8,8 @@
 ![Android](https://img.shields.io/badge/Android-lightgreen?style=for-the-badge&logo=android&logoColor=darkgreen)
 ![Follow_Me](https://img.shields.io/github/followers/OverPoweredDev?style=for-the-badge)
 
+<br>
+
 <img align="right" width="200" src="https://github.com/OverPoweredDev/Junior/blob/master/misc/Junior_demo.gif" alt="Junior demo">
 
 A novel bookmarking app specialised for online webnovels. Initially inspired by [this thread]() on r/noveltranslations, I wanted to create a novel managing app
