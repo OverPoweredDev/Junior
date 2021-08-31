@@ -1,6 +1,8 @@
+import 'package:Junior/details_page/components/novel_data.dart';
 import 'package:Junior/homepage/components/add_novel_button.dart';
 import 'package:Junior/homepage/components/novel_tile.dart';
 import 'package:Junior/homepage/components/searchbar.dart';
+import 'package:Junior/homepage/components/sort_options.dart';
 import 'package:Junior/homepage/components/title.dart';
 import 'package:Junior/model/novel.dart';
 import 'package:flutter/material.dart';
@@ -37,6 +39,21 @@ class _HomePageState extends State<HomePage> {
     setState(() {});
   }
 
+  void sortBy(String option) {
+    switch(option) {
+      case 'Alphabetically':
+        novelList.sort((novel1, novel2) {
+          return novel2.title.compareTo(novel1.title);
+        });
+        break;
+      case 'Most Recent':
+        novelList.sort();
+        break;
+    }
+
+    setState(() {});
+  }
+
   void filterSearchResults(String query) {
     List dummySearchList = [];
     dummySearchList.addAll(novelList);
@@ -69,7 +86,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 40),
+            SizedBox(height: 60),
             HomePageTitle(),
             SizedBox(height: 60),
             SearchBar(
@@ -79,6 +96,7 @@ class _HomePageState extends State<HomePage> {
             SizedBox(height: 20),
             AddNovelButton(),
             SizedBox(height: 20),
+            SortOptions(sortBy),
             ListView.builder(
               //otherwise there's two Scrollables and we can't scroll the list
               physics: NeverScrollableScrollPhysics(),
