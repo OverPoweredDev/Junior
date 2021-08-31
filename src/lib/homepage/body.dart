@@ -35,15 +35,14 @@ class _HomePageState extends State<HomePage> {
   loadData() async {
     novelList = await getNovelList();
     searchList.addAll(novelList);
-
-    setState(() {});
+    sortBy('Most Recent');
   }
 
   void sortBy(String option) {
     switch (option) {
       case 'Alphabetical':
         novelList.sort((novel1, novel2) {
-          return novel2.title.compareTo(novel1.title);
+          return novel1.title.toLowerCase().compareTo(novel2.title.toLowerCase());
         });
         break;
       case 'Most Recent':

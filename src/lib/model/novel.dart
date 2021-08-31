@@ -54,15 +54,18 @@ class Novel {
   String getChapterProgress() {
     String progress = '';
 
-    if (this.isComplete) {
-      progress += 'Complete';
-    } else if (this.currChapter != 0 && this.totalChapters != 0) {
+    if (this.currChapter != 0 && this.totalChapters != 0) {
       progress += 'c' +
           this.currChapter.toString() +
           '/' +
           this.totalChapters.toString();
+
+      if (this.isComplete) progress += ' • Complete';
     } else if (this.currChapter != 0 && this.totalChapters == 0) {
       progress += 'c' + this.currChapter.toString();
+      if (this.isComplete) progress += ' • Complete';
+    } else if (this.isComplete) {
+      progress += 'Complete';
     }
 
     return progress;
