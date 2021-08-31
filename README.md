@@ -64,8 +64,8 @@ memory.
 
 ```
 flutter_screen
-├── body.dart
-└── components
+├── body.dart/
+└── components/
     ├── button.dart
     ├── list_tile.dart
     ├── searchbar.dart
