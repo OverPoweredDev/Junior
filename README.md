@@ -2,12 +2,14 @@
 
 # Junior
 
-<img align="right" width="300" src="https://github.com/OverPoweredDev/Junior/blob/master/misc/Junior_demo" alt="Junior demo">
+<img align="right" width="200" src="https://github.com/OverPoweredDev/Junior/blob/master/misc/Junior_demo.gif" alt="Junior demo">
 
 A novel bookmarking app specialised for online webnovels. Initially inspired by [this thread]() on r/noveltranslations, I wanted to create a novel managing app
 that can handle more data than any notes taker, while also looking way better and still being as easy to use.
 
 Right now, the app only works on Android. To install it download the apk from [this drive folder](https://drive.google.com/drive/folders/1rwawC45TR2Fu8pQFKax5P_FVzVsjeiHa?usp=sharing) and install it on your phone
+
+<br>
 
 ### Table of Contents
 
