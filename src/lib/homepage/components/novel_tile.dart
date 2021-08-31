@@ -1,8 +1,8 @@
 import 'package:Junior/details_page/body.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:Junior/model/novel.dart';
 import 'package:Junior/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class NovelTile extends StatelessWidget {
   final Novel novel;
@@ -12,8 +12,8 @@ class NovelTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 1.0,
-      margin: new EdgeInsets.symmetric(horizontal: 15.0, vertical: 6.0),
+      elevation: 0,
+      margin: new EdgeInsets.only(left: 15.0, right: 15.0, bottom: 12.0),
       child: Container(
         decoration: BoxDecoration(color: tileColor),
         child: ExpansionTile(
@@ -146,10 +146,13 @@ class NovelNotes extends StatelessWidget {
     if (notes == '') {
       return Container();
     } else {
-      return Text(
-        notes,
-        style: TextStyle(color: textColor, fontSize: 16),
-        textAlign: TextAlign.left,
+      return Padding(
+          padding: EdgeInsets.only(bottom: 10),
+          child: Text(
+            notes,
+            style: TextStyle(color: textColor, fontSize: 16),
+            textAlign: TextAlign.left,
+          ),
       );
     }
   }

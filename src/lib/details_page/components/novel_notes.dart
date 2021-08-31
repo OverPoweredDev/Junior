@@ -15,7 +15,7 @@ class NovelNotes extends StatelessWidget {
         ),
         SizedBox(height: 10),
         Container(
-          height: 180,
+          height: 150,
           decoration: BoxDecoration(
               color: Color.fromRGBO(255, 255, 255, 0.2),
               borderRadius: BorderRadius.circular(5)),

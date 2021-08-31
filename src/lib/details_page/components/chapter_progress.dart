@@ -65,7 +65,7 @@ class ChapterInputField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 50,
+      width: 55,
       decoration: BoxDecoration(
           color: Color.fromRGBO(255, 255, 255, 0.2),
           borderRadius: BorderRadius.circular(5)),

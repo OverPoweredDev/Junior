@@ -35,7 +35,7 @@ class DetailsPage extends StatelessWidget {
         backgroundColor: backgroundColor,
         body: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.only(left: 20, top: 40, right: 20, bottom: 20),
+            padding: EdgeInsets.only(left: 20, top: 80, right: 20, bottom: 20),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
