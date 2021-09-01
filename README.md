@@ -1,13 +1,23 @@
 ![banner](https://github.com/OverPoweredDev/Junior/blob/master/misc/banner.png)
 
-# Junior
 
-<img align="right" width="300" src="https://github.com/OverPoweredDev/Junior/blob/master/misc/Junior_demo" alt="Junior demo">
+![Dart](https://img.shields.io/badge/Dart-blue?style=for-the-badge&logo=dart&logoColor=white)
+![Flutter](https://img.shields.io/badge/Flutter-lightblue?style=for-the-badge&logo=flutter&logoColor=darkblue)
+![PR](https://img.shields.io/badge/PRs-welcome-red?style=for-the-badge)
+![OpenSource](https://img.shields.io/badge/Open%20Source-greun?style=for-the-badge)
+![Android](https://img.shields.io/badge/Android-lightgreen?style=for-the-badge&logo=android&logoColor=darkgreen)
+![Follow_Me](https://img.shields.io/github/followers/OverPoweredDev?style=for-the-badge)
+
+<br>
+
+<img align="right" width="200" src="https://github.com/OverPoweredDev/Junior/blob/master/misc/Junior_demo.gif" alt="Junior demo">
 
 A novel bookmarking app specialised for online webnovels. Initially inspired by [this thread]() on r/noveltranslations, I wanted to create a novel managing app
 that can handle more data than any notes taker, while also looking way better and still being as easy to use.
 
 Right now, the app only works on Android. To install it download the apk from [this drive folder](https://drive.google.com/drive/folders/1rwawC45TR2Fu8pQFKax5P_FVzVsjeiHa?usp=sharing) and install it on your phone
+
+<br>
 
 ### Table of Contents
 
