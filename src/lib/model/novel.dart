@@ -52,23 +52,27 @@ class Novel {
         novelLink = json['novelLink'];
 
   String getChapterProgress() {
-    String progress = '';
+    String text = '';
 
-    if (this.currChapter != 0 && this.totalChapters != 0) {
-      progress += 'c' +
-          this.currChapter.toString() +
-          '/' +
-          this.totalChapters.toString();
+    if (this.currChapter != 0) {
+      text += 'c' + this.currChapter.toString();
 
-      if (this.isComplete) progress += ' • Complete';
-    } else if (this.currChapter != 0 && this.totalChapters == 0) {
-      progress += 'c' + this.currChapter.toString();
-      if (this.isComplete) progress += ' • Complete';
+      if (this.totalChapters != 0) {
+        text += '/' + this.totalChapters.toString();
+      }
+
+      if (this.isComplete) {
+        text += ' • Complete';
+      } else {
+        text += ' • Ongoing';
+      }
     } else if (this.isComplete) {
-      progress += 'Complete';
+      text += 'Complete';
+    } else {
+      text += 'Ongoing';
     }
 
-    return progress;
+    return text;
   }
 
   bool contains(String query) {
