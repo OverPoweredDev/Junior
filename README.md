@@ -4,31 +4,24 @@
 ![Flutter](https://img.shields.io/badge/Flutter-lightblue?style=for-the-badge&logo=flutter&logoColor=darkblue)
 ![Android](https://img.shields.io/badge/Android-lightgreen?style=for-the-badge&logo=android&logoColor=darkgreen)
 ![PR](https://img.shields.io/badge/PRs-welcome-red?style=for-the-badge)
-![License](https://img.shields.io/badge/License-GPLv3-purple?style=for-the-badge)
+![License](https://img.shields.io/badge/License-GPL3-purple?style=for-the-badge)
 ![OpenSource](https://img.shields.io/badge/Open%20Source-greun?style=for-the-badge)
-![Follow_Me](https://img.shields.io/github/followers/OverPoweredDev?style=for-the-badge)
 
 <br>
 
-<img align="right" width="200" src="https://github.com/OverPoweredDev/Junior/blob/master/misc/Junior_demo.gif" alt="Junior demo">
+<img align="right" width="250" src="https://github.com/OverPoweredDev/Junior/blob/master/misc/Junior_demo.gif" alt="Junior demo">
 
-Junior dares! to make a novel bookmarking app specialised for online webnovels. Initially inspired
-by [this thread](https://www.reddit.com/r/noveltranslations/comments/p8hx5a/i_want_to_know_if_anyone_does_this_too_and_if_not/h9qt309) on r/noveltranslations, I
-wanted to create a novel managing app that can handle more data than any notes taker, while also looking way better and still being as easy to use.
+Junior dares! to make a novel bookmarking app specialised for online webnovels. Initially inspired by [this thread](https://www.reddit.com/r/noveltranslations/comments/p8hx5a/i_want_to_know_if_anyone_does_this_too_and_if_not/h9qt309) on r/noveltranslations, I wanted to create a novel managing app that can handle more data than any notes taker, while also looking way better and still being as easy to use.
 
-Junior is an open-source Android app that helps you catalogue the novel you're reading and your progress on it. Apart from these details, you can also log your
-personal rating and any chapter notes for the current novel. The app as it is right now is only available on Android and in dark mode. To request additional
-features or report a bug in the app, simply [create an issue on the repository](https://github.com/OverPoweredDev/Junior/issues/new/choose).
+Junior is an open-source Android app that helps you catalogue the novel you're reading and your progress on it. Apart from these details, you can also log your personal rating and any chapter notes for the current novel. There's a demonstration of the working to the right ⟶
 
-Right now, the app only works on Android. To install it you can find the [current release on the Play Store](). If you want to make it harder for yourself, you
-can also download the apk from [this drive folder](https://drive.google.com/drive/folders/1rwawC45TR2Fu8pQFKax5P_FVzVsjeiHa?usp=sharing) and install it on your
-phone.
 
 <br>
 
 ## Table of Contents
 
 - [Installation](#installation)
+- [Usage](#usage)
 - [Development](#development)
     - [Navigation](#navigation)
     - [Getting Started](#getting-started)
@@ -38,6 +31,16 @@ phone.
 <br>
 
 ## Installation
+
+To install Junior you can find the (Currently under review so it'll take a couple days more) [current release on the Play Store](https://play.google.com/store/apps/details?id=com.overpowereddev.junior.src). If you want to make it harder for yourself, you can also download the apk from [this drive folder](https://drive.google.com/drive/folders/1rwawC45TR2Fu8pQFKax5P_FVzVsjeiHa?usp=sharing) and install it on your phone.
+
+The app as it is right now is only available on Android and in dark mode. To request additional features or report a bug in the app, simply [create an issue on the repository](https://github.com/OverPoweredDev/Junior/issues/new/choose).
+
+<br>
+
+## Usage
+
+TODO
 
 <br>
 
@@ -103,9 +106,13 @@ And that's about it for navigation! This is the layout that I feel is most intui
 
 ### Getting Started
 
+TODO
+
 <br>
 
 ### Contributing
+
+TODO
 
 <br>
 
