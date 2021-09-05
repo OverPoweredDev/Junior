@@ -24,6 +24,11 @@ class DetailsPage extends StatelessWidget {
 
     return WillPopScope(
       onWillPop: () async {
+        if (NovelData.isChanged) {
+          NovelData.novel.lastEdited = DateTime.now();
+          saveNovelList(novelList);
+        }
+
         Navigator.pop(context);
         Navigator.push(
           context,
