@@ -1,3 +1,4 @@
+import 'package:Junior/settings_page/body.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -12,8 +13,7 @@ class SortOptions extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 15.0),
       child: Row(
-        // crossAxisAlignment: CrossAxisAlignment.end,
-        // mainAxisAlignment: MainAxisAlignment.end,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           DropdownButton<String>(
             icon: Container(),
@@ -49,6 +49,22 @@ class SortOptions extends StatelessWidget {
                 child: Text(value),
               );
             }).toList(),
+          ),
+          IconButton(
+            icon: Icon(
+              Icons.settings,
+              color: Colors.white,
+              size: 20,
+            ),
+            onPressed: () {
+              Navigator.pop(context);
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => SettingsPage(),
+                ),
+              );
+            },
           ),
         ],
       ),
