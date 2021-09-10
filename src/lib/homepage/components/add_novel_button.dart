@@ -37,7 +37,7 @@ class AddNovelButton extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 color: Colors.white,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w600,
               ),
               textAlign: TextAlign.center,
             ),

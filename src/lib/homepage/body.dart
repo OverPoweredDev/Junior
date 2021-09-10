@@ -116,6 +116,7 @@ class _HomePageState extends State<HomePage> {
                 return NovelTile(novel: novelList[index]);
               },
             ),
+            SizedBox(height: 10),
           ],
         ),
       ),

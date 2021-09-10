@@ -29,7 +29,7 @@ class Buttons extends StatelessWidget {
         SizedBox(height: 10),
         EditButton(
           innerText: 'DELETE NOVEL',
-          buttonColor: Color.fromRGBO(182, 47, 58, 1.0),
+          buttonColor: Color.fromRGBO(255, 89, 99, 1.0),
           textColor: Colors.white,
           onPressed: () {
             novelList.remove(NovelData.novel);
@@ -87,9 +87,10 @@ class EditButton extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 color: textColor,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w600,
               ),
-              textAlign: TextAlign.center),
+              textAlign: TextAlign.center,
+          ),
         ),
       ),
     );
