@@ -42,14 +42,22 @@ class Novel {
       };
 
   Novel.fromJson(Map<String, dynamic> json)
-      : title = json['title'],
-        notes = json['notes'],
+      : title = getFromJson(json, 'title', ''),
+        notes = getFromJson(json, 'notes', ''),
         lastEdited = DateTime.parse(json['lastEdited']),
-        currChapter = json['currChapter'],
-        totalChapters = json['totalChapters'],
-        novelRating = json['novelRating'],
-        isComplete = json['isComplete'],
-        novelLink = json['novelLink'];
+        currChapter = getFromJson(json, 'currChapter', 0),
+        totalChapters = getFromJson(json, 'totalChapters', 0),
+        novelRating = getFromJson(json, 'novelRating', 0),
+        isComplete = getFromJson(json, 'isComplete', false),
+        novelLink = getFromJson(json, 'novelLink', '');
+
+  static dynamic getFromJson(Map<String, dynamic> json, String key, dynamic defaultValue){
+    if(json.containsKey(key)){
+      return json[key];
+    } else {
+      return defaultValue;
+    }
+  }
 
   String getChapterProgress() {
     String text = '';
@@ -76,7 +84,7 @@ class Novel {
   }
 
   bool contains(String query) {
-    return this.title.contains(query);
+    return this.title.toLowerCase().contains(query.toLowerCase());
   }
 }
 
