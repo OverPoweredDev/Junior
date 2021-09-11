@@ -2,6 +2,8 @@ import 'package:Junior/settings_page/body.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../../theme.dart';
+
 class SortOptions extends StatelessWidget {
   final Function(String option) sortBy;
   final String sortOption;
@@ -21,22 +23,22 @@ class SortOptions extends StatelessWidget {
               children: [
                 Icon(
                   Icons.sort,
-                  color: Colors.white,
+                  color: linkColor,
                   size: 20,
                 ),
                 SizedBox(width: 10),
                 Text(
                   sortOption,
                   style: TextStyle(
-                    color: Colors.white,
+                    color: textColor,
                     fontSize: 16,
                   ),
                 ),
               ],
             ),
             elevation: 0,
-            style: const TextStyle(color: Colors.white),
-            dropdownColor: Color.fromRGBO(69, 76, 95, 1.0),
+            style: TextStyle(color: textColor),
+            dropdownColor: tileColor,
             isDense: true,
             underline: Container(),
             onChanged: (String newValue) {
@@ -53,7 +55,7 @@ class SortOptions extends StatelessWidget {
           IconButton(
             icon: Icon(
               Icons.settings,
-              color: Colors.white,
+              color: linkColor,
               size: 20,
             ),
             onPressed: () {

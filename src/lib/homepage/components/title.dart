@@ -1,3 +1,4 @@
+import 'package:Junior/theme.dart';
 import 'package:flutter/material.dart';
 
 class HomePageTitle extends StatelessWidget {
@@ -7,7 +8,7 @@ class HomePageTitle extends StatelessWidget {
       padding: EdgeInsets.all(15),
       child: Text(
         'Novels',
-        style: TextStyle(color: Colors.white, fontSize: 40),
+        style: TextStyle(color: textColor, fontSize: 40),
         textAlign: TextAlign.left,
       ),
     );

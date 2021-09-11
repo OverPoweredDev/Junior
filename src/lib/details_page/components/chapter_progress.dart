@@ -2,6 +2,8 @@ import 'package:Junior/details_page/components/complete_checkbox.dart';
 import 'package:Junior/details_page/components/novel_data.dart';
 import 'package:flutter/material.dart';
 
+import '../../theme.dart';
+
 class ChapterProgress extends StatelessWidget {
   final int currChapter = NovelData.novel.currChapter;
   final int totalChapters = NovelData.novel.totalChapters;
@@ -16,7 +18,7 @@ class ChapterProgress extends StatelessWidget {
       children: [
         Text(
           'Chapter Progress',
-          style: TextStyle(color: Colors.white, fontSize: 16),
+          style: TextStyle(color:  textColor, fontSize: 16),
         ),
         SizedBox(height: 10),
         Row(
@@ -27,7 +29,7 @@ class ChapterProgress extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text('c', style: TextStyle(color: Colors.white, fontSize: 16)),
+                Text('c', style: TextStyle(color:  textColor, fontSize: 16)),
                 SizedBox(width: 5),
                 ChapterInputField(
                   chapterNum: currChapter.toString(),
@@ -37,7 +39,7 @@ class ChapterProgress extends StatelessWidget {
                   },
                 ),
                 SizedBox(width: 5),
-                Text('/', style: TextStyle(color: Colors.white, fontSize: 24)),
+                Text('/', style: TextStyle(color:  textColor, fontSize: 24)),
                 SizedBox(width: 5),
                 ChapterInputField(
                   chapterNum: totalChapters.toString(),
@@ -72,7 +74,7 @@ class ChapterInputField extends StatelessWidget {
       child: TextField(
         controller: TextEditingController()
           ..text = (chapterNum == '0') ? '' : chapterNum,
-        style: TextStyle(color: Colors.white),
+        style: TextStyle(color: textColor),
         keyboardType: TextInputType.number,
         decoration: InputDecoration(
           isDense: true,

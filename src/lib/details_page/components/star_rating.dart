@@ -1,6 +1,7 @@
 // modified https://gist.github.com/sma/1f22ef926ef878f10915aa9e00bc9eaa
 import 'package:flutter/material.dart';
 
+import '../../theme.dart';
 import 'novel_data.dart';
 
 class StarRating extends StatefulWidget {
@@ -35,13 +36,14 @@ class _StarRatingState extends State<StarRating> {
   @override
   Widget build(BuildContext context) {
     final color = Colors.amber;
+    final blank = Color.fromRGBO(0, 0, 0, 0.5);
     final size = 36.0;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           'Novel Rating',
-          style: TextStyle(color: Colors.white, fontSize: 16),
+          style: TextStyle(color: textColor, fontSize: 16),
         ),
         SizedBox(height: 5),
         Container(
@@ -55,7 +57,7 @@ class _StarRatingState extends State<StarRating> {
                   onPressed: () {
                     onChanged(_value == index + 1 ? index : index + 1);
                   },
-                  color: index < _value ? color : null,
+                  color: index < _value ? color : blank,
                   iconSize: size,
                   icon: Icon(
                     index < _value

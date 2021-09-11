@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import '../../theme.dart';
 import 'novel_data.dart';
 
 class NovelLink extends StatelessWidget {
@@ -11,7 +13,7 @@ class NovelLink extends StatelessWidget {
       children: [
         Text(
           'Link to Current Chapter',
-          style: TextStyle(color: Colors.white, fontSize: 16),
+          style: TextStyle(color: textColor, fontSize: 16),
         ),
         SizedBox(height: 10),
         Container(
@@ -20,7 +22,7 @@ class NovelLink extends StatelessWidget {
               borderRadius: BorderRadius.circular(5)),
           child: TextField(
             controller: TextEditingController()..text = link,
-            style: TextStyle(color: Colors.white, fontSize: 18),
+            style: TextStyle(color: textColor, fontSize: 18),
             keyboardType: TextInputType.text,
             maxLines: 1,
             decoration: InputDecoration(

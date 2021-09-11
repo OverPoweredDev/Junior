@@ -1,6 +1,8 @@
 import 'package:Junior/details_page/components/novel_data.dart';
 import 'package:flutter/material.dart';
 
+import '../../theme.dart';
+
 class IsCompleteCheckBox extends StatefulWidget {
   @override
   _IsCompleteCheckBox createState() => _IsCompleteCheckBox();
@@ -21,14 +23,13 @@ class _IsCompleteCheckBox extends State<IsCompleteCheckBox> {
           onChanged: (bool newValue) {
             NovelData.isChanged = true;
             NovelData.novel.isComplete = newValue;
-            
+
             setState(() {
               _isComplete = newValue;
             });
           },
         ),
-        Text('Mark Complete',
-            style: TextStyle(color: Colors.white, fontSize: 16)),
+        Text('Mark Complete', style: TextStyle(color: textColor, fontSize: 16)),
       ],
     );
   }

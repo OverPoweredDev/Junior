@@ -12,7 +12,7 @@ class AddNovelButton extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.only(left: 15, right: 15),
       child: Material(
-        color: Color.fromRGBO(255, 255, 255, 0.15),
+        color: tileColor,
         borderRadius: BorderRadius.circular(6.0),
         child: InkWell(
           onTap: () {
@@ -36,7 +36,7 @@ class AddNovelButton extends StatelessWidget {
               'ADD NEW NOVEL',
               style: TextStyle(
                 fontSize: 16,
-                color: Colors.white,
+                color: textColor,
                 fontWeight: FontWeight.w600,
               ),
               textAlign: TextAlign.center,

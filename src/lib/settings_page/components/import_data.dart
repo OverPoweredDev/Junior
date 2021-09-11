@@ -19,7 +19,7 @@ void showImportDataDialog(BuildContext context) async {
     builder: (BuildContext context) => AlertDialog(
       content: Text(
         dialogTextContent,
-        style: TextStyle(color: Colors.white),
+        style: TextStyle(color: textColor),
         textAlign: TextAlign.center,
       ),
       backgroundColor: tileColor,

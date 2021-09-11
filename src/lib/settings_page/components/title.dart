@@ -1,3 +1,4 @@
+import 'package:Junior/theme.dart';
 import 'package:flutter/material.dart';
 
 class SettingsTitle extends StatelessWidget {
@@ -6,7 +7,7 @@ class SettingsTitle extends StatelessWidget {
     return Padding( padding: EdgeInsets.symmetric(horizontal: 15), child:
       Text(
       'Settings',
-      style: TextStyle(color: Colors.white, fontSize: 40),
+      style: TextStyle(color: textColor, fontSize: 40),
       textAlign: TextAlign.left,
     ));
   }

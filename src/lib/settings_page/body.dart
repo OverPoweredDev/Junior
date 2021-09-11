@@ -1,10 +1,31 @@
 import 'package:Junior/homepage/body.dart';
-import 'package:Junior/settings_page/components/settings_list.dart';
-import 'package:Junior/settings_page/components/title.dart';
-import 'package:Junior/theme.dart';
+import 'package:Junior/model/preferences.dart';
+import 'package:Junior/settings_page/components/export_data.dart';
+import 'package:Junior/settings_page/components/import_data.dart';
+import 'package:Junior/settings_page/components/remove_data.dart';
 import 'package:flutter/material.dart';
+import 'package:settings_ui/settings_ui.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class SettingsPage extends StatelessWidget {
+import '../theme.dart';
+import 'components/title.dart';
+
+class SettingsPage extends StatefulWidget {
+  SettingsPage({Key key}) : super(key: key);
+
+  @override
+  _SettingsPageState createState() => _SettingsPageState();
+}
+
+class _SettingsPageState extends State<SettingsPage> {
+  Preferences preferences;
+
+  @override
+  void initState() {
+    preferences = loadPreferences();
+    setState(() {});
+  }
+
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -26,7 +47,159 @@ class SettingsPage extends StatelessWidget {
               children: [
                 SettingsTitle(),
                 SizedBox(height: 60),
-                Settings(),
+                SettingsList(
+                  physics: NeverScrollableScrollPhysics(),
+                  backgroundColor: backgroundColor,
+                  shrinkWrap: true,
+                  sections: [
+                    SettingsSection(
+                      title: 'General',
+                      titlePadding: EdgeInsets.only(left: 15, bottom: 10),
+                      titleTextStyle: TextStyle(
+                        color: textColor,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700,
+                      ),
+                      tiles: [
+                        SettingsTile.switchTile(
+                          title: 'Enable Dark Mode',
+                          titleTextStyle: TextStyle(color: textColor),
+                          leading: Icon(
+                            Icons.invert_colors,
+                            color: linkColor,
+                          ),
+                          switchValue: preferences.darkMode,
+                          onToggle: (bool toggle) {
+                            preferences.darkMode = toggle;
+                            if(toggle) {
+                              setDarkMode();
+                            } else {
+                              setLightMode();
+                            }
+                            setState(() {});
+                          },
+                        ),
+                        SettingsTile(
+                          title: 'Rate the App!',
+                          titleTextStyle: TextStyle(color: textColor),
+                          leading: Icon(
+                            Icons.rate_review,
+                            color: linkColor,
+                          ),
+                          onPressed: (context) {
+                            launch(
+                                'https://play.google.com/store/apps/details?id=com.overpowereddev.junior.src');
+                          },
+                        ),
+                        SettingsTile(
+                          title: 'Go Back',
+                          titleTextStyle: TextStyle(color: textColor),
+                          leading: Icon(
+                            Icons.arrow_back,
+                            color: linkColor,
+                          ),
+                          onPressed: (context) {
+                            Navigator.pop(context);
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => HomePage()),
+                            );
+                          },
+                        ),
+                      ],
+                    ),
+                    SettingsSection(
+                      title: 'Storage',
+                      titlePadding: EdgeInsets.only(top: 40, left: 15, bottom: 10),
+                      titleTextStyle: TextStyle(
+                        color: textColor,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700,
+                      ),
+                      tiles: [
+                        SettingsTile(
+                          title: 'Export Data',
+                          titleTextStyle: TextStyle(color: textColor),
+                          leading: Icon(
+                            Icons.arrow_circle_up,
+                            color: linkColor,
+                          ),
+                          onPressed: (context) {
+                            showExportDataDialog(context);
+                          },
+                        ),
+                        SettingsTile(
+                          title: 'Import Data',
+                          titleTextStyle: TextStyle(color: textColor),
+                          leading: Icon(
+                            Icons.arrow_circle_down,
+                            color: linkColor,
+                          ),
+                          onPressed: (context) {
+                            showImportDataDialog(context);
+                          },
+                        ),
+                        SettingsTile(
+                          title: 'Remove All Data',
+                          titleTextStyle: TextStyle(color: textColor),
+                          leading: Icon(
+                            Icons.delete,
+                            color: linkColor,
+                          ),
+                          onPressed: (context) {
+                            showRemoveDataDialog(context);
+                          },
+                        ),
+                      ],
+                    ),
+                    SettingsSection(
+                      title: 'Other',
+                      titlePadding: EdgeInsets.only(top: 40, left: 15, bottom: 10),
+                      titleTextStyle: TextStyle(
+                        color: textColor,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w700,
+                      ),
+                      tiles: [
+                        SettingsTile(
+                          title: 'Report a bug',
+                          titleTextStyle: TextStyle(color: textColor),
+                          leading: Icon(
+                            Icons.bug_report,
+                            color: linkColor,
+                          ),
+                          onPressed: (context) {
+                            launch(
+                                'https://github.com/OverPoweredDev/Junior/issues/new?assignees=&labels=&template=bug_report.md&title=');
+                          },
+                        ),
+                        SettingsTile(
+                          title: 'Request a Feature',
+                          titleTextStyle: TextStyle(color: textColor),
+                          leading: Icon(
+                            Icons.exit_to_app,
+                            color: linkColor,
+                          ),
+                          onPressed: (context) {
+                            launch(
+                                'https://github.com/OverPoweredDev/Junior/issues/new?assignees=&labels=&template=feature_request.md&title=');
+                          },
+                        ),
+                        SettingsTile(
+                          title: 'View Source Code',
+                          titleTextStyle: TextStyle(color: textColor),
+                          leading: Icon(
+                            Icons.code,
+                            color: linkColor,
+                          ),
+                          onPressed: (context) {
+                            launch('https://github.com/OverPoweredDev/Junior');
+                          },
+                        ),
+                      ],
+                    )
+                  ],
+                ),
               ],
             ),
           ),

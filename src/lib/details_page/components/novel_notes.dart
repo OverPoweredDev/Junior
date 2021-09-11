@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import '../../theme.dart';
 import 'novel_data.dart';
 
 class NovelNotes extends StatelessWidget {
@@ -11,7 +13,7 @@ class NovelNotes extends StatelessWidget {
       children: [
         Text(
           'Notes',
-          style: TextStyle(color: Colors.white, fontSize: 16),
+          style: TextStyle(color: textColor, fontSize: 16),
         ),
         SizedBox(height: 10),
         Container(
@@ -21,7 +23,7 @@ class NovelNotes extends StatelessWidget {
               borderRadius: BorderRadius.circular(5)),
           child: TextField(
             controller: TextEditingController()..text = notes,
-            style: TextStyle(color: Colors.white, fontSize: 18),
+            style: TextStyle(color: textColor, fontSize: 18),
             keyboardType: TextInputType.multiline,
             maxLines: null,
             decoration: InputDecoration(

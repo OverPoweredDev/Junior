@@ -20,12 +20,12 @@ class NovelTile extends StatelessWidget {
           title: Text(
             novel.title,
             style: TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 18),
+                color: textColor, fontWeight: FontWeight.bold, fontSize: 18),
             maxLines: 1,
             overflow: TextOverflow.ellipsis,
           ),
           subtitle: Text(novel.getChapterProgress(),
-              style: TextStyle(color: Colors.white, fontSize: 16)),
+              style: TextStyle(color: textColor, fontSize: 16)),
           children: [
             Container(
               padding: EdgeInsets.only(left: 15.0, right: 15.0, bottom: 15.0),
@@ -72,7 +72,7 @@ class RatingAndLink extends StatelessWidget {
                 SizedBox(width: 5),
                 Icon(
                   Icons.launch,
-                  color: Colors.white,
+                  color: linkColor,
                   size: 18,
                 ),
               ],
@@ -132,7 +132,10 @@ class StarDisplay extends StarDisplayWidget {
             Icons.star,
             color: Colors.amber,
           ),
-          unfilledStar: const Icon(Icons.star_outlined),
+          unfilledStar: const Icon(
+            Icons.star_outlined,
+            color: Color.fromRGBO(0, 0, 0, 0.5),
+          ),
         );
 }
 
@@ -147,12 +150,12 @@ class NovelNotes extends StatelessWidget {
       return Container();
     } else {
       return Padding(
-          padding: EdgeInsets.only(bottom: 10),
-          child: Text(
-            notes,
-            style: TextStyle(color: textColor, fontSize: 16),
-            textAlign: TextAlign.left,
-          ),
+        padding: EdgeInsets.only(bottom: 10),
+        child: Text(
+          notes,
+          style: TextStyle(color: textColor, fontSize: 16),
+          textAlign: TextAlign.left,
+        ),
       );
     }
   }
@@ -166,7 +169,7 @@ class DetailsButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Color.fromRGBO(64, 75, 96, 0.95),
+      color: Color.fromRGBO(0, 0, 20, 0.2),
       borderRadius: BorderRadius.circular(6.0),
       child: InkWell(
         onTap: () {

@@ -15,9 +15,9 @@ void showExportDataDialog(BuildContext context) async {
   showDialog(
     context: context,
     builder: (BuildContext context) => AlertDialog(
-      content: const Text(
+      content: Text(
         'Your novels have been exported to your Downloads Folder as novelList.txt',
-        style: TextStyle(color: Colors.white),
+        style: TextStyle(color: textColor),
       ),
       backgroundColor: tileColor,
     ),
