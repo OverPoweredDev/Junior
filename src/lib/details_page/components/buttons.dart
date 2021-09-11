@@ -61,10 +61,10 @@ class Buttons extends StatelessWidget {
 }
 
 class EditButton extends StatelessWidget {
-  String innerText;
-  Color buttonColor;
-  Color textColor;
-  VoidCallback onPressed;
+  final String innerText;
+  final Color buttonColor;
+  final Color textColor;
+  final VoidCallback onPressed;
 
   EditButton({
     @required this.innerText,

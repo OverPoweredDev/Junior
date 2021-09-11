@@ -2,6 +2,7 @@
 /src/build/
 /src/.dart_tool/
 /src/.flutter-plugins-dependencies
+/src/.flutter-plugins
 /src/.packages
 
 # Miscellaneous

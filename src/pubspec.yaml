@@ -12,7 +12,12 @@ dependencies:
     sdk: flutter
 
   cupertino_icons: ^1.0.1
+
+  file_picker:
   path_provider:
+  permission_handler:
+  downloads_path_provider:
+
   url_launcher:
   settings_ui:
 

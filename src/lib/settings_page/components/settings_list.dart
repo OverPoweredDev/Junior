@@ -1,5 +1,7 @@
 import 'package:Junior/homepage/body.dart';
 import 'package:Junior/model/preferences.dart';
+import 'package:Junior/settings_page/components/export_data.dart';
+import 'package:Junior/settings_page/components/import_data.dart';
 import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -59,7 +61,8 @@ class _SettingsState extends State<Settings> {
                 color: Colors.white,
               ),
               onPressed: (context) {
-                launch('https://play.google.com/store/apps/details?id=com.overpowereddev.junior.src');
+                launch(
+                    'https://play.google.com/store/apps/details?id=com.overpowereddev.junior.src');
               },
             ),
             SettingsTile(
@@ -95,7 +98,9 @@ class _SettingsState extends State<Settings> {
                 Icons.arrow_circle_up,
                 color: Colors.white,
               ),
-              onPressed: (context) {},
+              onPressed: (context) {
+                showExportDataDialog(context);
+              },
             ),
             SettingsTile(
               title: 'Import Data',
@@ -104,7 +109,9 @@ class _SettingsState extends State<Settings> {
                 Icons.arrow_circle_down,
                 color: Colors.white,
               ),
-              onPressed: (context) {},
+              onPressed: (context) {
+                showImportDataDialog(context);
+              },
             ),
           ],
         ),
@@ -125,7 +132,8 @@ class _SettingsState extends State<Settings> {
                 color: Colors.white,
               ),
               onPressed: (context) {
-                launch('https://github.com/OverPoweredDev/Junior/issues/new?assignees=&labels=&template=bug_report.md&title=');
+                launch(
+                    'https://github.com/OverPoweredDev/Junior/issues/new?assignees=&labels=&template=bug_report.md&title=');
               },
             ),
             SettingsTile(
@@ -136,7 +144,8 @@ class _SettingsState extends State<Settings> {
                 color: Colors.white,
               ),
               onPressed: (context) {
-                launch('https://github.com/OverPoweredDev/Junior/issues/new?assignees=&labels=&template=feature_request.md&title=');
+                launch(
+                    'https://github.com/OverPoweredDev/Junior/issues/new?assignees=&labels=&template=feature_request.md&title=');
               },
             ),
             SettingsTile(
