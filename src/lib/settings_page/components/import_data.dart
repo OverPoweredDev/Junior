@@ -8,13 +8,19 @@ import 'package:flutter/material.dart';
 import '../../theme.dart';
 
 void showImportDataDialog(BuildContext context) async {
-  await importData();
+  bool success = await importData();
+  String dialogTextContent;
+
+  if(success) dialogTextContent = 'Your novels have been added';
+  else dialogTextContent = 'There was an error';
+
   showDialog(
     context: context,
     builder: (BuildContext context) => AlertDialog(
-      content: const Text(
-        'Your novels have been added',
+      content: Text(
+        dialogTextContent,
         style: TextStyle(color: Colors.white),
+        textAlign: TextAlign.center,
       ),
       backgroundColor: tileColor,
     ),

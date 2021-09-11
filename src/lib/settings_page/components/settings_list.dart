@@ -2,6 +2,7 @@ import 'package:Junior/homepage/body.dart';
 import 'package:Junior/model/preferences.dart';
 import 'package:Junior/settings_page/components/export_data.dart';
 import 'package:Junior/settings_page/components/import_data.dart';
+import 'package:Junior/settings_page/components/remove_data.dart';
 import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -111,6 +112,17 @@ class _SettingsState extends State<Settings> {
               ),
               onPressed: (context) {
                 showImportDataDialog(context);
+              },
+            ),
+            SettingsTile(
+              title: 'Remove All Data',
+              titleTextStyle: TextStyle(color: Colors.white),
+              leading: Icon(
+                Icons.delete,
+                color: Colors.white,
+              ),
+              onPressed: (context) {
+                showRemoveDataDialog(context);
               },
             ),
           ],
