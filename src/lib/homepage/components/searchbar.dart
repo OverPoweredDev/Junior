@@ -1,4 +1,4 @@
-import 'package:Junior/model/novel.dart';
+import 'package:Junior/theme.dart';
 import 'package:flutter/material.dart';
 
 class SearchBar extends StatelessWidget {
@@ -24,14 +24,18 @@ class SearchBar extends StatelessWidget {
           keyboardType: TextInputType.text,
           controller: editingController,
           style: TextStyle(
-            color: Colors.white,
+            color: textColor,
             fontSize: 20,
           ),
           onChanged: onSearch,
+          cursorColor: textColor,
           decoration: InputDecoration(
             isDense: true,
             isCollapsed: true,
-            prefixIcon: Icon(Icons.search),
+            prefixIcon: Icon(
+              Icons.search,
+              color: iconColor,
+            ),
             border: InputBorder.none,
             focusedBorder: InputBorder.none,
             enabledBorder: InputBorder.none,

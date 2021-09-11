@@ -4,6 +4,7 @@ import 'package:Junior/homepage/components/searchbar.dart';
 import 'package:Junior/homepage/components/sort_options.dart';
 import 'package:Junior/homepage/components/title.dart';
 import 'package:Junior/model/novel.dart';
+import 'package:Junior/model/preferences.dart';
 import 'package:flutter/material.dart';
 
 import '../theme.dart';
@@ -17,6 +18,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   TextEditingController editingController;
+  Preferences preferences;
   String sortOption = 'Sort';
 
   List searchList = [];
@@ -34,6 +36,8 @@ class _HomePageState extends State<HomePage> {
   // and sorting.
   loadData() async {
     novelList = await getNovelList();
+    preferences = await loadPreferences();
+
     searchList.addAll(novelList);
     sortBy('Most Recent');
   }

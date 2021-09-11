@@ -16,6 +16,7 @@ dependencies:
   file_picker:
   path_provider:
   permission_handler:
+  shared_preferences:
   downloads_path_provider:
 
   url_launcher:

@@ -18,11 +18,16 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
-  Preferences preferences;
+  Preferences preferences = Preferences();
 
   @override
   void initState() {
-    preferences = loadPreferences();
+    super.initState();
+    loadData();
+  }
+
+  void loadData() async {
+    preferences = await loadPreferences();
     setState(() {});
   }
 
@@ -71,11 +76,13 @@ class _SettingsPageState extends State<SettingsPage> {
                           switchValue: preferences.darkMode,
                           onToggle: (bool toggle) {
                             preferences.darkMode = toggle;
-                            if(toggle) {
+                            savePreferences(preferences);
+
+                            if (toggle)
                               setDarkMode();
-                            } else {
+                            else
                               setLightMode();
-                            }
+
                             setState(() {});
                           },
                         ),
@@ -102,7 +109,8 @@ class _SettingsPageState extends State<SettingsPage> {
                             Navigator.pop(context);
                             Navigator.push(
                               context,
-                              MaterialPageRoute(builder: (context) => HomePage()),
+                              MaterialPageRoute(
+                                  builder: (context) => HomePage()),
                             );
                           },
                         ),
@@ -110,7 +118,8 @@ class _SettingsPageState extends State<SettingsPage> {
                     ),
                     SettingsSection(
                       title: 'Storage',
-                      titlePadding: EdgeInsets.only(top: 40, left: 15, bottom: 10),
+                      titlePadding:
+                          EdgeInsets.only(top: 40, left: 15, bottom: 10),
                       titleTextStyle: TextStyle(
                         color: textColor,
                         fontSize: 16,
@@ -154,7 +163,8 @@ class _SettingsPageState extends State<SettingsPage> {
                     ),
                     SettingsSection(
                       title: 'Other',
-                      titlePadding: EdgeInsets.only(top: 40, left: 15, bottom: 10),
+                      titlePadding:
+                          EdgeInsets.only(top: 40, left: 15, bottom: 10),
                       titleTextStyle: TextStyle(
                         color: textColor,
                         fontSize: 16,

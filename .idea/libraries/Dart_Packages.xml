@@ -387,6 +387,48 @@
             </list>
           </value>
         </entry>
+        <entry key="shared_preferences">
+          <value>
+            <list>
+              <option value="$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.5.12+4/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="shared_preferences_linux">
+          <value>
+            <list>
+              <option value="$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_linux-0.0.2+4/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="shared_preferences_macos">
+          <value>
+            <list>
+              <option value="$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_macos-0.0.1+11/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="shared_preferences_platform_interface">
+          <value>
+            <list>
+              <option value="$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_platform_interface-1.0.4/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="shared_preferences_web">
+          <value>
+            <list>
+              <option value="$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_web-0.1.2+7/lib" />
+            </list>
+          </value>
+        </entry>
+        <entry key="shared_preferences_windows">
+          <value>
+            <list>
+              <option value="$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_windows-0.0.2+3/lib" />
+            </list>
+          </value>
+        </entry>
         <entry key="sky_engine">
           <value>
             <list>
@@ -628,6 +670,12 @@
       <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/process-4.0.0-nullsafety.4/lib" />
       <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/pub_semver-1.4.4/lib" />
       <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/settings_ui-0.6.0/lib" />
+      <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-0.5.12+4/lib" />
+      <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_linux-0.0.2+4/lib" />
+      <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_macos-0.0.1+11/lib" />
+      <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_platform_interface-1.0.4/lib" />
+      <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_web-0.1.2+7/lib" />
+      <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences_windows-0.0.2+3/lib" />
       <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/source_map_stack_trace-2.1.0-nullsafety.4/lib" />
       <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/source_maps-0.10.10-nullsafety.3/lib" />
       <root url="file://$USER_HOME$/snap/flutter/common/flutter/.pub-cache/hosted/pub.dartlang.org/source_span-1.8.0-nullsafety.4/lib" />

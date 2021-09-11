@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import '../../theme.dart';
 
 void showRemoveDataDialog(BuildContext context) async {
-  removeData();
   showDialog(
     context: context,
     builder: (BuildContext context) => AlertDialog(
@@ -20,14 +19,14 @@ void showRemoveDataDialog(BuildContext context) async {
         children: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: const Text('No, wait'),
+            child: Text('No, wait', style: TextStyle(color: textColor)),
           ),
           TextButton(
             onPressed: () {
               removeData();
               Navigator.pop(context);
             },
-            child: const Text('I\'m Aware, Continue'),
+            child: Text('I\'m Aware, Continue', style: TextStyle(color: Colors.red),),
           )
         ],
       ),
