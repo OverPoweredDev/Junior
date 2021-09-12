@@ -27,7 +27,6 @@ void showExportDataDialog(BuildContext context) async {
 Future<bool> exportData(String filename) async {
   final data = utf8.encode(json.encode(novelList));
   await writeFile(data, filename);
-  print(data);
   return true;
 }
 
@@ -40,8 +39,6 @@ Future<File> writeFile(Uint8List data, String name) async {
   Directory tempDir = await DownloadsPathProvider.downloadsDirectory;
   String tempPath = tempDir.path;
   var filePath = tempPath + '/$name';
-
-  print(filePath);
 
   var bytes = ByteData.view(data.buffer);
   final buffer = bytes.buffer;

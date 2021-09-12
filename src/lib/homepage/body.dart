@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             SizedBox(height: 60),
             HomePageTitle(),
-            SizedBox(height: 60),
+            SizedBox(height: 80),
             SearchBar(
               onSearch: filterSearchResults,
               editingController: editingController,
