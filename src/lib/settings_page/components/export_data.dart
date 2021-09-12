@@ -11,12 +11,18 @@ import 'package:permission_handler/permission_handler.dart';
 import '../../theme.dart';
 
 void showExportDataDialog(BuildContext context) async {
-  await exportData('novelList.txt');
+  String text;
+  if(novelList != []) {
+    await exportData('novelList.txt');
+    text = 'Your novels have been exported to your Downloads Folder as novelList.txt';
+  } else {
+    text = 'Only a non-empty novelList can be exported';
+  }
   showDialog(
     context: context,
     builder: (BuildContext context) => AlertDialog(
       content: Text(
-        'Your novels have been exported to your Downloads Folder as novelList.txt',
+        text,
         style: TextStyle(color: textColor),
       ),
       backgroundColor: tileColor.withAlpha(255),
