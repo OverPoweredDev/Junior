@@ -104,7 +104,7 @@ Future<File> saveNovelList(novelList) async {
 
   final prefs = await loadPreferences();
   if (prefs.exportAutomatically)
-    exportData('novelList-autosave-' + getRandomNumbers() + '.txt');
+    exportData('autosaves/novelList-autosave-' + getRandomNumbers() + '.txt');
 
   return file.writeAsString(novelListJSON);
 }

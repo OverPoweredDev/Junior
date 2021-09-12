@@ -47,11 +47,11 @@ class _HomePageState extends State<HomePage> {
 
   showChangelog(BuildContext context) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    bool hasSeenChangelog = prefs.getBool('seenChangeLog-1.2.2') ?? false;
+    bool hasSeenChangelog = prefs.getBool('seenChangeLog-1.2.3') ?? false;
 
     if (!hasSeenChangelog) {
       showChangeDialog(context);
-      prefs.setBool('seenChangeLog-1.2.2', true);
+      prefs.setBool('seenChangeLog-1.2.3', true);
     }
   }
 

@@ -13,7 +13,7 @@ void showExportDataDialog(BuildContext context) async {
   if (novelList.length > 0) {
     await exportData('novelList-' + getRandomNumbers() + '.txt');
     text =
-        'Your novels have been exported to your Download/ Folder as novelList-[random numbers].txt';
+        'Your novels have been exported to your Download/Junior/ Folder as novelList-[random numbers].txt';
   } else {
     text = 'Only a non-empty novelList can be exported';
   }
@@ -41,11 +41,13 @@ Future<File> writeFile(String data, String name) async {
     await Permission.storage.request();
   }
 
-  String filePath = '/storage/emulated/0/Download/' + name;
+  String filePath = '/storage/emulated/0/Download/Junior/' + name;
 
   print(filePath);
 
-  return File(filePath).writeAsString(data);
+  File file = await File(filePath).create(recursive: true);
+
+  return file.writeAsString(data);
 }
 
 String getRandomNumbers() {
