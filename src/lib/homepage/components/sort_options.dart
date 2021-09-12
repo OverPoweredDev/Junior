@@ -1,3 +1,4 @@
+import 'package:Junior/model/preferences.dart';
 import 'package:Junior/settings_page/body.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -38,13 +39,14 @@ class SortOptions extends StatelessWidget {
             ),
             elevation: 0,
             style: TextStyle(color: textColor),
-            dropdownColor: tileColor,
+            dropdownColor: tileColor.withAlpha(255),
             isDense: true,
             underline: Container(),
             onChanged: (String newValue) {
+              saveSortOption(newValue);
               sortBy(newValue);
             },
-            items: <String>['Alphabetical', 'Most Recent', 'Rating']
+            items: <String>['Alphabetical', 'Most Recent', 'Rating', 'Ongoing']
                 .map<DropdownMenuItem<String>>((String value) {
               return DropdownMenuItem<String>(
                 value: value,

@@ -11,7 +11,7 @@ void showRemoveDataDialog(BuildContext context) async {
         'All Novel Data will be Removed',
         style: TextStyle(color: Colors.white, fontSize: 18),
       ),
-      backgroundColor: tileColor,
+      backgroundColor: tileColor.withAlpha(255),
       contentPadding: EdgeInsets.only(left: 20, right: 20, bottom: 10, top: 14),
       content: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

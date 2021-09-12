@@ -16,7 +16,7 @@ void setDarkMode(){
 
 void setLightMode(){
   backgroundColor = Color.fromRGBO(229, 229, 229, 1.0);
-  tileColor = Color.fromRGBO(245, 245, 245, 1.0);
+  tileColor = Color.fromRGBO(245, 245, 245, 0.9);
   textColor = Color.fromRGBO(0, 0, 0, 1.0);
   iconColor = Color.fromRGBO(38, 38, 38, 1.0);
   linkColor = Color.fromRGBO(31, 31, 31, 1.0);

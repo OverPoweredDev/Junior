@@ -39,53 +39,7 @@ class _HomePageState extends State<HomePage> {
     preferences = await loadPreferences();
 
     searchList.addAll(novelList);
-    sortBy('Most Recent');
-  }
-
-  void sortBy(String option) {
-    switch (option) {
-      case 'Alphabetical':
-        novelList.sort((novel1, novel2) {
-          return novel1.title.toLowerCase().compareTo(novel2.title.toLowerCase());
-        });
-        break;
-      case 'Most Recent':
-        novelList.sort((novel1, novel2) {
-          return novel2.lastEdited.compareTo(novel1.lastEdited);
-        });
-        break;
-      case 'Rating':
-        novelList.sort((novel1, novel2) {
-          return novel2.novelRating.compareTo(novel1.novelRating);
-        });
-        break;
-    }
-
-    setState(() {sortOption = option;});
-  }
-
-  void filterSearchResults(String query) {
-    List dummySearchList = [];
-    dummySearchList.addAll(novelList);
-    if (query.isNotEmpty) {
-      List dummyListData = [];
-      dummySearchList.forEach((item) {
-        if (item.contains(query)) {
-          dummyListData.add(item);
-        }
-      });
-
-      setState(() {
-        novelList.clear();
-        novelList.addAll(dummyListData);
-      });
-      return;
-    } else {
-      setState(() {
-        novelList.clear();
-        novelList.addAll(searchList);
-      });
-    }
+    sortBy(preferences.sortBy);
   }
 
   @override
@@ -125,5 +79,65 @@ class _HomePageState extends State<HomePage> {
         ),
       ),
     );
+  }
+
+  void sortBy(String option) {
+    switch (option) {
+      case 'Alphabetical':
+        novelList.sort((novel1, novel2) {
+          return novel1.title.toLowerCase().compareTo(novel2.title.toLowerCase());
+        });
+        break;
+      case 'Most Recent':
+        novelList.sort((novel1, novel2) {
+          return novel2.lastEdited.compareTo(novel1.lastEdited);
+        });
+        break;
+      case 'Rating':
+        novelList.sort((novel1, novel2) {
+          return novel2.novelRating.compareTo(novel1.novelRating);
+        });
+        break;
+      case 'Ongoing':
+        novelList.sort((novel1, novel2) {
+          int sortValue = 0;
+          if(novel1.isComplete == novel2.isComplete){
+            sortValue = novel2.lastEdited.compareTo(novel1.lastEdited);
+          } else if (novel1.isComplete) {
+            sortValue = 1;
+          } else if (novel2.isComplete) {
+            sortValue = -1;
+          }
+
+          return sortValue;
+        });
+        break;
+    }
+
+    setState(() {sortOption = option;});
+  }
+
+  void filterSearchResults(String query) {
+    List dummySearchList = [];
+    dummySearchList.addAll(novelList);
+    if (query.isNotEmpty) {
+      List dummyListData = [];
+      dummySearchList.forEach((item) {
+        if (item.contains(query)) {
+          dummyListData.add(item);
+        }
+      });
+
+      setState(() {
+        novelList.clear();
+        novelList.addAll(dummyListData);
+      });
+      return;
+    } else {
+      setState(() {
+        novelList.clear();
+        novelList.addAll(searchList);
+      });
+    }
   }
 }

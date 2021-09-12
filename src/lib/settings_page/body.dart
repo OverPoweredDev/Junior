@@ -76,7 +76,7 @@ class _SettingsPageState extends State<SettingsPage> {
                           switchValue: preferences.darkMode,
                           onToggle: (bool toggle) {
                             preferences.darkMode = toggle;
-                            savePreferences(preferences);
+                            saveDarkModeOption(toggle);
 
                             if (toggle)
                               setDarkMode();

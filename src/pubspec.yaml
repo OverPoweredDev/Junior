@@ -2,7 +2,7 @@ name: Junior
 description: Junior dares! to log his novel details
 
 publish_to: 'none'
-version: 1.0.2+3
+version: 1.1.1+5
 
 environment:
   sdk: ">=2.7.0 <3.0.0"

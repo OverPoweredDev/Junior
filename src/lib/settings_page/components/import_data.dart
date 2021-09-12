@@ -12,7 +12,7 @@ void showImportDataDialog(BuildContext context) async {
   String dialogTextContent;
 
   if(success) dialogTextContent = 'Your novels have been added';
-  else dialogTextContent = 'There was an error';
+  else dialogTextContent = 'Import Operation Cancelled';
 
   showDialog(
     context: context,
@@ -22,7 +22,7 @@ void showImportDataDialog(BuildContext context) async {
         style: TextStyle(color: textColor),
         textAlign: TextAlign.center,
       ),
-      backgroundColor: tileColor,
+      backgroundColor: tileColor.withAlpha(255),
     ),
   );
 }

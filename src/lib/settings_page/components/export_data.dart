@@ -19,7 +19,7 @@ void showExportDataDialog(BuildContext context) async {
         'Your novels have been exported to your Downloads Folder as novelList.txt',
         style: TextStyle(color: textColor),
       ),
-      backgroundColor: tileColor,
+      backgroundColor: tileColor.withAlpha(255),
     ),
   );
 }
