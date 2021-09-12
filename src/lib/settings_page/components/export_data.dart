@@ -11,7 +11,7 @@ import 'package:permission_handler/permission_handler.dart';
 import '../../theme.dart';
 
 void showExportDataDialog(BuildContext context) async {
-  await exportData();
+  await exportData('novelList.txt');
   showDialog(
     context: context,
     builder: (BuildContext context) => AlertDialog(
@@ -24,9 +24,10 @@ void showExportDataDialog(BuildContext context) async {
   );
 }
 
-Future<bool> exportData() async {
+Future<bool> exportData(String filename) async {
   final data = utf8.encode(json.encode(novelList));
-  writeFile(data, 'novelList.txt');
+  await writeFile(data, filename);
+  print(data);
   return true;
 }
 
@@ -39,6 +40,8 @@ Future<File> writeFile(Uint8List data, String name) async {
   Directory tempDir = await DownloadsPathProvider.downloadsDirectory;
   String tempPath = tempDir.path;
   var filePath = tempPath + '/$name';
+
+  print(filePath);
 
   var bytes = ByteData.view(data.buffer);
   final buffer = bytes.buffer;

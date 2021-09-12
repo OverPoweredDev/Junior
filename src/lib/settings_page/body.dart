@@ -1,4 +1,5 @@
 import 'package:Junior/homepage/body.dart';
+import 'package:Junior/model/changelog.dart';
 import 'package:Junior/model/preferences.dart';
 import 'package:Junior/settings_page/components/export_data.dart';
 import 'package:Junior/settings_page/components/import_data.dart';
@@ -135,7 +136,7 @@ class _SettingsPageState extends State<SettingsPage> {
                             fontSize: 12,
                           ),
                           leading: Padding(
-                            padding: EdgeInsets.only(top: 8),
+                            padding: EdgeInsets.only(top: 9),
                             child: Icon(
                               Icons.alarm,
                               color: linkColor,
@@ -173,9 +174,14 @@ class _SettingsPageState extends State<SettingsPage> {
                         SettingsTile(
                           title: 'Remove All Data',
                           titleTextStyle: TextStyle(color: textColor),
-                          leading: Icon(
-                            Icons.delete,
-                            color: linkColor,
+                          subtitle: 'This deletes the AutoSave too',
+                          subtitleTextStyle: TextStyle(color: textColor),
+                          leading: Padding(
+                            padding: EdgeInsets.only(top: 9),
+                            child: Icon(
+                              Icons.delete,
+                              color: linkColor,
+                            ),
                           ),
                           onPressed: (context) {
                             showRemoveDataDialog(context);
@@ -193,6 +199,17 @@ class _SettingsPageState extends State<SettingsPage> {
                         fontWeight: FontWeight.w700,
                       ),
                       tiles: [
+                        SettingsTile(
+                          title: 'View Changelog',
+                          titleTextStyle: TextStyle(color: textColor),
+                          leading: Icon(
+                            Icons.article,
+                            color: linkColor,
+                          ),
+                          onPressed: (context) {
+                            showChangeDialog(context);
+                          },
+                        ),
                         SettingsTile(
                           title: 'Report a bug',
                           titleTextStyle: TextStyle(color: textColor),
