@@ -7,7 +7,7 @@ showChangeDialog(BuildContext context) {
     context: context,
     builder: (BuildContext context) => AlertDialog(
       title: Text(
-        '1.2.1 Changelog (READ THIS!!!)',
+        'Version 1.2.2 (READ THIS!!!)',
         style: TextStyle(color: textColor),
       ),
       content: Text(
@@ -16,7 +16,7 @@ showChangeDialog(BuildContext context) {
         '𝗧𝗵𝗲 𝗘𝗻𝘁𝗶𝗿𝗲 𝗡𝗲𝘄 𝗦𝗲𝘁𝘁𝗶𝗻𝗴𝘀 𝗣𝗮𝗴𝗲\nCheck it out!\n\n'
         '𝗧𝗼𝗴𝗴𝗹𝗲 𝗟𝗶𝗴𝗵𝘁/𝗗𝗮𝗿𝗸 𝗠𝗼𝗱𝗲\nDark Mode is still default and Light mode kinda sucks but it\'s there now\n\n'
         '𝗔 𝗪𝗵𝗼𝗹𝗲 𝗕𝘂𝗻𝗰𝗵𝗮 𝗨𝗜 𝗨𝗽𝗱𝗮𝘁𝗲𝘀\nMainly in the settings page\n\n'
-        'As for where 1.1.0 and 1.2.0 went, it was too buggy so I had to add patches but I was also adding features so we\'re at 1.2.1 now',
+        'As for where 1.1.0 and 1.2.0 went, it was too buggy so I had to add patches but I was also adding features so we\'re at 1.2.2 now',
         style: TextStyle(color: textColor),
       ),
       backgroundColor: tileColor.withAlpha(255),

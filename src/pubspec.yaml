@@ -2,7 +2,7 @@ name: Junior
 description: Junior dares! to log his novel details
 
 publish_to: 'none'
-version: 1.2.1+7
+version: 1.2.2+9
 
 environment:
   sdk: ">=2.7.0 <3.0.0"
@@ -17,7 +17,6 @@ dependencies:
   path_provider:
   permission_handler:
   shared_preferences:
-  downloads_path_provider:
 
   url_launcher:
   settings_ui:

@@ -103,7 +103,8 @@ Future<File> saveNovelList(novelList) async {
   final novelListJSON = jsonEncode(novelList);
 
   final prefs = await loadPreferences();
-  if (prefs.exportAutomatically) exportData('novelList-autosave.txt');
+  if (prefs.exportAutomatically)
+    exportData('novelList-autosave-' + getRandomNumbers() + '.txt');
 
   return file.writeAsString(novelListJSON);
 }
