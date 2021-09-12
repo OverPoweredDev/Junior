@@ -6,6 +6,7 @@ import 'package:Junior/homepage/components/title.dart';
 import 'package:Junior/model/novel.dart';
 import 'package:Junior/model/preferences.dart';
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../theme.dart';
 
@@ -27,6 +28,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
+    showChangelog(context);
     loadData();
   }
 
@@ -40,6 +42,26 @@ class _HomePageState extends State<HomePage> {
 
     searchList.addAll(novelList);
     sortBy(preferences.sortBy);
+  }
+
+  showChangelog(BuildContext context) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    String changelogVersion = prefs.getString('currVersion') ?? '1.0.0';
+
+    bool showChangelog = true;
+
+    if(showChangelog) {
+      showDialog(
+        context: context,
+        builder: (BuildContext context) => AlertDialog(
+          title: Text(
+            '',
+            style: TextStyle(color: textColor),
+          ),
+          backgroundColor: tileColor.withAlpha(255),
+        ),
+      );
+    }
   }
 
   @override

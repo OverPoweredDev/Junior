@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
 
+import 'package:Junior/model/preferences.dart';
+import 'package:Junior/settings_page/components/export_data.dart';
 import 'package:flutter/material.dart';
 import 'package:path_provider/path_provider.dart';
 
@@ -51,8 +53,9 @@ class Novel {
         isComplete = getFromJson(json, 'isComplete', false),
         novelLink = getFromJson(json, 'novelLink', '');
 
-  static dynamic getFromJson(Map<String, dynamic> json, String key, dynamic defaultValue){
-    if(json.containsKey(key)){
+  static dynamic getFromJson(
+      Map<String, dynamic> json, String key, dynamic defaultValue) {
+    if (json.containsKey(key)) {
       return json[key];
     } else {
       return defaultValue;
@@ -98,6 +101,9 @@ Future<File> get _localFile async {
 Future<File> saveNovelList(novelList) async {
   final file = await _localFile;
   final novelListJSON = jsonEncode(novelList);
+
+  final prefs = await loadPreferences();
+  if (prefs.exportAutomatically) exportData();
 
   return file.writeAsString(novelListJSON);
 }

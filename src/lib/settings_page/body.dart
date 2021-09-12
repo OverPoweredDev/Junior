@@ -126,6 +126,28 @@ class _SettingsPageState extends State<SettingsPage> {
                         fontWeight: FontWeight.w700,
                       ),
                       tiles: [
+                        SettingsTile.switchTile(
+                          title: 'Automatic Exporting',
+                          subtitle: 'Highly Recommended',
+                          titleTextStyle: TextStyle(color: textColor),
+                          subtitleTextStyle: TextStyle(
+                            color: textColor,
+                            fontSize: 12,
+                          ),
+                          leading: Padding(
+                            padding: EdgeInsets.only(top: 8),
+                            child: Icon(
+                              Icons.alarm,
+                              color: linkColor,
+                            ),
+                          ),
+                          switchValue: preferences.exportAutomatically,
+                          onToggle: (bool toggle) {
+                            preferences.exportAutomatically = toggle;
+                            saveExportReminder(toggle);
+                            setState(() {});
+                          },
+                        ),
                         SettingsTile(
                           title: 'Export Data',
                           titleTextStyle: TextStyle(color: textColor),
