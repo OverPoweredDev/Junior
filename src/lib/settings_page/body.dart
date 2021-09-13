@@ -47,7 +47,7 @@ class _SettingsPageState extends State<SettingsPage> {
         backgroundColor: backgroundColor,
         body: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.only(top: 80, bottom: 20),
+            padding: EdgeInsets.only(top: 80),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -246,7 +246,7 @@ class _SettingsPageState extends State<SettingsPage> {
                           },
                         ),
                       ],
-                    )
+                    ),
                   ],
                 ),
               ],

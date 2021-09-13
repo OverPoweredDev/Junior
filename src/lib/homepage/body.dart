@@ -6,6 +6,7 @@ import 'package:Junior/homepage/components/title.dart';
 import 'package:Junior/model/changelog.dart';
 import 'package:Junior/model/novel.dart';
 import 'package:Junior/model/preferences.dart';
+import 'package:Junior/settings_page/components/export_data.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -41,17 +42,19 @@ class _HomePageState extends State<HomePage> {
     novelList = await getNovelList();
     preferences = await loadPreferences();
 
+    if(preferences.exportAutomatically) autoSave();
+
     searchList.addAll(novelList);
     sortBy(preferences.sortBy);
   }
 
   showChangelog(BuildContext context) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    bool hasSeenChangelog = prefs.getBool('seenChangeLog-1.2.3') ?? false;
+    bool hasSeenChangelog = prefs.getBool('seenChangeLog-1.2.4') ?? false;
 
     if (!hasSeenChangelog) {
       showChangeDialog(context);
-      prefs.setBool('seenChangeLog-1.2.3', true);
+      prefs.setBool('seenChangeLog-1.2.4', true);
     }
   }
 
@@ -155,6 +158,29 @@ class _HomePageState extends State<HomePage> {
         novelList.clear();
         novelList.addAll(searchList);
       });
+    }
+  }
+
+  void autoSave() async {
+    bool moreThanADay(int milliseconds) {
+      return DateTime.now().millisecondsSinceEpoch - milliseconds > 86400000;
+    }
+
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    int milliseconds = prefs.getInt('lastSaved') ?? DateTime.now().millisecondsSinceEpoch - 86500000;
+    if(moreThanADay(milliseconds)) {
+      await exportData('autosaves/novelList-autosave-' + getRandomNumbers() + '.txt');
+      showDialog(
+        context: context,
+        builder: (BuildContext context) => AlertDialog(
+          content: Text(
+            'Autosaved Data to Download/Junior/autosaves/',
+            style: TextStyle(color: textColor),
+          ),
+          backgroundColor: tileColor.withAlpha(255),
+        ),
+      );
+      prefs.setInt('lastSaved', DateTime.now().millisecondsSinceEpoch);
     }
   }
 }
