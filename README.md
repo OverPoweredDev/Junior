@@ -128,7 +128,8 @@ TODO
 ### Contributing
 
 Any and all contributions are welcome! As Junior is a project in release, changes to the source code won't be immediately accepted (they will be marked complete
-for HacktoberFest, don't worry). In case it's a new feature or something not mentioned below, just create an issue beforehand please.
+for HacktoberFest, don't worry). In case it's a new feature or something not mentioned below, just create an issue beforehand please. Also do add your name and
+account to the Maintainer's Section of CONTRIBUTING.md with your Pull Request!
 
 Contributions regarding the below are especially appreciated!
 
@@ -137,6 +138,8 @@ Contributions regarding the below are especially appreciated!
 - Minor changes/refactors to the Flutter Code
 - Adding features to the Application requested by users
 - Adding tests for the app
+
+The only thing I ask of you guys is to follow the directory structure as shown in [this section](#navigation).
 
 <br>
 
