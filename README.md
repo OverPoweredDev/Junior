@@ -69,7 +69,7 @@ to Contribution Guidelines so do check it out if you're helping out!
 ```
 Junior/
 ├── assets/
-│   └── banner.png
+│   └── banner.png
 ├── README.md
 └── src/
     ├── android/..
@@ -77,16 +77,16 @@ Junior/
     ├── assets/..
     ├── test/..
     ├── lib/
-    │   ├── details_page/
-    │   │   ├── body.dart
-    │   │   └── components/..
-    │   ├── homepage/
-    │   │   ├── body.dart
-    │   │   └── components/..
-    │   ├── model
-    │   │   └── novel.dart
-    │   ├── main.dart
-    │   └── theme.dart
+    │   ├── details_page/
+    │   │   ├── body.dart
+    │   │   └── components/..
+    │   ├── homepage/
+    │   │   ├── body.dart
+    │   │   └── components/..
+    │   ├── model
+    │   │   └── novel.dart
+    │   ├── main.dart
+    │   └── theme.dart
     ├── pubspec.lock
     ├── pubspec.yaml
     └── src.iml
@@ -127,7 +127,16 @@ TODO
 
 ### Contributing
 
-TODO
+Any and all contributions are welcome! As Junior is a project in release, changes to the source code won't be immediately accepted (they will be marked complete
+for HacktoberFest, don't worry). In case it's a new feature or something not mentioned below, just create an issue beforehand please.
+
+Contributions regarding the below are especially appreciated!
+
+- Contributing to the README (The TODO parts, mainly 😅)
+- Adding Pages to the Wiki
+- Minor changes/refactors to the Flutter Code
+- Adding features to the Application requested by users
+- Adding tests for the app
 
 <br>
 
