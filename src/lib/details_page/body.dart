@@ -27,6 +27,19 @@ class DetailsPage extends StatelessWidget {
         if (NovelData.isChanged) {
           NovelData.novel.lastEdited = DateTime.now();
           saveNovelList(novelList);
+
+          final snackBar = SnackBar(
+            backgroundColor: backgroundColor,
+            duration: Duration(seconds: 1),
+            content: Text(
+              'Updated ' + novel.title,
+              style: TextStyle(
+                color: linkColor,
+              ),
+            ),
+          );
+
+          ScaffoldMessenger.of(context).showSnackBar(snackBar);
         }
 
         Navigator.pop(context);

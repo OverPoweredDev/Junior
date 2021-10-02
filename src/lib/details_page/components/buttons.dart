@@ -2,6 +2,7 @@ import 'package:Junior/details_page/components/novel_data.dart';
 import 'package:Junior/homepage/body.dart';
 import 'package:Junior/model/novel.dart';
 import 'package:flutter/material.dart';
+import 'package:Junior/theme.dart';
 
 class Buttons extends StatelessWidget {
   @override
@@ -18,6 +19,19 @@ class Buttons extends StatelessWidget {
               NovelData.novel.lastEdited = DateTime.now();
               saveNovelList(novelList);
             }
+
+            final snackBar = SnackBar(
+              backgroundColor: backgroundColor,
+              duration: Duration(seconds: 1),
+              content: Text(
+                'Updated ' + NovelData.novel.title,
+                style: TextStyle(
+                  color: linkColor,
+                ),
+              ),
+            );
+
+            ScaffoldMessenger.of(context).showSnackBar(snackBar);
 
             Navigator.pop(context);
             Navigator.push(
