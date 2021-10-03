@@ -12,7 +12,7 @@ class NovelLink extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Link to Current Chapter',
+          'Link to Novel',
           style: TextStyle(color: textColor, fontSize: 16),
         ),
         SizedBox(height: 10),
