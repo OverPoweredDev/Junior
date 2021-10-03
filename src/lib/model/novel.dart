@@ -76,37 +76,37 @@ class Novel {
   String getChapterProgress() {
     String text = '';
 
-    if(!this.hasVolumes) {
-      if (this.currChapter != 0) {
-        text += 'c' + this.currChapter.toString();
+    if (!hasVolumes) {
+      if (currChapter != 0) {
+        text += 'c' + currChapter.toString();
 
-        if (this.totalChapters != 0) {
-          text += '/' + this.totalChapters.toString();
+        if (totalChapters != 0) {
+          text += '/' + totalChapters.toString();
         }
 
-        if (this.isComplete) {
+        if (isComplete) {
           text += ' • Complete';
         } else {
           text += ' • Ongoing';
         }
       }
-    } else if (this.hasVolumes) {
-      if(this.currVolume != 0) {
-        text += 'v' + this.currVolume.toString();
+    } else if (hasVolumes) {
+      if (currVolume != 0) {
+        text += 'v' + currVolume.toString();
 
-        if (this.currChapter != 0) {
-          text += 'c' + this.currChapter.toString();
+        if (currChapter != 0) {
+          text += 'c' + currChapter.toString();
         }
 
-        if(this.totalVolumes != 0){
-          text += '/ v' + this.totalVolumes.toString();
+        if (totalVolumes != 0) {
+          text += '/ v' + totalVolumes.toString();
 
-          if (this.totalChapters != 0) {
-            text += 'c' + this.totalChapters.toString();
+          if (totalChapters != 0) {
+            text += 'c' + totalChapters.toString();
           }
         }
 
-        if (this.isComplete) {
+        if (isComplete) {
           text += ' • Complete';
         } else {
           text += ' • Ongoing';

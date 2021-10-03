@@ -14,7 +14,7 @@ class SortOptions extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 15.0),
+      padding: const EdgeInsets.symmetric(horizontal: 15.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -27,7 +27,7 @@ class SortOptions extends StatelessWidget {
                   color: linkColor,
                   size: 20,
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Text(
                   sortOption,
                   style: TextStyle(
@@ -46,8 +46,14 @@ class SortOptions extends StatelessWidget {
               saveSortOption(newValue);
               sortBy(newValue);
             },
-            items: <String>['Alphabetical', 'Most Recent', 'Rating', 'Ongoing', 'Complete', 'On Hiatus']
-                .map<DropdownMenuItem<String>>((String value) {
+            items: <String>[
+              'Alphabetical',
+              'Most Recent',
+              'Rating',
+              'Ongoing',
+              'Complete',
+              'On Hiatus'
+            ].map<DropdownMenuItem<String>>((String value) {
               return DropdownMenuItem<String>(
                 value: value,
                 child: Text(value),
@@ -65,7 +71,7 @@ class SortOptions extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => SettingsPage(),
+                  builder: (context) => const SettingsPage(),
                 ),
               );
             },

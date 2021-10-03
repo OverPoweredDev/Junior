@@ -18,7 +18,7 @@ class ChapterProgress extends StatelessWidget {
       children: [
         Text(
           'Chapter Progress',
-          style: TextStyle(color:  textColor, fontSize: 16),
+          style: TextStyle(color: textColor, fontSize: 16),
         ),
         SizedBox(height: 10),
         Row(
@@ -29,7 +29,7 @@ class ChapterProgress extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Text('c', style: TextStyle(color:  textColor, fontSize: 16)),
+                Text('c', style: TextStyle(color: textColor, fontSize: 16)),
                 SizedBox(width: 5),
                 ChapterInputField(
                   chapterNum: currChapter.toString(),
@@ -39,7 +39,7 @@ class ChapterProgress extends StatelessWidget {
                   },
                 ),
                 SizedBox(width: 5),
-                Text('/', style: TextStyle(color:  textColor, fontSize: 24)),
+                Text('/', style: TextStyle(color: textColor, fontSize: 24)),
                 SizedBox(width: 5),
                 ChapterInputField(
                   chapterNum: totalChapters.toString(),
@@ -69,7 +69,7 @@ class ChapterInputField extends StatelessWidget {
     return Container(
       width: 55,
       decoration: BoxDecoration(
-          color: Color.fromRGBO(255, 255, 255, 0.2),
+          color: const Color.fromRGBO(255, 255, 255, 0.2),
           borderRadius: BorderRadius.circular(5)),
       child: TextField(
         controller: TextEditingController()

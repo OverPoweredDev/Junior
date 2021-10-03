@@ -18,7 +18,7 @@ class _NovelStatus extends State<NovelStatus> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Checkbox(
-          activeColor: Color.fromRGBO(255, 255, 255, 0.2),
+          activeColor: const Color.fromRGBO(255, 255, 255, 0.2),
           value: _isComplete,
           onChanged: (bool newValue) {
             NovelData.isChanged = true;

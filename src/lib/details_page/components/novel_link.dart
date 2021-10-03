@@ -15,17 +15,17 @@ class NovelLink extends StatelessWidget {
           'Link to Novel',
           style: TextStyle(color: textColor, fontSize: 16),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Container(
           decoration: BoxDecoration(
-              color: Color.fromRGBO(255, 255, 255, 0.2),
+              color: const Color.fromRGBO(255, 255, 255, 0.2),
               borderRadius: BorderRadius.circular(5)),
           child: TextField(
             controller: TextEditingController()..text = link,
             style: TextStyle(color: textColor, fontSize: 18),
             keyboardType: TextInputType.text,
             maxLines: 1,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               isDense: true,
               border: InputBorder.none,
               focusedBorder: InputBorder.none,

@@ -28,7 +28,7 @@ class NovelTitle extends StatelessWidget {
           disabledBorder: InputBorder.none,
           contentPadding: EdgeInsets.all(5),
         ),
-        style: TextStyle(color:  textColor, fontSize: 36),
+        style: TextStyle(color: textColor, fontSize: 36),
         onChanged: (String text) {
           NovelData.isChanged = true;
           NovelData.novel.title = text;

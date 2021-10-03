@@ -30,7 +30,7 @@ class DetailsPage extends StatelessWidget {
 
           final snackBar = SnackBar(
             backgroundColor: backgroundColor,
-            duration: Duration(seconds: 1),
+            duration: const Duration(seconds: 1),
             content: Text(
               'Updated ' + novel.title,
               style: TextStyle(
@@ -53,21 +53,21 @@ class DetailsPage extends StatelessWidget {
         backgroundColor: backgroundColor,
         body: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.only(left: 20, top: 80, right: 20, bottom: 20),
+            padding: const EdgeInsets.only(left: 20, top: 80, right: 20, bottom: 20),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 NovelTitle(autoFocus: titleFocus),
-                SizedBox(height: 50),
+                const SizedBox(height: 50),
                 ChapterProgress(),
-                SizedBox(height: 50),
+                const SizedBox(height: 50),
                 StarRating(),
-                SizedBox(height: 50),
+                const SizedBox(height: 50),
                 NovelLink(),
-                SizedBox(height: 50),
+                const SizedBox(height: 50),
                 NovelNotes(),
-                SizedBox(height: 50),
+                const SizedBox(height: 50),
                 Buttons(),
               ],
             ),

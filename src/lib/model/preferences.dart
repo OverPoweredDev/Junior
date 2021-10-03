@@ -6,7 +6,10 @@ class Preferences {
   bool exportAutomatically;
   String sortBy;
 
-  Preferences({this.darkMode = true, this.sortBy = 'Ongoing', this.exportAutomatically = true});
+  Preferences(
+      {this.darkMode = true,
+      this.sortBy = 'Ongoing',
+      this.exportAutomatically = true});
 }
 
 Future<Preferences> loadPreferences() async {
@@ -21,7 +24,8 @@ Future<Preferences> loadPreferences() async {
     setLightMode();
   }
 
-  return Preferences(darkMode: darkMode, sortBy: sortBy, exportAutomatically: exportReminder);
+  return Preferences(
+      darkMode: darkMode, sortBy: sortBy, exportAutomatically: exportReminder);
 }
 
 Future<bool> saveDarkModeOption(bool isDarkMode) async {
