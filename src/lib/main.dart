@@ -3,20 +3,22 @@ import 'package:Junior/theme.dart';
 import 'package:flutter/material.dart';
 
 void main() async {
-  runApp(new MyApp());
+  runApp(MyApp());
 }
 
+// ignore: use_key_in_widget_constructors
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return new MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Junior',
-      theme: new ThemeData(
+      theme: ThemeData(
         primaryColor: backgroundColor,
+        // ignore: deprecated_member_use
         accentColor: Colors.white,
       ),
-      home: new HomePage(),
+      home: const HomePage(),
     );
   }
 }

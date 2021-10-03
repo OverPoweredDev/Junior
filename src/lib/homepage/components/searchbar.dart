@@ -5,7 +5,7 @@ class SearchBar extends StatelessWidget {
   final void Function(String) onSearch;
   final TextEditingController editingController;
 
-  SearchBar({
+  const SearchBar({
     this.onSearch,
     this.editingController,
   });

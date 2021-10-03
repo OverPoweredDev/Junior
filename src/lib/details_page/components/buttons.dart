@@ -66,7 +66,7 @@ class EditButton extends StatelessWidget {
   final Color textColor;
   final VoidCallback onPressed;
 
-  EditButton({
+  const EditButton({
     @required this.innerText,
     @required this.buttonColor,
     @required this.textColor,

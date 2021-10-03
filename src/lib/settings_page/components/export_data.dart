@@ -10,7 +10,7 @@ import '../../theme.dart';
 
 void showExportDataDialog(BuildContext context) async {
   String text;
-  if (novelList.length > 0) {
+  if (novelList.isNotEmpty) {
     await exportData('novelList-' + getRandomNumbers() + '.txt');
     text =
         'Your novels have been exported to your Download/Junior/ Folder as novelList-[random numbers].txt';

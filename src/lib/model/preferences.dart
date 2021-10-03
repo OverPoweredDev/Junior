@@ -15,10 +15,11 @@ Future<Preferences> loadPreferences() async {
   bool exportReminder = preferences.get('exportAutomatically') ?? true;
   String sortBy = preferences.get('sortBy') ?? 'Ongoing';
 
-  if (darkMode)
+  if (darkMode) {
     setDarkMode();
-  else
+  } else {
     setLightMode();
+  }
 
   return Preferences(darkMode: darkMode, sortBy: sortBy, exportAutomatically: exportReminder);
 }

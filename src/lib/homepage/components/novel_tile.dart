@@ -7,13 +7,13 @@ import 'package:url_launcher/url_launcher.dart';
 class NovelTile extends StatelessWidget {
   final Novel novel;
 
-  NovelTile({this.novel});
+  const NovelTile({this.novel});
 
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 0,
-      margin: new EdgeInsets.only(left: 15.0, right: 15.0, bottom: 12.0),
+      margin: EdgeInsets.only(left: 15.0, right: 15.0, bottom: 12.0),
       child: Container(
         decoration: BoxDecoration(color: tileColor),
         child: ExpansionTile(
@@ -54,7 +54,7 @@ class RatingAndLink extends StatelessWidget {
   final String link;
   final int rating;
 
-  RatingAndLink({this.link, this.rating});
+  const RatingAndLink({this.link, this.rating});
 
   @override
   Widget build(BuildContext context) {
@@ -142,7 +142,7 @@ class StarDisplay extends StarDisplayWidget {
 class NovelNotes extends StatelessWidget {
   final String notes;
 
-  NovelNotes(this.notes);
+  const NovelNotes(this.notes);
 
   @override
   Widget build(BuildContext context) {
@@ -164,7 +164,7 @@ class NovelNotes extends StatelessWidget {
 class DetailsButton extends StatelessWidget {
   final Novel novel;
 
-  DetailsButton(this.novel);
+  const DetailsButton(this.novel);
 
   @override
   Widget build(BuildContext context) {

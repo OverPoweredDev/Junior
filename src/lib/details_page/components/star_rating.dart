@@ -37,7 +37,7 @@ class _StarRatingState extends State<StarRating> {
   Widget build(BuildContext context) {
     final color = Colors.amber;
     final blank = Color.fromRGBO(0, 0, 0, 0.5);
-    final size = 36.0;
+    const size = 36.0;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [

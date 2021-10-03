@@ -13,7 +13,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import '../theme.dart';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key}) : super(key: key);
+  const HomePage({Key key}) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
@@ -142,11 +142,11 @@ class _HomePageState extends State<HomePage> {
     dummySearchList.addAll(novelList);
     if (query.isNotEmpty) {
       List dummyListData = [];
-      dummySearchList.forEach((item) {
+      for (var item in dummySearchList) {
         if (item.contains(query)) {
           dummyListData.add(item);
         }
-      });
+      }
 
       setState(() {
         novelList.clear();
