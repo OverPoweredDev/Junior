@@ -67,7 +67,7 @@ class RatingAndLink extends StatelessWidget {
             padding: EdgeInsets.only(top: 5, bottom: 5, right: 10),
             child: Row(
               children: [
-                Text('Link to Current Chapter',
+                Text('Link to Novel',
                     style: TextStyle(color: linkColor, fontSize: 16)),
                 SizedBox(width: 5),
                 Icon(
