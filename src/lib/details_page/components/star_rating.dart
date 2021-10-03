@@ -36,7 +36,7 @@ class _StarRatingState extends State<StarRating> {
   @override
   Widget build(BuildContext context) {
     final color = Colors.amber;
-    final blank = Color.fromRGBO(0, 0, 0, 0.5);
+    const blank = Color.fromRGBO(0, 0, 0, 0.5);
     const size = 36.0;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,7 +45,7 @@ class _StarRatingState extends State<StarRating> {
           'Novel Rating',
           style: TextStyle(color: textColor, fontSize: 16),
         ),
-        SizedBox(height: 5),
+        const SizedBox(height: 5),
         Container(
           transform: Matrix4.translationValues(-10.0, 0.0, 0.0),
           child: Row(

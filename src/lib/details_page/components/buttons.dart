@@ -1,8 +1,8 @@
 import 'package:Junior/details_page/components/novel_data.dart';
 import 'package:Junior/homepage/body.dart';
 import 'package:Junior/model/novel.dart';
-import 'package:flutter/material.dart';
 import 'package:Junior/theme.dart';
+import 'package:flutter/material.dart';
 
 class Buttons extends StatelessWidget {
   @override
@@ -12,7 +12,7 @@ class Buttons extends StatelessWidget {
       children: [
         EditButton(
           innerText: 'UPDATE DETAILS',
-          buttonColor: Color.fromRGBO(50, 155, 196, 1.0),
+          buttonColor: const Color.fromRGBO(50, 155, 196, 1.0),
           textColor: Colors.white,
           onPressed: () {
             if (NovelData.isChanged) {
@@ -22,7 +22,7 @@ class Buttons extends StatelessWidget {
 
             final snackBar = SnackBar(
               backgroundColor: backgroundColor,
-              duration: Duration(seconds: 1),
+              duration: const Duration(seconds: 1),
               content: Text(
                 'Updated ' + NovelData.novel.title,
                 style: TextStyle(
@@ -36,14 +36,14 @@ class Buttons extends StatelessWidget {
             Navigator.pop(context);
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => HomePage()),
+              MaterialPageRoute(builder: (context) => const HomePage()),
             );
           },
         ),
         SizedBox(height: 10),
         EditButton(
           innerText: 'DELETE NOVEL',
-          buttonColor: Color.fromRGBO(255, 89, 99, 1.0),
+          buttonColor: const Color.fromRGBO(255, 89, 99, 1.0),
           textColor: Colors.white,
           onPressed: () {
             novelList.remove(NovelData.novel);
@@ -52,20 +52,20 @@ class Buttons extends StatelessWidget {
             Navigator.pop(context);
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => HomePage()),
+              MaterialPageRoute(builder: (context) => const HomePage()),
             );
           },
         ),
         SizedBox(height: 10),
         EditButton(
           innerText: 'GO BACK',
-          buttonColor: Color.fromRGBO(142, 142, 142, 1.0),
+          buttonColor: const Color.fromRGBO(142, 142, 142, 1.0),
           textColor: Colors.white,
           onPressed: () {
             Navigator.pop(context);
             Navigator.push(
               context,
-              MaterialPageRoute(builder: (context) => HomePage()),
+              MaterialPageRoute(builder: (context) => const HomePage()),
             );
           },
         ),
@@ -95,15 +95,16 @@ class EditButton extends StatelessWidget {
       child: InkWell(
         onTap: onPressed,
         child: Container(
-          padding: EdgeInsets.all(6),
+          padding: const EdgeInsets.all(6),
           width: double.infinity,
-          child: Text(innerText,
-              style: TextStyle(
-                fontSize: 16,
-                color: textColor,
-                fontWeight: FontWeight.w600,
-              ),
-              textAlign: TextAlign.center,
+          child: Text(
+            innerText,
+            style: TextStyle(
+              fontSize: 16,
+              color: textColor,
+              fontWeight: FontWeight.w600,
+            ),
+            textAlign: TextAlign.center,
           ),
         ),
       ),

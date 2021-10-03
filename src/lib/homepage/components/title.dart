@@ -5,7 +5,7 @@ class HomePageTitle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(15),
+      padding: const EdgeInsets.all(15),
       child: Text(
         'Novels',
         style: TextStyle(color: textColor, fontSize: 40),

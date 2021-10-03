@@ -10,11 +10,16 @@ class Novel {
   String title;
   String notes;
   String novelLink;
+  String novelStatus;
 
   DateTime lastEdited;
 
   int currChapter;
   int totalChapters;
+
+  bool hasVolumes;
+  int currVolume;
+  int totalVolumes;
 
   int novelRating;
   bool isComplete;
@@ -24,8 +29,12 @@ class Novel {
     @required this.lastEdited,
     this.currChapter = 0,
     this.totalChapters = 0,
+    this.hasVolumes = false,
+    this.currVolume = 0,
+    this.totalVolumes = 0,
     this.notes = '',
     this.novelRating = 0,
+    this.novelStatus = 'Ongoing',
     this.isComplete = false,
     this.novelLink = '',
   });
@@ -36,7 +45,11 @@ class Novel {
         'lastEdited': lastEdited.toString(),
         'currChapter': currChapter,
         'totalChapters': totalChapters,
+        'hasVolumes': hasVolumes,
+        'currVolume': currVolume,
+        'totalVolumes': totalVolumes,
         'novelRating': novelRating,
+        'novelStatus': novelStatus,
         'isComplete': isComplete,
         'novelLink': novelLink,
       };
@@ -47,7 +60,11 @@ class Novel {
         lastEdited = DateTime.parse(json['lastEdited']),
         currChapter = getFromJson(json, 'currChapter', 0),
         totalChapters = getFromJson(json, 'totalChapters', 0),
+        hasVolumes = getFromJson(json, 'hasVolumes', false),
+        currVolume = getFromJson(json, 'currVolume', 0),
+        totalVolumes = getFromJson(json, 'totalVolumes', 0),
         novelRating = getFromJson(json, 'novelRating', 0),
+        novelStatus = getFromJson(json, 'novelStatus', 'Ongoing'),
         isComplete = getFromJson(json, 'isComplete', false),
         novelLink = getFromJson(json, 'novelLink', '');
 
@@ -60,26 +77,49 @@ class Novel {
     }
   }
 
+  updateNovelStatus() {
+    if(isComplete) {
+      novelStatus = 'Complete';
+    }
+  }
+
   String getChapterProgress() {
+    updateNovelStatus();
+
     String text = '';
 
-    if (currChapter != 0) {
-      text += 'c' + currChapter.toString();
+    if (!hasVolumes) {
+      if (currChapter != 0) {
+        text += 'c' + currChapter.toString();
 
-      if (totalChapters != 0) {
-        text += '/' + totalChapters.toString();
+        if (totalChapters != 0) {
+          text += '/' + totalChapters.toString();
+        }
+
+        text += ' • ';
+      }
+    } else if (hasVolumes) {
+      if (currVolume != 0) {
+        text += 'v' + currVolume.toString();
+
+        if (currChapter != 0) {
+          text += 'c' + currChapter.toString();
+        }
+
+        if (totalVolumes != 0) {
+          text += '/v' + totalVolumes.toString();
+
+          if (totalChapters != 0) {
+            text += 'c' + totalChapters.toString();
+          }
+        }
+
+        text += ' • ';
       }
 
-      if (isComplete) {
-        text += ' • Complete';
-      } else {
-        text += ' • Ongoing';
-      }
-    } else if (isComplete) {
-      text += 'Complete';
-    } else {
-      text += 'Ongoing';
     }
+
+    text += novelStatus;
 
     return text;
   }

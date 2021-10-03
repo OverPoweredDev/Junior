@@ -26,7 +26,10 @@ void showRemoveDataDialog(BuildContext context) async {
               removeData();
               Navigator.pop(context);
             },
-            child: Text('I\'m Aware, Continue', style: TextStyle(color: Colors.red),),
+            child: const Text(
+              'I\'m Aware, Continue',
+              style: TextStyle(color: Colors.red),
+            ),
           )
         ],
       ),

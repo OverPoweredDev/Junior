@@ -4,13 +4,12 @@ import 'package:Junior/theme.dart';
 import 'package:flutter/material.dart';
 
 class AddNovelButton extends StatelessWidget {
-
   const AddNovelButton();
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(left: 15, right: 15),
+      padding: const EdgeInsets.only(left: 15, right: 15),
       child: Material(
         color: tileColor,
         borderRadius: BorderRadius.circular(6.0),
