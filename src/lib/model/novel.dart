@@ -80,6 +80,7 @@ class Novel {
   updateNovelStatus() {
     if(isComplete) {
       novelStatus = 'Complete';
+      isComplete = false;
     }
   }
 
