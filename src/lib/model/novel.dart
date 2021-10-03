@@ -10,11 +10,16 @@ class Novel {
   String title;
   String notes;
   String novelLink;
+  String novelStatus;
 
   DateTime lastEdited;
 
   int currChapter;
   int totalChapters;
+
+  bool hasVolumes;
+  int currVolume;
+  int totalVolumes;
 
   int novelRating;
   bool isComplete;
@@ -36,7 +41,11 @@ class Novel {
         'lastEdited': lastEdited.toString(),
         'currChapter': currChapter,
         'totalChapters': totalChapters,
+        'hasVolumes': hasVolumes,
+        'currVolume': currVolume,
+        'totalVolumes': totalVolumes,
         'novelRating': novelRating,
+        'novelStatus': novelStatus,
         'isComplete': isComplete,
         'novelLink': novelLink,
       };
@@ -47,7 +56,11 @@ class Novel {
         lastEdited = DateTime.parse(json['lastEdited']),
         currChapter = getFromJson(json, 'currChapter', 0),
         totalChapters = getFromJson(json, 'totalChapters', 0),
+        hasVolumes = getFromJson(json, 'hasVolumes', false),
+        currVolume = getFromJson(json, 'currVolume', 0),
+        totalVolumes = getFromJson(json, 'totalVolumes', 0),
         novelRating = getFromJson(json, 'novelRating', 0),
+        novelStatus = getFromJson(json, 'novelStatus', 'Ongoing'),
         isComplete = getFromJson(json, 'isComplete', false),
         novelLink = getFromJson(json, 'novelLink', '');
 
@@ -63,17 +76,41 @@ class Novel {
   String getChapterProgress() {
     String text = '';
 
-    if (this.currChapter != 0) {
-      text += 'c' + this.currChapter.toString();
+    if(!this.hasVolumes) {
+      if (this.currChapter != 0) {
+        text += 'c' + this.currChapter.toString();
 
-      if (this.totalChapters != 0) {
-        text += '/' + this.totalChapters.toString();
+        if (this.totalChapters != 0) {
+          text += '/' + this.totalChapters.toString();
+        }
+
+        if (this.isComplete) {
+          text += ' • Complete';
+        } else {
+          text += ' • Ongoing';
+        }
       }
+    } else if (this.hasVolumes) {
+      if(this.currVolume != 0) {
+        text += 'v' + this.currVolume.toString();
 
-      if (this.isComplete) {
-        text += ' • Complete';
-      } else {
-        text += ' • Ongoing';
+        if (this.currChapter != 0) {
+          text += 'c' + this.currChapter.toString();
+        }
+
+        if(this.totalVolumes != 0){
+          text += '/ v' + this.totalVolumes.toString();
+
+          if (this.totalChapters != 0) {
+            text += 'c' + this.totalChapters.toString();
+          }
+        }
+
+        if (this.isComplete) {
+          text += ' • Complete';
+        } else {
+          text += ' • Ongoing';
+        }
       }
     } else if (this.isComplete) {
       text += 'Complete';

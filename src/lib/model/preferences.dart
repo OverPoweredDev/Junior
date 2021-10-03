@@ -13,7 +13,7 @@ Future<Preferences> loadPreferences() async {
   SharedPreferences preferences = await SharedPreferences.getInstance();
   bool darkMode = preferences.get('darkMode') ?? true;
   bool exportReminder = preferences.get('exportAutomatically') ?? true;
-  String sortBy = preferences.get('sortBy') ?? 'Ongoing';
+  String sortBy = preferences.get('sortBy') ?? 'Most Recent';
 
   if (darkMode)
     setDarkMode();

@@ -50,7 +50,7 @@ class ChapterProgress extends StatelessWidget {
                 ),
               ],
             ),
-            IsCompleteCheckBox(),
+            NovelStatus(),
           ],
         ),
       ],

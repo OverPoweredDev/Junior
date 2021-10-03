@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 
 import '../../theme.dart';
 
-class IsCompleteCheckBox extends StatefulWidget {
+class NovelStatus extends StatefulWidget {
   @override
-  _IsCompleteCheckBox createState() => _IsCompleteCheckBox();
+  _NovelStatus createState() => _NovelStatus();
 }
 
-class _IsCompleteCheckBox extends State<IsCompleteCheckBox> {
+class _NovelStatus extends State<NovelStatus> {
   bool _isComplete = NovelData.novel.isComplete;
 
   @override

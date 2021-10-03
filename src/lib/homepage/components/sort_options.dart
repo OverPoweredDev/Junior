@@ -46,7 +46,7 @@ class SortOptions extends StatelessWidget {
               saveSortOption(newValue);
               sortBy(newValue);
             },
-            items: <String>['Alphabetical', 'Most Recent', 'Rating', 'Ongoing']
+            items: <String>['Alphabetical', 'Most Recent', 'Rating', 'Ongoing', 'Complete', 'On Hiatus']
                 .map<DropdownMenuItem<String>>((String value) {
               return DropdownMenuItem<String>(
                 value: value,
