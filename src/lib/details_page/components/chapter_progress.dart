@@ -62,7 +62,7 @@ class ChapterInputField extends StatelessWidget {
   final Function(String) onTextChanged;
   final String chapterNum;
 
-  ChapterInputField({@required this.onTextChanged, this.chapterNum});
+  const ChapterInputField({@required this.onTextChanged, this.chapterNum});
 
   @override
   Widget build(BuildContext context) {

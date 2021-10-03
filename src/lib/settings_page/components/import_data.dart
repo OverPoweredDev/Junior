@@ -11,8 +11,11 @@ void showImportDataDialog(BuildContext context) async {
   bool success = await importData();
   String dialogTextContent;
 
-  if(success) dialogTextContent = 'Your novels have been added';
-  else dialogTextContent = 'Import Operation Cancelled';
+  if(success) {
+    dialogTextContent = 'Your novels have been added';
+  } else {
+    dialogTextContent = 'Import Operation Cancelled';
+  }
 
   showDialog(
     context: context,

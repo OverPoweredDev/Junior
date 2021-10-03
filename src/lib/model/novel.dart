@@ -112,7 +112,7 @@ class Novel {
           text += ' • Ongoing';
         }
       }
-    } else if (this.isComplete) {
+    } else if (isComplete) {
       text += 'Complete';
     } else {
       text += 'Ongoing';
@@ -122,7 +122,7 @@ class Novel {
   }
 
   bool contains(String query) {
-    return this.title.toLowerCase().contains(query.toLowerCase());
+    return title.toLowerCase().contains(query.toLowerCase());
   }
 }
 

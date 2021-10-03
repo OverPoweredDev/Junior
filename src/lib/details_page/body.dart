@@ -15,11 +15,11 @@ class DetailsPage extends StatelessWidget {
   final Novel novel;
   final bool titleFocus;
 
-  DetailsPage({this.novel, this.titleFocus = false});
+  const DetailsPage({this.novel, this.titleFocus = false});
 
   @override
   Widget build(BuildContext context) {
-    NovelData.novel = this.novel;
+    NovelData.novel = novel;
     NovelData.isChanged = false;
 
     return WillPopScope(
