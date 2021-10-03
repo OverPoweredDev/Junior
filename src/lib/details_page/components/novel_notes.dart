@@ -15,18 +15,18 @@ class NovelNotes extends StatelessWidget {
           'Notes',
           style: TextStyle(color: textColor, fontSize: 16),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Container(
           height: 150,
           decoration: BoxDecoration(
-              color: Color.fromRGBO(255, 255, 255, 0.2),
+              color: const Color.fromRGBO(255, 255, 255, 0.2),
               borderRadius: BorderRadius.circular(5)),
           child: TextField(
             controller: TextEditingController()..text = notes,
             style: TextStyle(color: textColor, fontSize: 18),
             keyboardType: TextInputType.multiline,
             maxLines: null,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               isDense: true,
               border: InputBorder.none,
               focusedBorder: InputBorder.none,

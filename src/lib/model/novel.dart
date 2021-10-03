@@ -29,8 +29,12 @@ class Novel {
     @required this.lastEdited,
     this.currChapter = 0,
     this.totalChapters = 0,
+    this.hasVolumes = false,
+    this.currVolume = 0,
+    this.totalVolumes = 0,
     this.notes = '',
     this.novelRating = 0,
+    this.novelStatus = 'Ongoing',
     this.isComplete = false,
     this.novelLink = '',
   });
@@ -73,7 +77,15 @@ class Novel {
     }
   }
 
+  updateNovelStatus() {
+    if(isComplete) {
+      novelStatus = 'Complete';
+    }
+  }
+
   String getChapterProgress() {
+    updateNovelStatus();
+
     String text = '';
 
     if (!hasVolumes) {
@@ -84,11 +96,7 @@ class Novel {
           text += '/' + totalChapters.toString();
         }
 
-        if (isComplete) {
-          text += ' • Complete';
-        } else {
-          text += ' • Ongoing';
-        }
+        text += ' • ';
       }
     } else if (hasVolumes) {
       if (currVolume != 0) {
@@ -99,24 +107,19 @@ class Novel {
         }
 
         if (totalVolumes != 0) {
-          text += '/ v' + totalVolumes.toString();
+          text += '/v' + totalVolumes.toString();
 
           if (totalChapters != 0) {
             text += 'c' + totalChapters.toString();
           }
         }
 
-        if (isComplete) {
-          text += ' • Complete';
-        } else {
-          text += ' • Ongoing';
-        }
+        text += ' • ';
       }
-    } else if (isComplete) {
-      text += 'Complete';
-    } else {
-      text += 'Ongoing';
+
     }
+
+    text += novelStatus;
 
     return text;
   }
