@@ -9,7 +9,7 @@ class SortOptions extends StatelessWidget {
   final Function(String option) sortBy;
   final String sortOption;
 
-  SortOptions({this.sortBy, this.sortOption});
+  const SortOptions({this.sortBy, this.sortOption});
 
   @override
   Widget build(BuildContext context) {

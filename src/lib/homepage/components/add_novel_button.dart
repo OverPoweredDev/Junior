@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class AddNovelButton extends StatelessWidget {
 
-  AddNovelButton();
+  const AddNovelButton();
 
   @override
   Widget build(BuildContext context) {

@@ -63,19 +63,19 @@ class Novel {
   String getChapterProgress() {
     String text = '';
 
-    if (this.currChapter != 0) {
-      text += 'c' + this.currChapter.toString();
+    if (currChapter != 0) {
+      text += 'c' + currChapter.toString();
 
-      if (this.totalChapters != 0) {
-        text += '/' + this.totalChapters.toString();
+      if (totalChapters != 0) {
+        text += '/' + totalChapters.toString();
       }
 
-      if (this.isComplete) {
+      if (isComplete) {
         text += ' • Complete';
       } else {
         text += ' • Ongoing';
       }
-    } else if (this.isComplete) {
+    } else if (isComplete) {
       text += 'Complete';
     } else {
       text += 'Ongoing';
@@ -85,7 +85,7 @@ class Novel {
   }
 
   bool contains(String query) {
-    return this.title.toLowerCase().contains(query.toLowerCase());
+    return title.toLowerCase().contains(query.toLowerCase());
   }
 }
 

@@ -12,7 +12,7 @@ import '../theme.dart';
 import 'components/title.dart';
 
 class SettingsPage extends StatefulWidget {
-  SettingsPage({Key key}) : super(key: key);
+  const SettingsPage({Key key}) : super(key: key);
 
   @override
   _SettingsPageState createState() => _SettingsPageState();
@@ -79,10 +79,11 @@ class _SettingsPageState extends State<SettingsPage> {
                             preferences.darkMode = toggle;
                             saveDarkModeOption(toggle);
 
-                            if (toggle)
+                            if (toggle) {
                               setDarkMode();
-                            else
+                            } else {
                               setLightMode();
+                            }
 
                             setState(() {});
                           },
