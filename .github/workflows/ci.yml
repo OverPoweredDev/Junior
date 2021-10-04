@@ -51,9 +51,9 @@ jobs:
   finish:
     needs: build
     runs-on: ubuntu-latest
-    steps:
-      - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          parallel-finished: true
+#     steps:
+#       - name: Coveralls
+#         uses: coverallsapp/github-action@master
+#         with:
+#           github-token: ${{ secrets.GITHUB_TOKEN }}
+#           parallel-finished: true
