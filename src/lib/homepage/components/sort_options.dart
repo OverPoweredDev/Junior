@@ -1,5 +1,5 @@
-import 'package:Junior/model/preferences.dart';
-import 'package:Junior/settings_page/body.dart';
+import 'package:junior/model/preferences.dart';
+import 'package:junior/settings_page/body.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

@@ -1,10 +1,10 @@
 // ignore_for_file: use_key_in_widget_constructors
 
-import 'package:Junior/details_page/components/novel_data.dart';
 import 'package:flutter/material.dart';
+import 'package:junior/details_page/components/novel_data.dart';
 
 // ignore: always_use_package_imports
-import '../../theme.dart';
+import 'package:junior/theme.dart';
 
 class ChapterProgress extends StatefulWidget {
   const ChapterProgress({Key key}) : super(key: key);
@@ -100,7 +100,8 @@ class ChapterProgressTitle extends StatelessWidget {
           splashColor: Colors.transparent,
           child: Text(
             'Chapter',
-            style: TextStyle(color: getSelectedColor(hasVolumes, 'Chapter'), fontSize: 16),
+            style: TextStyle(
+                color: getSelectedColor(hasVolumes, 'Chapter'), fontSize: 16),
           ),
           onTap: () {
             setHasVolumes(false);
@@ -111,15 +112,15 @@ class ChapterProgressTitle extends StatelessWidget {
           style: TextStyle(color: textColor.withOpacity(0.8), fontSize: 16),
         ),
         InkWell(
-          splashColor: Colors.transparent,
-          child: Text(
-            'Volume',
-            style: TextStyle(color: getSelectedColor(hasVolumes, 'Volume'), fontSize: 16),
-          ),
-          onTap: () {
-            setHasVolumes(true);
-          }
-        ),
+            splashColor: Colors.transparent,
+            child: Text(
+              'Volume',
+              style: TextStyle(
+                  color: getSelectedColor(hasVolumes, 'Volume'), fontSize: 16),
+            ),
+            onTap: () {
+              setHasVolumes(true);
+            }),
         Text(
           ' Progress',
           style: TextStyle(color: textColor, fontSize: 16),
@@ -134,12 +135,13 @@ class VolumeOrChapterProgress extends StatelessWidget {
   final int currChapter, totalChapters, currVolume, totalVolumes;
 
   // ignore: sort_constructors_first
-  const VolumeOrChapterProgress({Key key,
-    this.hasVolumes,
-    this.currChapter,
-    this.currVolume,
-    this.totalChapters,
-    this.totalVolumes})
+  const VolumeOrChapterProgress(
+      {Key key,
+      this.hasVolumes,
+      this.currChapter,
+      this.currVolume,
+      this.totalChapters,
+      this.totalVolumes})
       : super(key: key);
 
   @override
@@ -227,7 +229,6 @@ class VolumeOrChapterProgress extends StatelessWidget {
     }
   }
 }
-
 
 class ChapterInputField extends StatelessWidget {
   final Function(String) onTextChanged;

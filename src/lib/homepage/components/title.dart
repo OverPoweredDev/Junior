@@ -1,4 +1,4 @@
-import 'package:Junior/theme.dart';
+import 'package:junior/theme.dart';
 import 'package:flutter/material.dart';
 
 class HomePageTitle extends StatelessWidget {

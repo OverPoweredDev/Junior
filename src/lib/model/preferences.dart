@@ -1,4 +1,4 @@
-import 'package:Junior/theme.dart';
+import 'package:junior/theme.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class Preferences {
@@ -7,7 +7,10 @@ class Preferences {
   String sortBy;
 
   // ignore: sort_constructors_first
-  Preferences({this.darkMode = true, this.sortBy = 'Ongoing', this.exportAutomatically = true});
+  Preferences(
+      {this.darkMode = true,
+      this.sortBy = 'Ongoing',
+      this.exportAutomatically = true});
 }
 
 Future<Preferences> loadPreferences() async {
@@ -22,7 +25,8 @@ Future<Preferences> loadPreferences() async {
     setLightMode();
   }
 
-  return Preferences(darkMode: darkMode, sortBy: sortBy, exportAutomatically: exportReminder);
+  return Preferences(
+      darkMode: darkMode, sortBy: sortBy, exportAutomatically: exportReminder);
 }
 
 Future<bool> saveDarkModeOption(bool isDarkMode) async {

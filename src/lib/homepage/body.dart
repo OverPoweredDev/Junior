@@ -1,12 +1,12 @@
-import 'package:Junior/homepage/components/add_novel_button.dart';
-import 'package:Junior/homepage/components/novel_tile.dart';
-import 'package:Junior/homepage/components/searchbar.dart';
-import 'package:Junior/homepage/components/sort_options.dart';
-import 'package:Junior/homepage/components/title.dart';
-import 'package:Junior/model/changelog.dart';
-import 'package:Junior/model/novel.dart';
-import 'package:Junior/model/preferences.dart';
-import 'package:Junior/settings_page/components/export_data.dart';
+import 'package:junior/homepage/components/add_novel_button.dart';
+import 'package:junior/homepage/components/novel_tile.dart';
+import 'package:junior/homepage/components/searchbar.dart';
+import 'package:junior/homepage/components/sort_options.dart';
+import 'package:junior/homepage/components/title.dart';
+import 'package:junior/model/changelog.dart';
+import 'package:junior/model/novel.dart';
+import 'package:junior/model/preferences.dart';
+import 'package:junior/settings_page/components/export_data.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
