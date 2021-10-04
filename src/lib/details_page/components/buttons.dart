@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:junior/details_page/components/novel_data.dart';
 import 'package:junior/homepage/body.dart';
 import 'package:junior/model/novel.dart';
 import 'package:junior/theme.dart';
-import 'package:flutter/material.dart';
 
 class Buttons extends StatelessWidget {
   const Buttons({Key key}) : super(key: key);

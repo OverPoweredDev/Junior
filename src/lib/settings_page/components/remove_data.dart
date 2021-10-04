@@ -1,5 +1,5 @@
-import 'package:junior/model/novel.dart';
 import 'package:flutter/material.dart';
+import 'package:junior/model/novel.dart';
 
 // ignore: always_use_package_imports
 import '../../theme.dart';

@@ -1,7 +1,7 @@
 // ignore_for_file: sort_constructors_first
 
-import 'package:junior/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:junior/theme.dart';
 
 class SearchBar extends StatelessWidget {
   final void Function(String) onSearch;

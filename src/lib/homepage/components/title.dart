@@ -1,5 +1,5 @@
-import 'package:junior/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:junior/theme.dart';
 
 class HomePageTitle extends StatelessWidget {
   const HomePageTitle({Key key}) : super(key: key);

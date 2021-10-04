@@ -1,7 +1,7 @@
-import 'package:junior/model/preferences.dart';
-import 'package:junior/settings_page/body.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:junior/model/preferences.dart';
+import 'package:junior/settings_page/body.dart';
 
 // ignore: always_use_package_imports
 import '../../theme.dart';

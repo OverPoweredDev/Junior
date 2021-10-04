@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:junior/homepage/components/add_novel_button.dart';
 import 'package:junior/homepage/components/novel_tile.dart';
 import 'package:junior/homepage/components/searchbar.dart';
@@ -7,7 +8,6 @@ import 'package:junior/model/changelog.dart';
 import 'package:junior/model/novel.dart';
 import 'package:junior/model/preferences.dart';
 import 'package:junior/settings_page/components/export_data.dart';
-import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 // ignore: always_use_package_imports

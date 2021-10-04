@@ -1,5 +1,5 @@
-import 'package:junior/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:junior/theme.dart';
 
 class SettingsTitle extends StatelessWidget {
   const SettingsTitle({Key key}) : super(key: key);

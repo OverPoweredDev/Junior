@@ -1,9 +1,9 @@
 // ignore_for_file: use_key_in_widget_constructors
 
+import 'package:flutter/material.dart';
 import 'package:junior/details_page/body.dart';
 import 'package:junior/model/novel.dart';
 import 'package:junior/theme.dart';
-import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class NovelTile extends StatelessWidget {

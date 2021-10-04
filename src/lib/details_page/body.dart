@@ -1,5 +1,6 @@
 // ignore_for_file: use_key_in_widget_constructors
 
+import 'package:flutter/material.dart';
 import 'package:junior/details_page/components/buttons.dart';
 import 'package:junior/details_page/components/chapter_progress.dart';
 import 'package:junior/details_page/components/novel_data.dart';
@@ -9,7 +10,6 @@ import 'package:junior/details_page/components/star_rating.dart';
 import 'package:junior/homepage/body.dart';
 import 'package:junior/model/novel.dart';
 import 'package:junior/theme.dart';
-import 'package:flutter/material.dart';
 
 // ignore: always_use_package_imports
 import 'components/novel_link.dart';

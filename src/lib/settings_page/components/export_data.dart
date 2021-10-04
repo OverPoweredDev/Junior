@@ -2,8 +2,8 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:junior/model/novel.dart';
 import 'package:flutter/material.dart';
+import 'package:junior/model/novel.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 // ignore: always_use_package_imports

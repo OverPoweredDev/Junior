@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:junior/details_page/components/novel_data.dart';
-
 // ignore: always_use_package_imports
 import 'package:junior/theme.dart';
 

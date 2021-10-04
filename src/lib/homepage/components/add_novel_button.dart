@@ -1,7 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:junior/details_page/body.dart';
 import 'package:junior/model/novel.dart';
 import 'package:junior/theme.dart';
-import 'package:flutter/material.dart';
 
 class AddNovelButton extends StatelessWidget {
   // ignore: use_key_in_widget_constructors
