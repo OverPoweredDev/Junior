@@ -36,17 +36,17 @@ jobs:
       - run: flutter analyze .
         working-directory: src
 
-#       Run tests for our flutter project.
-#       - run: flutter test --coverage
-#         working-directory: src
+      - name: Run tests for our flutter project.
+        run: flutter test --coverage
+        working-directory: src
 
       # Sends test coverage to coveralls
-      - name: Coveralls
-        uses: coverallsapp/github-action@master
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          flag-name: run-${{ matrix.platform }}
-          parallel: true
+#       - name: Coveralls
+#         uses: coverallsapp/github-action@master
+#         with:
+#           github-token: ${{ secrets.GITHUB_TOKEN }}
+#           flag-name: run-${{ matrix.platform }}
+#           parallel: true
 
       # Build apk.
       - run: flutter build apk
