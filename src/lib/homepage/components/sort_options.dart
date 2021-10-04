@@ -3,18 +3,20 @@ import 'package:Junior/settings_page/body.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+// ignore: always_use_package_imports
 import '../../theme.dart';
 
 class SortOptions extends StatelessWidget {
   final Function(String option) sortBy;
   final String sortOption;
 
+  // ignore: sort_constructors_first, use_key_in_widget_constructors
   const SortOptions({this.sortBy, this.sortOption});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 15.0),
+      padding: const EdgeInsets.symmetric(horizontal: 15.0),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -27,7 +29,7 @@ class SortOptions extends StatelessWidget {
                   color: linkColor,
                   size: 20,
                 ),
-                SizedBox(width: 10),
+                const SizedBox(width: 10),
                 Text(
                   sortOption,
                   style: TextStyle(
@@ -65,7 +67,7 @@ class SortOptions extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => SettingsPage(),
+                  builder: (context) => const SettingsPage(),
                 ),
               );
             },

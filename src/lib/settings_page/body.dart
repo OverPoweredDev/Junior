@@ -8,7 +8,9 @@ import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+// ignore: always_use_package_imports
 import '../theme.dart';
+// ignore: always_use_package_imports
 import 'components/title.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -39,7 +41,7 @@ class _SettingsPageState extends State<SettingsPage> {
         Navigator.pop(context);
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => HomePage()),
+          MaterialPageRoute(builder: (context) => const HomePage()),
         );
         return false;
       },
@@ -47,20 +49,20 @@ class _SettingsPageState extends State<SettingsPage> {
         backgroundColor: backgroundColor,
         body: SingleChildScrollView(
           child: Padding(
-            padding: EdgeInsets.only(top: 80),
+            padding: const EdgeInsets.only(top: 80),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SettingsTitle(),
-                SizedBox(height: 60),
+                const SettingsTitle(),
+                const SizedBox(height: 60),
                 SettingsList(
-                  physics: NeverScrollableScrollPhysics(),
+                  physics: const NeverScrollableScrollPhysics(),
                   backgroundColor: backgroundColor,
                   shrinkWrap: true,
                   sections: [
                     SettingsSection(
                       title: 'General',
-                      titlePadding: EdgeInsets.only(left: 15, bottom: 10),
+                      titlePadding: const EdgeInsets.only(left: 15, bottom: 10),
                       titleTextStyle: TextStyle(
                         color: textColor,
                         fontSize: 16,
@@ -112,7 +114,7 @@ class _SettingsPageState extends State<SettingsPage> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => HomePage()),
+                                  builder: (context) => const HomePage()),
                             );
                           },
                         ),
@@ -121,7 +123,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     SettingsSection(
                       title: 'Storage',
                       titlePadding:
-                          EdgeInsets.only(top: 40, left: 15, bottom: 10),
+                          const EdgeInsets.only(top: 40, left: 15, bottom: 10),
                       titleTextStyle: TextStyle(
                         color: textColor,
                         fontSize: 16,
@@ -137,7 +139,7 @@ class _SettingsPageState extends State<SettingsPage> {
                             fontSize: 12,
                           ),
                           leading: Padding(
-                            padding: EdgeInsets.only(top: 9),
+                            padding: const EdgeInsets.only(top: 9),
                             child: Icon(
                               Icons.alarm,
                               color: linkColor,
@@ -178,7 +180,7 @@ class _SettingsPageState extends State<SettingsPage> {
                           subtitle: 'This deletes the AutoSave too',
                           subtitleTextStyle: TextStyle(color: textColor),
                           leading: Padding(
-                            padding: EdgeInsets.only(top: 9),
+                            padding: const EdgeInsets.only(top: 9),
                             child: Icon(
                               Icons.delete,
                               color: linkColor,
@@ -193,7 +195,7 @@ class _SettingsPageState extends State<SettingsPage> {
                     SettingsSection(
                       title: 'Other',
                       titlePadding:
-                          EdgeInsets.only(top: 40, left: 15, bottom: 10),
+                          const EdgeInsets.only(top: 40, left: 15, bottom: 10),
                       titleTextStyle: TextStyle(
                         color: textColor,
                         fontSize: 16,

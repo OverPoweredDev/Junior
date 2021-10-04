@@ -1,7 +1,7 @@
 import 'package:Junior/details_page/components/complete_checkbox.dart';
 import 'package:Junior/details_page/components/novel_data.dart';
 import 'package:flutter/material.dart';
-
+// ignore: always_use_package_imports
 import '../../theme.dart';
 
 class ChapterProgress extends StatelessWidget {
@@ -9,6 +9,7 @@ class ChapterProgress extends StatelessWidget {
   final int totalChapters = NovelData.novel.totalChapters;
   final bool isComplete = NovelData.novel.isComplete;
 
+  // ignore: use_key_in_widget_constructors, sort_constructors_first
   ChapterProgress();
 
   @override
@@ -20,7 +21,7 @@ class ChapterProgress extends StatelessWidget {
           'Chapter Progress',
           style: TextStyle(color:  textColor, fontSize: 16),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -30,7 +31,7 @@ class ChapterProgress extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text('c', style: TextStyle(color:  textColor, fontSize: 16)),
-                SizedBox(width: 5),
+                const SizedBox(width: 5),
                 ChapterInputField(
                   chapterNum: currChapter.toString(),
                   onTextChanged: (String text) {
@@ -38,9 +39,9 @@ class ChapterProgress extends StatelessWidget {
                     NovelData.novel.currChapter = int.parse(text);
                   },
                 ),
-                SizedBox(width: 5),
+                const SizedBox(width: 5),
                 Text('/', style: TextStyle(color:  textColor, fontSize: 24)),
-                SizedBox(width: 5),
+                const SizedBox(width: 5),
                 ChapterInputField(
                   chapterNum: totalChapters.toString(),
                   onTextChanged: (String text) {
@@ -50,7 +51,7 @@ class ChapterProgress extends StatelessWidget {
                 ),
               ],
             ),
-            IsCompleteCheckBox(),
+            const IsCompleteCheckBox(),
           ],
         ),
       ],
@@ -62,6 +63,7 @@ class ChapterInputField extends StatelessWidget {
   final Function(String) onTextChanged;
   final String chapterNum;
 
+  // ignore: sort_constructors_first, use_key_in_widget_constructors
   const ChapterInputField({@required this.onTextChanged, this.chapterNum});
 
   @override
@@ -69,14 +71,14 @@ class ChapterInputField extends StatelessWidget {
     return Container(
       width: 55,
       decoration: BoxDecoration(
-          color: Color.fromRGBO(255, 255, 255, 0.2),
+          color: const Color.fromRGBO(255, 255, 255, 0.2),
           borderRadius: BorderRadius.circular(5)),
       child: TextField(
         controller: TextEditingController()
           ..text = (chapterNum == '0') ? '' : chapterNum,
         style: TextStyle(color: textColor),
         keyboardType: TextInputType.number,
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           isDense: true,
           border: InputBorder.none,
           focusedBorder: InputBorder.none,

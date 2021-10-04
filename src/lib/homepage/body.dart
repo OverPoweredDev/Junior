@@ -10,6 +10,7 @@ import 'package:Junior/settings_page/components/export_data.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+// ignore: always_use_package_imports
 import '../theme.dart';
 
 class HomePage extends StatefulWidget {
@@ -66,23 +67,23 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 60),
-            HomePageTitle(),
-            SizedBox(height: 80),
+            const SizedBox(height: 60),
+            const HomePageTitle(),
+            const SizedBox(height: 80),
             SearchBar(
               onSearch: filterSearchResults,
               editingController: editingController,
             ),
-            SizedBox(height: 20),
-            AddNovelButton(),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
+            const AddNovelButton(),
+            const SizedBox(height: 20),
             SortOptions(
               sortBy: sortBy,
               sortOption: sortOption,
             ),
             ListView.builder(
               //otherwise there's two Scrollables and we can't scroll the list
-              physics: NeverScrollableScrollPhysics(),
+              physics: const NeverScrollableScrollPhysics(),
               scrollDirection: Axis.vertical,
               shrinkWrap: true,
               itemCount: novelList.length,
@@ -90,7 +91,7 @@ class _HomePageState extends State<HomePage> {
                 return NovelTile(novel: novelList[index]);
               },
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
           ],
         ),
       ),

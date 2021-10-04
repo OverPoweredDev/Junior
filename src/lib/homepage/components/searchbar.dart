@@ -1,3 +1,5 @@
+// ignore_for_file: sort_constructors_first
+
 import 'package:Junior/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -5,6 +7,7 @@ class SearchBar extends StatelessWidget {
   final void Function(String) onSearch;
   final TextEditingController editingController;
 
+  // ignore: use_key_in_widget_constructors
   const SearchBar({
     this.onSearch,
     this.editingController,
@@ -13,11 +16,11 @@ class SearchBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(15),
+      padding: const EdgeInsets.all(15),
       child: Container(
         width: double.infinity,
         decoration: BoxDecoration(
-          color: Color.fromRGBO(255, 255, 255, 0.3),
+          color: const Color.fromRGBO(255, 255, 255, 0.3),
           borderRadius: BorderRadius.circular(20),
         ),
         child: TextField(
@@ -41,7 +44,7 @@ class SearchBar extends StatelessWidget {
             enabledBorder: InputBorder.none,
             errorBorder: InputBorder.none,
             disabledBorder: InputBorder.none,
-            contentPadding: EdgeInsets.all(11),
+            contentPadding: const EdgeInsets.all(11),
           ),
         ),
       ),

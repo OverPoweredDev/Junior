@@ -1,3 +1,5 @@
+// ignore_for_file: sort_constructors_first
+
 import 'package:Junior/details_page/body.dart';
 import 'package:Junior/model/novel.dart';
 import 'package:Junior/theme.dart';
@@ -7,13 +9,14 @@ import 'package:url_launcher/url_launcher.dart';
 class NovelTile extends StatelessWidget {
   final Novel novel;
 
+  // ignore: use_key_in_widget_constructors,
   const NovelTile({this.novel});
 
   @override
   Widget build(BuildContext context) {
     return Card(
       elevation: 0,
-      margin: EdgeInsets.only(left: 15.0, right: 15.0, bottom: 12.0),
+      margin: const EdgeInsets.only(left: 15.0, right: 15.0, bottom: 12.0),
       child: Container(
         decoration: BoxDecoration(color: tileColor),
         child: ExpansionTile(
@@ -28,7 +31,7 @@ class NovelTile extends StatelessWidget {
               style: TextStyle(color: textColor, fontSize: 16)),
           children: [
             Container(
-              padding: EdgeInsets.only(left: 15.0, right: 15.0, bottom: 15.0),
+              padding: const EdgeInsets.only(left: 15.0, right: 15.0, bottom: 15.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -36,9 +39,9 @@ class NovelTile extends StatelessWidget {
                     link: novel.novelLink,
                     rating: novel.novelRating,
                   ),
-                  SizedBox(height: 15),
+                  const SizedBox(height: 15),
                   NovelNotes(novel.notes),
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   DetailsButton(novel),
                 ],
               ),
@@ -54,6 +57,8 @@ class RatingAndLink extends StatelessWidget {
   final String link;
   final int rating;
 
+  // use_key_in_widget_constructors
+  // ignore: use_key_in_widget_constructors
   const RatingAndLink({this.link, this.rating});
 
   @override
@@ -64,12 +69,12 @@ class RatingAndLink extends StatelessWidget {
         color: Colors.transparent,
         child: InkWell(
           child: Padding(
-            padding: EdgeInsets.only(top: 5, bottom: 5, right: 10),
+            padding: const EdgeInsets.only(top: 5, bottom: 5, right: 10),
             child: Row(
               children: [
                 Text('Link to Novel',
                     style: TextStyle(color: linkColor, fontSize: 16)),
-                SizedBox(width: 5),
+              const SizedBox(width: 5),
                 Icon(
                   Icons.launch,
                   color: linkColor,
@@ -98,11 +103,13 @@ class RatingAndLink extends StatelessWidget {
   }
 }
 
+
 class StarDisplayWidget extends StatelessWidget {
   // courtesy of https://gist.github.com/sma/1f22ef926ef878f10915aa9e00bc9eaa
   final int value;
   final Widget filledStar;
   final Widget unfilledStar;
+
 
   const StarDisplayWidget({
     Key key,
@@ -142,6 +149,7 @@ class StarDisplay extends StarDisplayWidget {
 class NovelNotes extends StatelessWidget {
   final String notes;
 
+  // ignore: use_key_in_widget_constructors
   const NovelNotes(this.notes);
 
   @override
@@ -150,7 +158,7 @@ class NovelNotes extends StatelessWidget {
       return Container();
     } else {
       return Padding(
-        padding: EdgeInsets.only(bottom: 10),
+        padding: const EdgeInsets.only(bottom: 10),
         child: Text(
           notes,
           style: TextStyle(color: textColor, fontSize: 16),
@@ -164,12 +172,13 @@ class NovelNotes extends StatelessWidget {
 class DetailsButton extends StatelessWidget {
   final Novel novel;
 
+  // ignore: use_key_in_widget_constructors
   const DetailsButton(this.novel);
 
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Color.fromRGBO(0, 0, 20, 0.2),
+      color: const Color.fromRGBO(0, 0, 20, 0.2),
       borderRadius: BorderRadius.circular(6.0),
       child: InkWell(
         onTap: () {
@@ -180,12 +189,7 @@ class DetailsButton extends StatelessWidget {
           );
         },
         child: Container(
-          padding: EdgeInsets.only(
-            left: 1,
-            top: 5,
-            right: 1,
-            bottom: 5,
-          ),
+          padding: const EdgeInsets.only(left: 1, top: 5, right: 1, bottom: 5,),
           width: double.infinity,
           child: Text('Update Details',
               style: TextStyle(

@@ -1,9 +1,12 @@
 import 'package:Junior/details_page/components/novel_data.dart';
 import 'package:flutter/material.dart';
 
+// ignore: always_use_package_imports
 import '../../theme.dart';
 
 class IsCompleteCheckBox extends StatefulWidget {
+  const IsCompleteCheckBox({Key key}) : super(key: key);
+
   @override
   _IsCompleteCheckBox createState() => _IsCompleteCheckBox();
 }
@@ -18,7 +21,7 @@ class _IsCompleteCheckBox extends State<IsCompleteCheckBox> {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Checkbox(
-          activeColor: Color.fromRGBO(255, 255, 255, 0.2),
+          activeColor: const Color.fromRGBO(255, 255, 255, 0.2),
           value: _isComplete,
           onChanged: (bool newValue) {
             NovelData.isChanged = true;

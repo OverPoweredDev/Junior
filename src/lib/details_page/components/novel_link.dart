@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
+// ignore: always_use_package_imports
 import '../../theme.dart';
+// ignore: always_use_package_imports
 import 'novel_data.dart';
 
+// ignore: use_key_in_widget_constructors
 class NovelLink extends StatelessWidget {
   final String link = NovelData.novel.novelLink;
 
@@ -15,17 +18,17 @@ class NovelLink extends StatelessWidget {
           'Link to Novel',
           style: TextStyle(color: textColor, fontSize: 16),
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         Container(
           decoration: BoxDecoration(
-              color: Color.fromRGBO(255, 255, 255, 0.2),
+              color: const Color.fromRGBO(255, 255, 255, 0.2),
               borderRadius: BorderRadius.circular(5)),
           child: TextField(
             controller: TextEditingController()..text = link,
             style: TextStyle(color: textColor, fontSize: 18),
             keyboardType: TextInputType.text,
             maxLines: 1,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               isDense: true,
               border: InputBorder.none,
               focusedBorder: InputBorder.none,

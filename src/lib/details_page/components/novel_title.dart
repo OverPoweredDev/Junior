@@ -1,25 +1,27 @@
 import 'package:Junior/details_page/components/novel_data.dart';
 import 'package:flutter/material.dart';
 
+// ignore: always_use_package_imports
 import '../../theme.dart';
 
 class NovelTitle extends StatelessWidget {
   final String title = NovelData.novel.title;
   final bool autoFocus;
 
-  NovelTitle({this.autoFocus = false});
+  // ignore: sort_constructors_first
+  NovelTitle({Key key, this.autoFocus = false}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(right: 5),
+      padding: const EdgeInsets.only(right: 5),
       child: TextField(
         controller: TextEditingController()..text = title,
         keyboardType: TextInputType.text,
         autofocus: autoFocus,
         maxLines: 3,
         minLines: 1,
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           isDense: true,
           border: InputBorder.none,
           focusedBorder: InputBorder.none,
