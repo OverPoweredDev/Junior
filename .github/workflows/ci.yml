@@ -27,11 +27,7 @@ jobs:
       # Get flutter dependencies.
       - run: flutter pub get
         working-directory: src
-
-      # Run build runner to generate dart files
-      - run: flutter packages pub run --no-sound-null-safety build_runner build --delete-conflicting-outputs
-        working-directory: src
-
+        
       # Check for any formatting issues in the code.
       - run: flutter format --set-exit-if-changed .
         working-directory: src
@@ -40,9 +36,9 @@ jobs:
       - run: flutter analyze .
         working-directory: src
 
-      # Run tests for our flutter project.
-      - run: flutter test --coverage
-        working-directory: src
+#       Run tests for our flutter project.
+#       - run: flutter test --coverage
+#         working-directory: src
 
       # Sends test coverage to coveralls
       - name: Coveralls
