@@ -10,7 +10,6 @@ import 'package:Junior/settings_page/components/export_data.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-// ignore: always_use_package_imports
 import '../theme.dart';
 
 class HomePage extends StatefulWidget {
@@ -43,7 +42,7 @@ class _HomePageState extends State<HomePage> {
     novelList = await getNovelList();
     preferences = await loadPreferences();
 
-    if(preferences.exportAutomatically) autoSave();
+    if (preferences.exportAutomatically) autoSave();
 
     searchList.addAll(novelList);
     sortBy(preferences.sortBy);
@@ -68,7 +67,7 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 60),
-            const HomePageTitle(),
+            HomePageTitle(),
             const SizedBox(height: 80),
             SearchBar(
               onSearch: filterSearchResults,
@@ -120,11 +119,39 @@ class _HomePageState extends State<HomePage> {
       case 'Ongoing':
         novelList.sort((novel1, novel2) {
           int sortValue = 0;
-          if (novel1.isComplete == novel2.isComplete) {
+          if (novel1.novelStatus == novel2.novelStatus) {
             sortValue = novel2.lastEdited.compareTo(novel1.lastEdited);
-          } else if (novel1.isComplete) {
+          } else if (novel2.novelStatus == 'Ongoing') {
             sortValue = 1;
-          } else if (novel2.isComplete) {
+          } else if (novel1.novelStatus == 'Ongoing') {
+            sortValue = -1;
+          }
+
+          return sortValue;
+        });
+        break;
+      case 'Complete':
+        novelList.sort((novel1, novel2) {
+          int sortValue = 0;
+          if (novel1.novelStatus == novel2.novelStatus) {
+            sortValue = novel2.lastEdited.compareTo(novel1.lastEdited);
+          } else if (novel2.novelStatus == 'Complete') {
+            sortValue = 1;
+          } else if (novel1.novelStatus == 'Complete') {
+            sortValue = -1;
+          }
+
+          return sortValue;
+        });
+        break;
+      case 'On Hiatus':
+        novelList.sort((novel1, novel2) {
+          int sortValue = 0;
+          if (novel1.novelStatus == novel2.novelStatus) {
+            sortValue = novel2.lastEdited.compareTo(novel1.lastEdited);
+          } else if (novel2.novelStatus == 'On Hiatus') {
+            sortValue = 1;
+          } else if (novel1.novelStatus == 'On Hiatus') {
             sortValue = -1;
           }
 
@@ -163,14 +190,21 @@ class _HomePageState extends State<HomePage> {
   }
 
   void autoSave() async {
+    const int dayInMilliseconds = 86400000;
+
     bool moreThanADay(int milliseconds) {
-      return DateTime.now().millisecondsSinceEpoch - milliseconds > 86400000;
+      return DateTime.now().millisecondsSinceEpoch - milliseconds >
+          dayInMilliseconds;
     }
 
+    // just Autosave if lastSaved is unknown
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    int milliseconds = prefs.getInt('lastSaved') ?? DateTime.now().millisecondsSinceEpoch - 86500000;
-    if(moreThanADay(milliseconds)) {
-      await exportData('autosaves/novelList-autosave-' + getRandomNumbers() + '.txt');
+    int milliseconds = prefs.getInt('lastSaved') ??
+        DateTime.now().millisecondsSinceEpoch - dayInMilliseconds * 2;
+
+    if (moreThanADay(milliseconds)) {
+      await exportData(
+          'autosaves/novelList-autosave-' + getRandomNumbers() + '.txt');
       showDialog(
         context: context,
         builder: (BuildContext context) => AlertDialog(

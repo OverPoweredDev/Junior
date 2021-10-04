@@ -100,13 +100,14 @@ class EditButton extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(6),
           width: double.infinity,
-          child: Text(innerText,
-              style: TextStyle(
-                fontSize: 16,
-                color: textColor,
-                fontWeight: FontWeight.w600,
-              ),
-              textAlign: TextAlign.center,
+          child: Text(
+            innerText,
+            style: TextStyle(
+              fontSize: 16,
+              color: textColor,
+              fontWeight: FontWeight.w600,
+            ),
+            textAlign: TextAlign.center,
           ),
         ),
       ),

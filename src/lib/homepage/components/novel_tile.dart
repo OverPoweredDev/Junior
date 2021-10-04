@@ -1,5 +1,3 @@
-// ignore_for_file: sort_constructors_first
-
 import 'package:Junior/details_page/body.dart';
 import 'package:Junior/model/novel.dart';
 import 'package:Junior/theme.dart';
@@ -9,7 +7,6 @@ import 'package:url_launcher/url_launcher.dart';
 class NovelTile extends StatelessWidget {
   final Novel novel;
 
-  // ignore: use_key_in_widget_constructors,
   const NovelTile({this.novel});
 
   @override
@@ -57,8 +54,6 @@ class RatingAndLink extends StatelessWidget {
   final String link;
   final int rating;
 
-  // use_key_in_widget_constructors
-  // ignore: use_key_in_widget_constructors
   const RatingAndLink({this.link, this.rating});
 
   @override
@@ -74,7 +69,7 @@ class RatingAndLink extends StatelessWidget {
               children: [
                 Text('Link to Novel',
                     style: TextStyle(color: linkColor, fontSize: 16)),
-              const SizedBox(width: 5),
+                const SizedBox(width: 5),
                 Icon(
                   Icons.launch,
                   color: linkColor,
@@ -103,13 +98,11 @@ class RatingAndLink extends StatelessWidget {
   }
 }
 
-
 class StarDisplayWidget extends StatelessWidget {
   // courtesy of https://gist.github.com/sma/1f22ef926ef878f10915aa9e00bc9eaa
   final int value;
   final Widget filledStar;
   final Widget unfilledStar;
-
 
   const StarDisplayWidget({
     Key key,
@@ -149,7 +142,6 @@ class StarDisplay extends StarDisplayWidget {
 class NovelNotes extends StatelessWidget {
   final String notes;
 
-  // ignore: use_key_in_widget_constructors
   const NovelNotes(this.notes);
 
   @override
@@ -172,7 +164,6 @@ class NovelNotes extends StatelessWidget {
 class DetailsButton extends StatelessWidget {
   final Novel novel;
 
-  // ignore: use_key_in_widget_constructors
   const DetailsButton(this.novel);
 
   @override
@@ -189,7 +180,12 @@ class DetailsButton extends StatelessWidget {
           );
         },
         child: Container(
-          padding: const EdgeInsets.only(left: 1, top: 5, right: 1, bottom: 5,),
+          padding: const EdgeInsets.only(
+            left: 1,
+            top: 5,
+            right: 1,
+            bottom: 5,
+          ),
           width: double.infinity,
           child: Text('Update Details',
               style: TextStyle(

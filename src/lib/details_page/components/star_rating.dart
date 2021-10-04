@@ -1,9 +1,7 @@
 // modified https://gist.github.com/sma/1f22ef926ef878f10915aa9e00bc9eaa
 import 'package:flutter/material.dart';
 
-// ignore: always_use_package_imports
 import '../../theme.dart';
-// ignore: always_use_package_imports
 import 'novel_data.dart';
 
 class StarRating extends StatefulWidget {
@@ -11,7 +9,6 @@ class StarRating extends StatefulWidget {
   final IconData filledStar;
   final IconData unfilledStar;
 
-  // ignore: sort_constructors_first
   StarRating({
     Key key,
     this.filledStar,
@@ -19,7 +16,6 @@ class StarRating extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  // ignore: no_logic_in_create_state
   _StarRatingState createState() => _StarRatingState(value);
 }
 
@@ -35,14 +31,12 @@ class _StarRatingState extends State<StarRating> {
     });
   }
 
-  // ignore: sort_constructors_first
   _StarRatingState(this._value);
 
   @override
   Widget build(BuildContext context) {
     final color = Colors.amber;
-    // ignore: prefer_const_declarations
-    final blank =  const Color.fromRGBO(0, 0, 0, 0.5);
+    final blank = Color.fromRGBO(0, 0, 0, 0.5);
     const size = 36.0;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,7 +45,7 @@ class _StarRatingState extends State<StarRating> {
           'Novel Rating',
           style: TextStyle(color: textColor, fontSize: 16),
         ),
-        const SizedBox(height: 5),
+        SizedBox(height: 5),
         Container(
           transform: Matrix4.translationValues(-10.0, 0.0, 0.0),
           child: Row(

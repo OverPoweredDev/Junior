@@ -1,7 +1,6 @@
 import 'package:Junior/model/novel.dart';
 import 'package:flutter/material.dart';
 
-// ignore: always_use_package_imports
 import '../../theme.dart';
 
 void showRemoveDataDialog(BuildContext context) async {
@@ -13,7 +12,7 @@ void showRemoveDataDialog(BuildContext context) async {
         style: TextStyle(color: Colors.white, fontSize: 18),
       ),
       backgroundColor: tileColor.withAlpha(255),
-      contentPadding: const EdgeInsets.only(left: 20, right: 20, bottom: 10, top: 14),
+      contentPadding: EdgeInsets.only(left: 20, right: 20, bottom: 10, top: 14),
       content: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         mainAxisSize: MainAxisSize.max,
@@ -27,7 +26,10 @@ void showRemoveDataDialog(BuildContext context) async {
               removeData();
               Navigator.pop(context);
             },
-            child: const Text('I\'m Aware, Continue', style: TextStyle(color: Colors.red),),
+            child: const Text(
+              'I\'m Aware, Continue',
+              style: TextStyle(color: Colors.red),
+            ),
           )
         ],
       ),

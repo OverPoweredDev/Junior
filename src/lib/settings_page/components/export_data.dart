@@ -43,9 +43,6 @@ Future<File> writeFile(String data, String name) async {
   }
 
   String filePath = '/storage/emulated/0/Download/Junior/' + name;
-
-  print(filePath);
-
   File file = await File(filePath).create(recursive: true);
 
   return file.writeAsString(data);

@@ -4,15 +4,13 @@ import 'dart:io';
 import 'package:Junior/model/novel.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
-
-// ignore: always_use_package_imports
-import '../../theme.dart';
+import 'package:Junior/theme.dart';
 
 void showImportDataDialog(BuildContext context) async {
   bool success = await importData();
   String dialogTextContent;
 
-  if(success) {
+  if (success) {
     dialogTextContent = 'Your novels have been added';
   } else {
     dialogTextContent = 'Import Operation Cancelled';

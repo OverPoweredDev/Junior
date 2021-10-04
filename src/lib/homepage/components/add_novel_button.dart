@@ -4,8 +4,6 @@ import 'package:Junior/theme.dart';
 import 'package:flutter/material.dart';
 
 class AddNovelButton extends StatelessWidget {
-
-  // ignore: use_key_in_widget_constructors
   const AddNovelButton();
 
   @override
@@ -31,7 +29,7 @@ class AddNovelButton extends StatelessWidget {
             );
           },
           child: Container(
-            padding: const EdgeInsets.all(8),
+            padding: EdgeInsets.all(8),
             width: double.infinity,
             child: Text(
               'ADD NEW NOVEL',

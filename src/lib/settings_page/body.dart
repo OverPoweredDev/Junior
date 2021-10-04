@@ -8,9 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:settings_ui/settings_ui.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-// ignore: always_use_package_imports
 import '../theme.dart';
-// ignore: always_use_package_imports
 import 'components/title.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -53,7 +51,7 @@ class _SettingsPageState extends State<SettingsPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SettingsTitle(),
+                SettingsTitle(),
                 const SizedBox(height: 60),
                 SettingsList(
                   physics: const NeverScrollableScrollPhysics(),

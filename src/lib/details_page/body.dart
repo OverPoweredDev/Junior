@@ -9,14 +9,12 @@ import 'package:Junior/model/novel.dart';
 import 'package:Junior/theme.dart';
 import 'package:flutter/material.dart';
 
-// ignore: always_use_package_imports
 import 'components/novel_link.dart';
 
 class DetailsPage extends StatelessWidget {
   final Novel novel;
   final bool titleFocus;
 
-  // ignore: sort_constructors_first, use_key_in_widget_constructors
   const DetailsPage({this.novel, this.titleFocus = false});
 
   @override
@@ -32,7 +30,7 @@ class DetailsPage extends StatelessWidget {
 
           final snackBar = SnackBar(
             backgroundColor: backgroundColor,
-            duration: const Duration(seconds: 1),
+            duration: Duration(seconds: 1),
             content: Text(
               'Updated ' + novel.title,
               style: TextStyle(
@@ -47,7 +45,7 @@ class DetailsPage extends StatelessWidget {
         Navigator.pop(context);
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => const HomePage()),
+          MaterialPageRoute(builder: (context) => HomePage()),
         );
         return false;
       },
@@ -55,22 +53,22 @@ class DetailsPage extends StatelessWidget {
         backgroundColor: backgroundColor,
         body: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.only(left: 20, top: 80, right: 20, bottom: 20),
+            padding: EdgeInsets.only(left: 20, top: 80, right: 20, bottom: 20),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 NovelTitle(autoFocus: titleFocus),
-                const SizedBox(height: 50),
+                SizedBox(height: 50),
                 ChapterProgress(),
-                const SizedBox(height: 50),
+                SizedBox(height: 50),
                 StarRating(),
-                const SizedBox(height: 50),
+                SizedBox(height: 50),
                 NovelLink(),
-                const SizedBox(height: 50),
+                SizedBox(height: 50),
                 NovelNotes(),
-                const SizedBox(height: 50),
-                const Buttons(),
+                SizedBox(height: 50),
+                Buttons(),
               ],
             ),
           ),
