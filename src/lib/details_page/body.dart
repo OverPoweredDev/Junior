@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:Junior/details_page/components/buttons.dart';
 import 'package:Junior/details_page/components/chapter_progress.dart';
 import 'package:Junior/details_page/components/novel_data.dart';
@@ -9,12 +11,14 @@ import 'package:Junior/model/novel.dart';
 import 'package:Junior/theme.dart';
 import 'package:flutter/material.dart';
 
+// ignore: always_use_package_imports
 import 'components/novel_link.dart';
 
 class DetailsPage extends StatelessWidget {
   final Novel novel;
   final bool titleFocus;
 
+  // ignore: sort_constructors_first
   const DetailsPage({this.novel, this.titleFocus = false});
 
   @override
@@ -45,7 +49,7 @@ class DetailsPage extends StatelessWidget {
         Navigator.pop(context);
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => HomePage()),
+          MaterialPageRoute(builder: (context) => const HomePage()),
         );
         return false;
       },
@@ -60,7 +64,7 @@ class DetailsPage extends StatelessWidget {
               children: [
                 NovelTitle(autoFocus: titleFocus),
                 const SizedBox(height: 50),
-                ChapterProgress(),
+                const ChapterProgress(),
                 const SizedBox(height: 50),
                 StarRating(),
                 const SizedBox(height: 50),
@@ -68,7 +72,7 @@ class DetailsPage extends StatelessWidget {
                 const SizedBox(height: 50),
                 NovelNotes(),
                 const SizedBox(height: 50),
-                Buttons(),
+                const Buttons(),
               ],
             ),
           ),

@@ -3,12 +3,14 @@ import 'package:Junior/settings_page/body.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+// ignore: always_use_package_imports
 import '../../theme.dart';
 
 class SortOptions extends StatelessWidget {
   final Function(String option) sortBy;
   final String sortOption;
 
+  // ignore: sort_constructors_first, use_key_in_widget_constructors
   const SortOptions({this.sortBy, this.sortOption});
 
   @override

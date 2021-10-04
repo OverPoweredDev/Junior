@@ -6,17 +6,15 @@ class Preferences {
   bool exportAutomatically;
   String sortBy;
 
-  Preferences(
-      {this.darkMode = true,
-      this.sortBy = 'Ongoing',
-      this.exportAutomatically = true});
+  // ignore: sort_constructors_first
+  Preferences({this.darkMode = true, this.sortBy = 'Ongoing', this.exportAutomatically = true});
 }
 
 Future<Preferences> loadPreferences() async {
   SharedPreferences preferences = await SharedPreferences.getInstance();
   bool darkMode = preferences.get('darkMode') ?? true;
   bool exportReminder = preferences.get('exportAutomatically') ?? true;
-  String sortBy = preferences.get('sortBy') ?? 'Most Recent';
+  String sortBy = preferences.get('sortBy') ?? 'Ongoing';
 
   if (darkMode) {
     setDarkMode();
@@ -24,8 +22,7 @@ Future<Preferences> loadPreferences() async {
     setLightMode();
   }
 
-  return Preferences(
-      darkMode: darkMode, sortBy: sortBy, exportAutomatically: exportReminder);
+  return Preferences(darkMode: darkMode, sortBy: sortBy, exportAutomatically: exportReminder);
 }
 
 Future<bool> saveDarkModeOption(bool isDarkMode) async {

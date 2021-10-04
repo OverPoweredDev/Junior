@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 
+// ignore: always_use_package_imports
 import '../../theme.dart';
+// ignore: always_use_package_imports
 import 'novel_data.dart';
 
+// ignore: use_key_in_widget_constructors
 class NovelLink extends StatelessWidget {
   final String link = NovelData.novel.novelLink;
 

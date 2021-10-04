@@ -2,6 +2,8 @@ import 'package:Junior/theme.dart';
 import 'package:flutter/material.dart';
 
 class HomePageTitle extends StatelessWidget {
+  const HomePageTitle({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(

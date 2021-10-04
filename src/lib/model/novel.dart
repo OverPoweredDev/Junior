@@ -24,6 +24,7 @@ class Novel {
   int novelRating;
   bool isComplete;
 
+  // ignore: sort_constructors_first
   Novel({
     @required this.title,
     @required this.lastEdited,
@@ -54,6 +55,7 @@ class Novel {
         'novelLink': novelLink,
       };
 
+  // ignore: sort_constructors_first
   Novel.fromJson(Map<String, dynamic> json)
       : title = getFromJson(json, 'title', ''),
         notes = getFromJson(json, 'notes', ''),

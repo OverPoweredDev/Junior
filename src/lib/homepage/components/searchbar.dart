@@ -1,3 +1,5 @@
+// ignore_for_file: sort_constructors_first
+
 import 'package:Junior/theme.dart';
 import 'package:flutter/material.dart';
 
@@ -5,6 +7,7 @@ class SearchBar extends StatelessWidget {
   final void Function(String) onSearch;
   final TextEditingController editingController;
 
+  // ignore: use_key_in_widget_constructors
   const SearchBar({
     this.onSearch,
     this.editingController,

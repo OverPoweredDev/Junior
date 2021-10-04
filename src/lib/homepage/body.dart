@@ -10,6 +10,7 @@ import 'package:Junior/settings_page/components/export_data.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+// ignore: always_use_package_imports
 import '../theme.dart';
 
 class HomePage extends StatefulWidget {
@@ -67,7 +68,7 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 60),
-            HomePageTitle(),
+            const HomePageTitle(),
             const SizedBox(height: 80),
             SearchBar(
               onSearch: filterSearchResults,

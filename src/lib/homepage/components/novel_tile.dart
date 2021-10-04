@@ -1,3 +1,5 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:Junior/details_page/body.dart';
 import 'package:Junior/model/novel.dart';
 import 'package:Junior/theme.dart';
@@ -7,6 +9,7 @@ import 'package:url_launcher/url_launcher.dart';
 class NovelTile extends StatelessWidget {
   final Novel novel;
 
+  // ignore: sort_constructors_first
   const NovelTile({this.novel});
 
   @override
@@ -54,6 +57,7 @@ class RatingAndLink extends StatelessWidget {
   final String link;
   final int rating;
 
+  // ignore: sort_constructors_first
   const RatingAndLink({this.link, this.rating});
 
   @override
@@ -104,6 +108,7 @@ class StarDisplayWidget extends StatelessWidget {
   final Widget filledStar;
   final Widget unfilledStar;
 
+  // ignore: sort_constructors_first
   const StarDisplayWidget({
     Key key,
     this.value = 0,
@@ -142,6 +147,7 @@ class StarDisplay extends StarDisplayWidget {
 class NovelNotes extends StatelessWidget {
   final String notes;
 
+  // ignore: sort_constructors_first
   const NovelNotes(this.notes);
 
   @override
@@ -164,6 +170,7 @@ class NovelNotes extends StatelessWidget {
 class DetailsButton extends StatelessWidget {
   final Novel novel;
 
+  // ignore: sort_constructors_first
   const DetailsButton(this.novel);
 
   @override

@@ -5,6 +5,8 @@ import 'package:Junior/theme.dart';
 import 'package:flutter/material.dart';
 
 class Buttons extends StatelessWidget {
+  const Buttons({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -40,7 +42,7 @@ class Buttons extends StatelessWidget {
             );
           },
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         EditButton(
           innerText: 'DELETE NOVEL',
           buttonColor: const Color.fromRGBO(255, 89, 99, 1.0),
@@ -56,7 +58,7 @@ class Buttons extends StatelessWidget {
             );
           },
         ),
-        SizedBox(height: 10),
+        const SizedBox(height: 10),
         EditButton(
           innerText: 'GO BACK',
           buttonColor: const Color.fromRGBO(142, 142, 142, 1.0),
@@ -80,6 +82,7 @@ class EditButton extends StatelessWidget {
   final Color textColor;
   final VoidCallback onPressed;
 
+  // ignore: sort_constructors_first, use_key_in_widget_constructors
   const EditButton({
     @required this.innerText,
     @required this.buttonColor,

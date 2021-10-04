@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 
+// ignore: always_use_package_imports
 import '../../theme.dart';
+// ignore: always_use_package_imports
 import 'novel_data.dart';
 
+// ignore: use_key_in_widget_constructors
 class NovelNotes extends StatelessWidget {
+
+
   final String notes = NovelData.novel.notes;
 
   @override
