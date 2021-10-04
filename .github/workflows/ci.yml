@@ -24,16 +24,16 @@ jobs:
         with:
           channel: "stable"
 
-      # Get flutter dependencies.
-      - run: flutter pub get
+      - name: Get flutter dependencies.
+        run: flutter pub get
         working-directory: src
         
-      # Check for any formatting issues in the code.
-      - run: flutter format .
+      - name: Check for any formatting issues in the code.
+        run: flutter format --set-exit-if-changed .
         working-directory: src
 
-      # Statically analyze the Dart code for any errors.
-      - run: flutter analyze .
+      - name: Statically analyze the Dart code for any errors.
+        run: flutter analyze .
         working-directory: src
 
       - name: Run tests for our flutter project.
