@@ -7,8 +7,6 @@ import 'novel_data.dart';
 
 // ignore: use_key_in_widget_constructors
 class NovelNotes extends StatelessWidget {
-
-
   final String notes = NovelData.novel.notes;
 
   @override

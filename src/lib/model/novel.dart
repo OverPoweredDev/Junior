@@ -80,7 +80,7 @@ class Novel {
   }
 
   updateNovelStatus() {
-    if(isComplete) {
+    if (isComplete) {
       novelStatus = 'Complete';
       isComplete = false;
     }
@@ -119,7 +119,6 @@ class Novel {
 
         text += ' • ';
       }
-
     }
 
     text += novelStatus;
