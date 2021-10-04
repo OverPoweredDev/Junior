@@ -6,6 +6,7 @@ class Preferences {
   bool exportAutomatically;
   String sortBy;
 
+  // ignore: sort_constructors_first
   Preferences({this.darkMode = true, this.sortBy = 'Ongoing', this.exportAutomatically = true});
 }
 

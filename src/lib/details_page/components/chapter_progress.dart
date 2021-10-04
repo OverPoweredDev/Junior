@@ -1,6 +1,9 @@
+// ignore_for_file: use_key_in_widget_constructors
+
 import 'package:Junior/details_page/components/novel_data.dart';
 import 'package:flutter/material.dart';
 
+// ignore: always_use_package_imports
 import '../../theme.dart';
 
 class ChapterProgress extends StatefulWidget {
@@ -66,7 +69,8 @@ class ChapterProgressTitle extends StatelessWidget {
   final bool hasVolumes;
   final void Function(bool option) setHasVolumes;
 
-  ChapterProgressTitle(this.hasVolumes, this.setHasVolumes);
+  // ignore: sort_constructors_first,
+  const ChapterProgressTitle(this.hasVolumes, this.setHasVolumes);
 
   Color getSelectedColor(bool hasVolumes, String chapterOrVolume) {
     Color dullColor = textColor.withOpacity(0.8);
@@ -129,6 +133,7 @@ class VolumeOrChapterProgress extends StatelessWidget {
   final bool hasVolumes;
   final int currChapter, totalChapters, currVolume, totalVolumes;
 
+  // ignore: sort_constructors_first
   const VolumeOrChapterProgress({Key key,
     this.hasVolumes,
     this.currChapter,
@@ -223,11 +228,13 @@ class VolumeOrChapterProgress extends StatelessWidget {
   }
 }
 
+
 class ChapterInputField extends StatelessWidget {
   final Function(String) onTextChanged;
   final String chapterNum;
   final double width;
 
+  // ignore: sort_constructors_first
   const ChapterInputField(
       {@required this.onTextChanged, this.chapterNum, this.width});
 
@@ -262,6 +269,7 @@ class NovelStatus extends StatelessWidget {
   final String novelStatus;
   final void Function(String) updateStatus;
 
+  // ignore: sort_constructors_first
   const NovelStatus(this.novelStatus, this.updateStatus);
 
   @override
