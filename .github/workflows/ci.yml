@@ -48,9 +48,9 @@ jobs:
 #           flag-name: run-${{ matrix.platform }}
 
 
-  finish:
-    needs: build
-    runs-on: ubuntu-latest
+#   finish:
+#     needs: build
+#     runs-on: ubuntu-latest
 #     steps:
 #       - name: Coveralls
 #         uses: coverallsapp/github-action@master
