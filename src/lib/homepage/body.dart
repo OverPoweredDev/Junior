@@ -145,14 +145,14 @@ class _HomePageState extends State<HomePage> {
           return sortValue;
         });
         break;
-      case 'On Hiatus':
+      case 'To Read':
         novelList.sort((novel1, novel2) {
           int sortValue = 0;
           if (novel1.novelStatus == novel2.novelStatus) {
             sortValue = novel2.lastEdited.compareTo(novel1.lastEdited);
-          } else if (novel2.novelStatus == 'On Hiatus') {
+          } else if (novel2.novelStatus == 'To Read') {
             sortValue = 1;
-          } else if (novel1.novelStatus == 'On Hiatus') {
+          } else if (novel1.novelStatus == 'To Read') {
             sortValue = -1;
           }
 
