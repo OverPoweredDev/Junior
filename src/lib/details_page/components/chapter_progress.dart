@@ -290,10 +290,10 @@ class NovelStatus extends StatelessWidget {
           ),
           onTap: () {
             if (novelStatus == 'Complete') {
-              updateStatus('On Hiatus');
+              updateStatus('To Read');
             } else if (novelStatus == 'Ongoing') {
               updateStatus('Complete');
-            } else if (novelStatus == 'On Hiatus') {
+            } else if (novelStatus == 'To Read') {
               updateStatus('Ongoing');
             }
           },
