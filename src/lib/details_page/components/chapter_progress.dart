@@ -290,11 +290,13 @@ class NovelStatus extends StatelessWidget {
           ),
           onTap: () {
             if (novelStatus == 'Complete') {
-              updateStatus('To Read');
-            } else if (novelStatus == 'Ongoing') {
-              updateStatus('Complete');
-            } else if (novelStatus == 'To Read') {
               updateStatus('Ongoing');
+            } else if (novelStatus == 'Ongoing') {
+              updateStatus('On Hiatus');
+            } else if (novelStatus == 'On Hiatus') {
+              updateStatus('To Read');
+            } else if (novelStatus == 'To Read') {
+              updateStatus('Complete');
             }
           },
         ),
