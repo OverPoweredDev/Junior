@@ -133,8 +133,13 @@ class VolumeOrChapterProgress extends StatelessWidget {
   final bool hasVolumes;
   final int currChapter, totalChapters, currVolume, totalVolumes;
 
+  final TextEditingController _currVol = TextEditingController();
+  final TextEditingController _currChap = TextEditingController();
+  final TextEditingController _totalVol = TextEditingController();
+  final TextEditingController _totalChap = TextEditingController();
+
   // ignore: sort_constructors_first
-  const VolumeOrChapterProgress(
+  VolumeOrChapterProgress(
       {Key key,
       this.hasVolumes,
       this.currChapter,
@@ -159,6 +164,7 @@ class VolumeOrChapterProgress extends StatelessWidget {
               NovelData.isChanged = true;
               NovelData.novel.currVolume = int.parse(text);
             },
+            myController: _currVol,
           ),
           const SizedBox(width: 5),
           Text('c', style: TextStyle(color: textColor, fontSize: 16)),
@@ -170,6 +176,7 @@ class VolumeOrChapterProgress extends StatelessWidget {
               NovelData.isChanged = true;
               NovelData.novel.currChapter = int.parse(text);
             },
+            myController: _currVol,
           ),
           const SizedBox(width: 5),
           Text('/', style: TextStyle(color: textColor, fontSize: 24)),
@@ -183,6 +190,7 @@ class VolumeOrChapterProgress extends StatelessWidget {
               NovelData.isChanged = true;
               NovelData.novel.totalVolumes = int.parse(text);
             },
+            myController: _totalVol,
           ),
           const SizedBox(width: 5),
           Text('c', style: TextStyle(color: textColor, fontSize: 16)),
@@ -194,6 +202,7 @@ class VolumeOrChapterProgress extends StatelessWidget {
               NovelData.isChanged = true;
               NovelData.novel.totalChapters = int.parse(text);
             },
+            myController: _totalChap,
           ),
         ],
       );
@@ -211,6 +220,7 @@ class VolumeOrChapterProgress extends StatelessWidget {
               NovelData.isChanged = true;
               NovelData.novel.currChapter = int.parse(text);
             },
+            myController: _currChap,
           ),
           const SizedBox(width: 5),
           Text('/', style: TextStyle(color: textColor, fontSize: 24)),
@@ -222,6 +232,7 @@ class VolumeOrChapterProgress extends StatelessWidget {
               NovelData.isChanged = true;
               NovelData.novel.totalChapters = int.parse(text);
             },
+            myController: _totalChap,
           ),
         ],
       );
@@ -233,10 +244,14 @@ class ChapterInputField extends StatelessWidget {
   final Function(String) onTextChanged;
   final String chapterNum;
   final double width;
+  final TextEditingController myController;
 
   // ignore: sort_constructors_first
   const ChapterInputField(
-      {@required this.onTextChanged, this.chapterNum, this.width});
+      {@required this.onTextChanged,
+      this.chapterNum,
+      this.width,
+      @required this.myController});
 
   @override
   Widget build(BuildContext context) {
@@ -246,22 +261,29 @@ class ChapterInputField extends StatelessWidget {
           color: const Color.fromRGBO(255, 255, 255, 0.2),
           borderRadius: BorderRadius.circular(5)),
       child: TextField(
-        controller: TextEditingController()
-          ..text = (chapterNum == '0') ? '' : chapterNum,
-        style: TextStyle(color: textColor),
-        keyboardType: TextInputType.number,
-        decoration: const InputDecoration(
-          isDense: true,
-          border: InputBorder.none,
-          focusedBorder: InputBorder.none,
-          enabledBorder: InputBorder.none,
-          errorBorder: InputBorder.none,
-          disabledBorder: InputBorder.none,
-          contentPadding: EdgeInsets.all(5),
-        ),
-        onChanged: onTextChanged,
-      ),
+          controller: myController
+            ..text = (chapterNum == '0') ? '' : chapterNum,
+          style: TextStyle(color: textColor),
+          keyboardType: TextInputType.number,
+          decoration: const InputDecoration(
+            isDense: true,
+            border: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            enabledBorder: InputBorder.none,
+            errorBorder: InputBorder.none,
+            disabledBorder: InputBorder.none,
+            contentPadding: EdgeInsets.all(5),
+          ),
+          onChanged: onTextChanged,
+          onTap: () => myController.selectAll()),
     );
+  }
+}
+
+extension TextEditingControllerExt on TextEditingController {
+  void selectAll() {
+    if (text == null || text.isEmpty) return;
+    selection = TextSelection(baseOffset: 0, extentOffset: text.length);
   }
 }
 
