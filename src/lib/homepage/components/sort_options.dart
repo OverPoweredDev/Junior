@@ -54,7 +54,7 @@ class SortOptions extends StatelessWidget {
               'Rating',
               'Ongoing',
               'Complete',
-              'On Hiatus'
+              'To Read'
             ].map<DropdownMenuItem<String>>((String value) {
               return DropdownMenuItem<String>(
                 value: value,
