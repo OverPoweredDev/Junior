@@ -138,7 +138,6 @@ class VolumeOrChapterProgress extends StatelessWidget {
   final TextEditingController _totalVol = TextEditingController();
   final TextEditingController _totalChap = TextEditingController();
 
-
   // ignore: sort_constructors_first
   VolumeOrChapterProgress(
       {Key key,
@@ -148,8 +147,6 @@ class VolumeOrChapterProgress extends StatelessWidget {
       this.totalChapters,
       this.totalVolumes})
       : super(key: key);
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -167,7 +164,7 @@ class VolumeOrChapterProgress extends StatelessWidget {
               NovelData.isChanged = true;
               NovelData.novel.currVolume = int.parse(text);
             },
-              myController: _currVol,
+            myController: _currVol,
           ),
           const SizedBox(width: 5),
           Text('c', style: TextStyle(color: textColor, fontSize: 16)),
@@ -251,7 +248,10 @@ class ChapterInputField extends StatelessWidget {
 
   // ignore: sort_constructors_first
   const ChapterInputField(
-      {@required this.onTextChanged, this.chapterNum, this.width, @required this.myController});
+      {@required this.onTextChanged,
+      this.chapterNum,
+      this.width,
+      @required this.myController});
 
   @override
   Widget build(BuildContext context) {
@@ -261,22 +261,21 @@ class ChapterInputField extends StatelessWidget {
           color: const Color.fromRGBO(255, 255, 255, 0.2),
           borderRadius: BorderRadius.circular(5)),
       child: TextField(
-        controller: myController
-          ..text = (chapterNum == '0') ? '' : chapterNum,
-        style: TextStyle(color: textColor),
-        keyboardType: TextInputType.number,
-        decoration: const InputDecoration(
-          isDense: true,
-          border: InputBorder.none,
-          focusedBorder: InputBorder.none,
-          enabledBorder: InputBorder.none,
-          errorBorder: InputBorder.none,
-          disabledBorder: InputBorder.none,
-          contentPadding: EdgeInsets.all(5),
-        ),
-        onChanged: onTextChanged,
-        onTap: () => myController.selectAll()
-      ),
+          controller: myController
+            ..text = (chapterNum == '0') ? '' : chapterNum,
+          style: TextStyle(color: textColor),
+          keyboardType: TextInputType.number,
+          decoration: const InputDecoration(
+            isDense: true,
+            border: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            enabledBorder: InputBorder.none,
+            errorBorder: InputBorder.none,
+            disabledBorder: InputBorder.none,
+            contentPadding: EdgeInsets.all(5),
+          ),
+          onChanged: onTextChanged,
+          onTap: () => myController.selectAll()),
     );
   }
 }
