@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:junior/details_page/components/novel_data.dart';
+
 // ignore: always_use_package_imports
 import 'package:junior/theme.dart';
 
@@ -176,7 +177,7 @@ class VolumeOrChapterProgress extends StatelessWidget {
               NovelData.isChanged = true;
               NovelData.novel.currChapter = int.parse(text);
             },
-            myController: _currVol,
+            myController: _currChap,
           ),
           const SizedBox(width: 5),
           Text('/', style: TextStyle(color: textColor, fontSize: 24)),
@@ -311,14 +312,14 @@ class NovelStatus extends StatelessWidget {
             ),
           ),
           onTap: () {
-            if (novelStatus == 'Complete') {
-              updateStatus('Ongoing');
-            } else if (novelStatus == 'Ongoing') {
-              updateStatus('On Hiatus');
-            } else if (novelStatus == 'On Hiatus') {
+            if (novelStatus == 'Ongoing') {
+              updateStatus('Complete');
+            } else if (novelStatus == 'Complete') {
               updateStatus('To Read');
             } else if (novelStatus == 'To Read') {
-              updateStatus('Complete');
+              updateStatus('On Hiatus');
+            } else if (novelStatus == 'On Hiatus') {
+              updateStatus('Ongoing');
             }
           },
         ),

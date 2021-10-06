@@ -13,6 +13,7 @@ import 'package:junior/theme.dart';
 
 // ignore: always_use_package_imports
 import 'components/novel_link.dart';
+import 'components/novel_tags.dart';
 
 class DetailsPage extends StatelessWidget {
   final Novel novel;
@@ -70,7 +71,9 @@ class DetailsPage extends StatelessWidget {
                 StarRating(),
                 const SizedBox(height: 50),
                 NovelLink(),
-                const SizedBox(height: 50),
+                const SizedBox(height: 30),
+                NovelTags(),
+                const SizedBox(height: 30),
                 NovelNotes(),
                 const SizedBox(height: 50),
                 const Buttons(),

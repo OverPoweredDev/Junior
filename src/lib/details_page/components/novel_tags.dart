@@ -4,7 +4,7 @@ import 'package:junior/theme.dart';
 import 'novel_data.dart';
 
 // ignore: use_key_in_widget_constructors
-class NovelLink extends StatelessWidget {
+class NovelTags extends StatelessWidget {
   final String link = NovelData.novel.novelLink;
 
   @override
@@ -13,7 +13,7 @@ class NovelLink extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Link to Novel',
+          'Novel Tags',
           style: TextStyle(color: textColor, fontSize: 16),
         ),
         const SizedBox(height: 10),
@@ -22,7 +22,7 @@ class NovelLink extends StatelessWidget {
               color: const Color.fromRGBO(255, 255, 255, 0.2),
               borderRadius: BorderRadius.circular(5)),
           child: TextField(
-            controller: TextEditingController()..text = link,
+            controller: TextEditingController()..text = '',
             style: TextStyle(color: textColor, fontSize: 18),
             keyboardType: TextInputType.text,
             maxLines: 1,
@@ -36,8 +36,8 @@ class NovelLink extends StatelessWidget {
               contentPadding: EdgeInsets.all(5),
             ),
             onChanged: (String text) {
-              NovelData.isChanged = true;
-              NovelData.novel.novelLink = text;
+              // NovelData.isChanged = true;
+              // NovelData.novel.novelLink = text;
             },
           ),
         )

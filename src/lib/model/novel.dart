@@ -12,6 +12,8 @@ class Novel {
   String novelLink;
   String novelStatus;
 
+  List<String> novelTags;
+
   DateTime lastEdited;
 
   int currChapter;
@@ -35,6 +37,7 @@ class Novel {
     this.totalVolumes = 0,
     this.notes = '',
     this.novelRating = 0,
+    this.novelTags = const <String>[],
     this.novelStatus = 'Ongoing',
     this.isComplete = false,
     this.novelLink = '',
@@ -50,6 +53,7 @@ class Novel {
         'currVolume': currVolume,
         'totalVolumes': totalVolumes,
         'novelRating': novelRating,
+        'novelTags': novelTags,
         'novelStatus': novelStatus,
         'isComplete': isComplete,
         'novelLink': novelLink,
@@ -66,6 +70,7 @@ class Novel {
         currVolume = getFromJson(json, 'currVolume', 0),
         totalVolumes = getFromJson(json, 'totalVolumes', 0),
         novelRating = getFromJson(json, 'novelRating', 0),
+        novelTags = getFromJson(json, 'novelTags', <String>[]),
         novelStatus = getFromJson(json, 'novelStatus', 'Ongoing'),
         isComplete = getFromJson(json, 'isComplete', false),
         novelLink = getFromJson(json, 'novelLink', '');
@@ -115,6 +120,14 @@ class Novel {
           if (totalChapters != 0) {
             text += 'c' + totalChapters.toString();
           }
+        }
+        text += ' • ';
+
+      } else if (currChapter != 0) {
+        text += 'c' + currChapter.toString();
+
+        if (totalChapters != 0) {
+          text += '/' + totalChapters.toString();
         }
 
         text += ' • ';
