@@ -12,7 +12,7 @@ class Novel {
   String novelLink;
   String novelStatus;
 
-  List<String> novelTags;
+  List novelTags;
 
   DateTime lastEdited;
 
@@ -37,7 +37,7 @@ class Novel {
     this.totalVolumes = 0,
     this.notes = '',
     this.novelRating = 0,
-    this.novelTags = const <String>[],
+    this.novelTags = const [],
     this.novelStatus = 'Ongoing',
     this.isComplete = false,
     this.novelLink = '',
@@ -70,7 +70,7 @@ class Novel {
         currVolume = getFromJson(json, 'currVolume', 0),
         totalVolumes = getFromJson(json, 'totalVolumes', 0),
         novelRating = getFromJson(json, 'novelRating', 0),
-        novelTags = getFromJson(json, 'novelTags', <String>[]),
+        novelTags = getFromJson(json, 'novelTags', []),
         novelStatus = getFromJson(json, 'novelStatus', 'Ongoing'),
         isComplete = getFromJson(json, 'isComplete', false),
         novelLink = getFromJson(json, 'novelLink', '');
@@ -122,7 +122,6 @@ class Novel {
           }
         }
         text += ' • ';
-
       } else if (currChapter != 0) {
         text += 'c' + currChapter.toString();
 

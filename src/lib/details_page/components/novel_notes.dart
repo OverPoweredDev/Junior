@@ -26,7 +26,7 @@ class NovelNotes extends StatelessWidget {
               borderRadius: BorderRadius.circular(5)),
           child: TextField(
             controller: TextEditingController()..text = notes,
-            style: TextStyle(color: textColor, fontSize: 18),
+            style: TextStyle(color: textColor, fontSize: 16),
             keyboardType: TextInputType.multiline,
             maxLines: null,
             decoration: const InputDecoration(

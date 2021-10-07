@@ -23,7 +23,7 @@ class NovelLink extends StatelessWidget {
               borderRadius: BorderRadius.circular(5)),
           child: TextField(
             controller: TextEditingController()..text = link,
-            style: TextStyle(color: textColor, fontSize: 18),
+            style: TextStyle(color: textColor, fontSize: 16),
             keyboardType: TextInputType.text,
             maxLines: 1,
             decoration: const InputDecoration(

@@ -4,16 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:junior/details_page/components/buttons.dart';
 import 'package:junior/details_page/components/chapter_progress.dart';
 import 'package:junior/details_page/components/novel_data.dart';
+import 'package:junior/details_page/components/novel_link.dart';
 import 'package:junior/details_page/components/novel_notes.dart';
+import 'package:junior/details_page/components/novel_tags.dart';
 import 'package:junior/details_page/components/novel_title.dart';
 import 'package:junior/details_page/components/star_rating.dart';
 import 'package:junior/homepage/body.dart';
 import 'package:junior/model/novel.dart';
 import 'package:junior/theme.dart';
-
-// ignore: always_use_package_imports
-import 'components/novel_link.dart';
-import 'components/novel_tags.dart';
 
 class DetailsPage extends StatelessWidget {
   final Novel novel;

@@ -28,7 +28,13 @@ class _ChapterProgress extends State<ChapterProgress> {
   void updateStatus(String newStatus) {
     NovelData.isChanged = true;
     NovelData.novel.novelStatus = newStatus;
+
     novelStatus = newStatus;
+    currVolume = NovelData.novel.currVolume;
+    currChapter = NovelData.novel.currChapter;
+    totalVolumes = NovelData.novel.totalVolumes;
+    totalChapters = NovelData.novel.totalChapters;
+
     setState(() {});
   }
 
@@ -56,6 +62,7 @@ class _ChapterProgress extends State<ChapterProgress> {
               currChapter: currChapter,
               totalVolumes: totalVolumes,
               totalChapters: totalChapters,
+              updateStatus: updateStatus,
             ),
             NovelStatus(novelStatus, updateStatus),
           ],
@@ -133,6 +140,7 @@ class ChapterProgressTitle extends StatelessWidget {
 class VolumeOrChapterProgress extends StatelessWidget {
   final bool hasVolumes;
   final int currChapter, totalChapters, currVolume, totalVolumes;
+  final Function(String) updateStatus;
 
   final TextEditingController _currVol = TextEditingController();
   final TextEditingController _currChap = TextEditingController();
@@ -146,11 +154,32 @@ class VolumeOrChapterProgress extends StatelessWidget {
       this.currChapter,
       this.currVolume,
       this.totalChapters,
-      this.totalVolumes})
+      this.totalVolumes,
+      this.updateStatus})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    void markIfComplete() {
+      int cc = NovelData.novel.currChapter;
+      int cv = NovelData.novel.currVolume;
+      int tc = NovelData.novel.totalChapters;
+      int tv = NovelData.novel.totalVolumes;
+
+      if (hasVolumes) {
+        if (cv == tv && tv != 0) {
+          if (cc == tc && tc != 0) {
+            FocusScope.of(context).unfocus();
+            updateStatus('Complete');
+          }
+        }
+      } else {
+        if (cc == tc && tc != 0) {
+          updateStatus('Complete');
+        }
+      }
+    }
+
     if (hasVolumes) {
       return Row(
         mainAxisAlignment: MainAxisAlignment.start,
@@ -164,6 +193,7 @@ class VolumeOrChapterProgress extends StatelessWidget {
             onTextChanged: (String text) {
               NovelData.isChanged = true;
               NovelData.novel.currVolume = int.parse(text);
+              markIfComplete();
             },
             myController: _currVol,
           ),
@@ -176,6 +206,7 @@ class VolumeOrChapterProgress extends StatelessWidget {
             onTextChanged: (String text) {
               NovelData.isChanged = true;
               NovelData.novel.currChapter = int.parse(text);
+              markIfComplete();
             },
             myController: _currChap,
           ),
@@ -190,6 +221,7 @@ class VolumeOrChapterProgress extends StatelessWidget {
             onTextChanged: (String text) {
               NovelData.isChanged = true;
               NovelData.novel.totalVolumes = int.parse(text);
+              markIfComplete();
             },
             myController: _totalVol,
           ),
@@ -202,6 +234,7 @@ class VolumeOrChapterProgress extends StatelessWidget {
             onTextChanged: (String text) {
               NovelData.isChanged = true;
               NovelData.novel.totalChapters = int.parse(text);
+              markIfComplete();
             },
             myController: _totalChap,
           ),
@@ -220,6 +253,7 @@ class VolumeOrChapterProgress extends StatelessWidget {
             onTextChanged: (String text) {
               NovelData.isChanged = true;
               NovelData.novel.currChapter = int.parse(text);
+              markIfComplete();
             },
             myController: _currChap,
           ),
@@ -232,6 +266,7 @@ class VolumeOrChapterProgress extends StatelessWidget {
             onTextChanged: (String text) {
               NovelData.isChanged = true;
               NovelData.novel.totalChapters = int.parse(text);
+              markIfComplete();
             },
             myController: _totalChap,
           ),
@@ -262,29 +297,30 @@ class ChapterInputField extends StatelessWidget {
           color: const Color.fromRGBO(255, 255, 255, 0.2),
           borderRadius: BorderRadius.circular(5)),
       child: TextField(
-          controller: myController
-            ..text = (chapterNum == '0') ? '' : chapterNum,
-          style: TextStyle(color: textColor),
-          keyboardType: TextInputType.number,
-          decoration: const InputDecoration(
-            isDense: true,
-            border: InputBorder.none,
-            focusedBorder: InputBorder.none,
-            enabledBorder: InputBorder.none,
-            errorBorder: InputBorder.none,
-            disabledBorder: InputBorder.none,
-            contentPadding: EdgeInsets.all(5),
-          ),
-          onChanged: onTextChanged,
-          onTap: () => myController.selectAll()),
+        controller: myController..text = (chapterNum == '0') ? '' : chapterNum,
+        style: TextStyle(color: textColor),
+        keyboardType: TextInputType.number,
+        decoration: const InputDecoration(
+          isDense: true,
+          border: InputBorder.none,
+          focusedBorder: InputBorder.none,
+          enabledBorder: InputBorder.none,
+          errorBorder: InputBorder.none,
+          disabledBorder: InputBorder.none,
+          contentPadding: EdgeInsets.all(5),
+        ),
+        onChanged: onTextChanged,
+        onTap: () => myController.selectAll(),
+      ),
     );
   }
 }
 
+// had to remove it due to bad User Experience
 extension TextEditingControllerExt on TextEditingController {
   void selectAll() {
-    if (text == null || text.isEmpty) return;
-    selection = TextSelection(baseOffset: 0, extentOffset: text.length);
+    // if (text == null || text.isEmpty) return;
+    // selection = TextSelection(baseOffset: 0, extentOffset: text.length);
   }
 }
 

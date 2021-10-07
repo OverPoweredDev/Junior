@@ -24,6 +24,8 @@ class StarRating extends StatefulWidget {
 }
 
 class _StarRatingState extends State<StarRating> {
+  _StarRatingState(this._value);
+
   int _value = 0;
 
   void onChanged(int index) {
@@ -35,14 +37,10 @@ class _StarRatingState extends State<StarRating> {
     });
   }
 
-  // ignore: sort_constructors_first
-  _StarRatingState(this._value);
-
   @override
   Widget build(BuildContext context) {
     final color = Colors.amber;
-    // ignore: prefer_const_declarations
-    final blank = const Color.fromRGBO(0, 0, 0, 0.5);
+    const blank = Color.fromRGBO(0, 0, 0, 0.5);
     const size = 36.0;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
