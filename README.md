@@ -121,7 +121,25 @@ And that's about it for navigation! This is the layout that I feel is most intui
 
 ### Getting Started
 
-TODO
+1. Fork this repository to your account by clicking the “Fork” button on top-right of the repository page.
+	![Fork Button](https://i.postimg.cc/3wn7mr1j/fork.png)
+
+2. Now, you will see copy of this repository in your account.
+
+	![Forked Repository](https://i.postimg.cc/k5XPJ3C2/repo.png)
+
+3. Next, clone this repository to your machine with help of IDE or you can do it with command line as well. Use below command to clone it
+
+	`git clone https://github.com/<your-user-name>/Junior`.
+	
+	For Android Studio, you can clone it using "Get from Version Control" in VCS.
+	![Android Studio Clone](https://i.postimg.cc/Kj4YR3yg/clone.png)
+	
+4. Create new branch and edit all the changes into it.
+
+5. After changes completed, commit the changes and push it to github.
+
+6. Now go to github repository and you will see the option "Compare and Create Pull Request". Click on it, review changes and create new Pull Request.
 
 <br>
 
