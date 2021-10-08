@@ -141,6 +141,8 @@ And that's about it for navigation! This is the layout that I feel is most intui
 
 6. Now go to github repository and you will see the option "Compare and Create Pull Request". Click on it, review changes and create new Pull Request.
 
+    ![Pull Request](https://i.postimg.cc/JnpNqqMw/pull.png)
+
 <br>
 
 ### Contributing
