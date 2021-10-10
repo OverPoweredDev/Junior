@@ -39,7 +39,7 @@ class _StarRatingState extends State<StarRating> {
 
   @override
   Widget build(BuildContext context) {
-    final color = Colors.amber;
+    const color = Colors.amber;
     const blank = Color.fromRGBO(0, 0, 0, 0.5);
     const size = 36.0;
     return Column(

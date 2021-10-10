@@ -57,7 +57,7 @@ class NovelTile extends StatelessWidget {
 }
 
 Widget getSpacing(List tags) {
-  if(tags.isNotEmpty){
+  if (tags.isNotEmpty) {
     return Container();
   } else {
     return const SizedBox(height: 10);
