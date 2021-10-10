@@ -139,7 +139,19 @@ class Novel {
   }
 
   bool contains(String query) {
-    return title.toLowerCase().contains(query.toLowerCase());
+    String text = '';
+    text = join(text, title);
+    text = join(text, notes);
+    text = join(text, novelRating.toString());
+    text = join(text, novelLink);
+    text = join(text, novelStatus);
+    text = join(text, novelTags.join(' '));
+
+    return text.toLowerCase().contains(query.toLowerCase());
+  }
+
+  String join(String text, String concat) {
+    return text + ' ' + (concat ?? '');
   }
 }
 
