@@ -53,7 +53,7 @@ class _SettingsPageState extends State<SettingsPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SettingsTitle(),
+                SettingsTitle(textColor),
                 const SizedBox(height: 60),
                 SettingsList(
                   physics: const NeverScrollableScrollPhysics(),

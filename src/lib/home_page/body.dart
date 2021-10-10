@@ -64,7 +64,10 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: backgroundColor,
       body: RefreshIndicator(
+          color: textColor,
+          backgroundColor: backgroundColor,
           onRefresh: () async => await loadData(),
+          displacement: 20,
           child: SingleChildScrollView(
             physics: const AlwaysScrollableScrollPhysics(),
             child: Column(
