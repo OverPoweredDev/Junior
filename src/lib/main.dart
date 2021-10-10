@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:junior/homepage/body.dart';
+import 'package:junior/home_page/body.dart';
 import 'package:junior/theme.dart';
 
 void main() async {

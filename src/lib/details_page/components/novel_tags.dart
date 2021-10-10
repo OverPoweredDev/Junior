@@ -35,7 +35,7 @@ class NovelTags extends StatelessWidget {
               errorBorder: InputBorder.none,
               disabledBorder: InputBorder.none,
               contentPadding: const EdgeInsets.all(5),
-              hintText: ' CN, JP, Xianxia, etc.',
+              hintText: ' CN, JP, EN, Xianxia, etc.',
               hintStyle: TextStyle(
                 color: textColor.withOpacity(0.7),
                 fontSize: 16,
@@ -43,6 +43,7 @@ class NovelTags extends StatelessWidget {
             ),
             onChanged: (String text) {
               NovelData.isChanged = true;
+              text = text.replaceAll(RegExp(r',[ ]*'), ',');
               NovelData.novel.novelTags = text.split(',');
             },
           ),

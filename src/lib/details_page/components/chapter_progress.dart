@@ -175,6 +175,7 @@ class VolumeOrChapterProgress extends StatelessWidget {
         }
       } else {
         if (cc == tc && tc != 0) {
+          FocusScope.of(context).unfocus();
           updateStatus('Complete');
         }
       }

@@ -1,6 +1,7 @@
 // ignore_for_file: use_key_in_widget_constructors
 
 import 'package:flutter/material.dart';
+import 'package:flutter_tags/flutter_tags.dart';
 import 'package:junior/details_page/body.dart';
 import 'package:junior/model/novel.dart';
 import 'package:junior/theme.dart';
@@ -40,7 +41,8 @@ class NovelTile extends StatelessWidget {
                     link: novel.novelLink,
                     rating: novel.novelRating,
                   ),
-                  const SizedBox(height: 15),
+                  NovelTags(novel.novelTags),
+                  getSpacing(novel.novelTags),
                   NovelNotes(novel.notes),
                   const SizedBox(height: 10),
                   DetailsButton(novel),
@@ -51,6 +53,14 @@ class NovelTile extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+Widget getSpacing(List tags) {
+  if(tags.isNotEmpty){
+    return Container();
+  } else {
+    return const SizedBox(height: 10);
   }
 }
 
@@ -143,6 +153,36 @@ class StarDisplay extends StarDisplayWidget {
             color: Color.fromRGBO(0, 0, 0, 0.5),
           ),
         );
+}
+
+class NovelTags extends StatelessWidget {
+  const NovelTags(this.tags);
+
+  final List tags;
+
+  @override
+  Widget build(BuildContext context) {
+    if (tags.isNotEmpty) {
+      return Tags(
+        itemCount: tags.length,
+        horizontalScroll: true,
+        itemBuilder: (int index) {
+          return ItemTags(
+            key: Key(index.toString()),
+            elevation: 0,
+            activeColor: textColor.withOpacity(0.2),
+            index: index,
+            title: tags[index],
+            textStyle: const TextStyle(
+              fontSize: 14,
+            ),
+          );
+        },
+      );
+    } else {
+      return Container();
+    }
+  }
 }
 
 class NovelNotes extends StatelessWidget {

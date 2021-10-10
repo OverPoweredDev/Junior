@@ -18,6 +18,7 @@ dependencies:
   permission_handler:
   shared_preferences:
 
+  flutter_tags: ^0.4.9+1
   url_launcher:
   settings_ui:
 

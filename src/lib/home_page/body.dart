@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:junior/homepage/components/add_novel_button.dart';
-import 'package:junior/homepage/components/novel_tile.dart';
-import 'package:junior/homepage/components/searchbar.dart';
-import 'package:junior/homepage/components/sort_options.dart';
-import 'package:junior/homepage/components/title.dart';
+import 'package:junior/home_page/components/add_novel_button.dart';
+import 'package:junior/home_page/components/novel_tile.dart';
+import 'package:junior/home_page/components/searchbar.dart';
+import 'package:junior/home_page/components/sort_options.dart';
+import 'package:junior/home_page/components/title.dart';
 import 'package:junior/model/changelog.dart';
 import 'package:junior/model/novel.dart';
 import 'package:junior/model/preferences.dart';

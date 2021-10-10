@@ -80,7 +80,7 @@ Junior/
     │   ├── details_page/
     │   │   ├── body.dart
     │   │   └── components/..
-    │   ├── homepage/
+    │   ├── home_page/
     │   │   ├── body.dart
     │   │   └── components/..
     │   ├── model

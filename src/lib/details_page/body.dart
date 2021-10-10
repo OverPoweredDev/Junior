@@ -9,7 +9,7 @@ import 'package:junior/details_page/components/novel_notes.dart';
 import 'package:junior/details_page/components/novel_tags.dart';
 import 'package:junior/details_page/components/novel_title.dart';
 import 'package:junior/details_page/components/star_rating.dart';
-import 'package:junior/homepage/body.dart';
+import 'package:junior/home_page/body.dart';
 import 'package:junior/model/novel.dart';
 import 'package:junior/theme.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:junior/homepage/body.dart';
+import 'package:junior/home_page/body.dart';
 import 'package:junior/model/changelog.dart';
 import 'package:junior/model/preferences.dart';
 import 'package:junior/settings_page/components/export_data.dart';
