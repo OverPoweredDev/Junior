@@ -205,6 +205,7 @@ class VolumeOrChapterProgress extends StatelessWidget {
             chapterNum: currChapter.toString(),
             width: 40,
             onTextChanged: (String text) {
+              if (text == '') text = '0';
               NovelData.isChanged = true;
               NovelData.novel.currChapter = int.parse(text);
               markIfComplete();
@@ -220,6 +221,7 @@ class VolumeOrChapterProgress extends StatelessWidget {
             chapterNum: totalVolumes.toString(),
             width: 30,
             onTextChanged: (String text) {
+              if (text == '') text = '0';
               NovelData.isChanged = true;
               NovelData.novel.totalVolumes = int.parse(text);
               markIfComplete();
@@ -233,6 +235,7 @@ class VolumeOrChapterProgress extends StatelessWidget {
             chapterNum: totalChapters.toString(),
             width: 40,
             onTextChanged: (String text) {
+              if (text == '') text = '0';
               NovelData.isChanged = true;
               NovelData.novel.totalChapters = int.parse(text);
               markIfComplete();
@@ -252,6 +255,7 @@ class VolumeOrChapterProgress extends StatelessWidget {
             chapterNum: currChapter.toString(),
             width: 55,
             onTextChanged: (String text) {
+              if (text == '') text = '0';
               NovelData.isChanged = true;
               NovelData.novel.currChapter = int.parse(text);
               markIfComplete();
@@ -265,6 +269,7 @@ class VolumeOrChapterProgress extends StatelessWidget {
             chapterNum: totalChapters.toString(),
             width: 55,
             onTextChanged: (String text) {
+              if (text == '') text = '0';
               NovelData.isChanged = true;
               NovelData.novel.totalChapters = int.parse(text);
               markIfComplete();
