@@ -121,7 +121,44 @@ And that's about it for navigation! This is the layout that I feel is most intui
 
 ### Getting Started
 
-TODO
+1. Fork this repository to your account by clicking the “Fork” button on top-right of the repository page.
+
+	<img src="https://i.postimg.cc/3wn7mr1j/fork.png" alt="Fork" width="700">
+
+
+2. Now, you will see copy of this repository in your account.
+
+	<img src="https://i.postimg.cc/k5XPJ3C2/repo.png" alt="Repo" width="700">
+
+
+3. Next, clone this repository to your machine with help of IDE or you can do it with command line as well. Use below command to clone it
+
+		git clone https://github.com/<your-user-name>/Junior
+	
+	For Android Studio, you can clone it using "Get from Version Control" in VCS.
+	
+	<img src="https://i.postimg.cc/Kj4YR3yg/clone.png" alt="Android Studio" width="700">
+	
+	
+4. Open this downloaded project in your IDE i.e. Android Studio, Visual Studio Code etc. 
+    
+ 	 - For Android Studio go to Junior -> src -> lib -> main.dart and select "Enable Dart Support" option in top right corner.
+   
+ 	 - Then, go to Junior -> src -> test -> pubspec.yaml and select "Get Dependencies" option.
+   
+	  - Now, open AVD Manager in android studio and run your virtual device.
+   
+ 	 - Run the Project file and the application will get install on virtual device.
+ 	 
+5. On App's home screen you will see various options like "Add New Novel", Setting, progress of ongoing novel and few other options. You are ready to Explore the app now :)
+	
+6. Create new branch and edit all the changes into it.
+
+7. After changes completed, commit the changes and push it to github.
+
+8. Now go to github repository and you will see the option "Compare and Create Pull Request". Click on it, review changes and create new Pull Request.
+
+	<img src="https://i.postimg.cc/JnpNqqMw/pull.png" alt="Pull Request" width="700" >
 
 <br>
 
