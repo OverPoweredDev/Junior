@@ -5,8 +5,7 @@ import '../theme.dart';
 
 String versionName = "𝗠𝗮𝗷𝗼𝗿 𝗨𝗽𝗱𝗮𝘁𝗲 (𝟭.𝟯.𝟬)";
 
-String changeLog =
-"""
+String changeLog = """
 This Young Master has been silent but that's only to break through the bottleneck and reach a whole new realm! Junior has recieved a lot of contributions and nearly a month's worth of effort later, it now supports:
 
 𝗩𝗼𝗹𝘂𝗺𝗲/𝗖𝗵𝗮𝗽𝘁𝗲𝗿 𝗦𝘂𝗽𝗽𝗼𝗿𝘁
