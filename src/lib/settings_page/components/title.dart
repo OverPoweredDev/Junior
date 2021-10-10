@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 class SettingsTitle extends StatelessWidget {
+  const SettingsTitle({Key key, this.textColor}) : super(key: key);
   final Color textColor;
-  const SettingsTitle(this.textColor);
 
   @override
   Widget build(BuildContext context) {
