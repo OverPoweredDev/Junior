@@ -222,7 +222,7 @@ class _SettingsPageState extends State<SettingsPage> {
                           ),
                           onPressed: (context) {
                             launch(
-                                'https://github.com/OverPoweredDev/Junior/issues/new?assignees=&labels=&template=bug_report.md&title=');
+                                'https://gitreports.com/issue/OverPoweredDev/Junior');
                           },
                         ),
                         SettingsTile(
@@ -234,7 +234,7 @@ class _SettingsPageState extends State<SettingsPage> {
                           ),
                           onPressed: (context) {
                             launch(
-                                'https://github.com/OverPoweredDev/Junior/issues/new?assignees=&labels=&template=feature_request.md&title=');
+                                'https://gitreports.com/issue/OverPoweredDev/Junior');
                           },
                         ),
                         SettingsTile(
