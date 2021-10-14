@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:junior/theme.dart';
 
 class SettingsTitle extends StatelessWidget {
-  const SettingsTitle({Key key}) : super(key: key);
+  const SettingsTitle({Key key, this.textColor}) : super(key: key);
+  final Color textColor;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 15),
-        child: Text(
-          'Settings',
-          style: TextStyle(color: textColor, fontSize: 40),
-          textAlign: TextAlign.left,
-        ));
+      padding: const EdgeInsets.symmetric(horizontal: 15),
+      child: Text(
+        'Settings',
+        style: TextStyle(color: textColor, fontSize: 40),
+        textAlign: TextAlign.left,
+      ),
+    );
   }
 }

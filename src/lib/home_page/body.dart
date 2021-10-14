@@ -63,38 +63,44 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: backgroundColor,
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const SizedBox(height: 60),
-            const HomePageTitle(),
-            const SizedBox(height: 80),
-            SearchBar(
-              onSearch: filterSearchResults,
-              editingController: editingController,
+      body: RefreshIndicator(
+          color: textColor,
+          backgroundColor: backgroundColor,
+          onRefresh: () async => await loadData(),
+          displacement: 20,
+          child: SingleChildScrollView(
+            physics: const AlwaysScrollableScrollPhysics(),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(height: 60),
+                const HomePageTitle(),
+                const SizedBox(height: 80),
+                SearchBar(
+                  onSearch: filterSearchResults,
+                  editingController: editingController,
+                ),
+                const SizedBox(height: 20),
+                const AddNovelButton(),
+                const SizedBox(height: 20),
+                SortOptions(
+                  sortBy: sortBy,
+                  sortOption: sortOption,
+                ),
+                ListView.builder(
+                  //otherwise there's two Scrollables and we can't scroll the list
+                  physics: const NeverScrollableScrollPhysics(),
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  itemCount: novelList.length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return NovelTile(novel: novelList[index]);
+                  },
+                ),
+                const SizedBox(height: 10),
+              ],
             ),
-            const SizedBox(height: 20),
-            const AddNovelButton(),
-            const SizedBox(height: 20),
-            SortOptions(
-              sortBy: sortBy,
-              sortOption: sortOption,
-            ),
-            ListView.builder(
-              //otherwise there's two Scrollables and we can't scroll the list
-              physics: const NeverScrollableScrollPhysics(),
-              scrollDirection: Axis.vertical,
-              shrinkWrap: true,
-              itemCount: novelList.length,
-              itemBuilder: (BuildContext context, int index) {
-                return NovelTile(novel: novelList[index]);
-              },
-            ),
-            const SizedBox(height: 10),
-          ],
-        ),
-      ),
+          )),
     );
   }
 
