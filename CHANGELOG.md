@@ -60,3 +60,12 @@ Works for all of these!
 Finally, there are minor updates like showing a small tooltip after updating, etc. but those don't affect your experience. So try out all the new features and
 be sure to let me know how they feel!
 
+### 1.3.1
+
+𝗥𝗲𝗹𝗼𝗮𝗱 𝗕𝘂𝘁𝘁𝗼𝗻 (𝗝𝘂𝘀𝘁 𝗦𝘄𝗶𝗽𝗲 𝗨𝗽)
+I got a lot of complaints of the app suddenly not showing any novels and only working when opened again. I've tried to fix the underlying issues too but as a hotfix, just swipe up to reload your novel data
+
+𝗨𝗽𝗱𝗮𝘁𝗲𝗱 𝗕𝘂𝗴 𝗥𝗲𝗽𝗼𝗿𝘁 𝗟𝗶𝗻𝗸𝘀
+The Bug Report and Feature Request Links now don't need you to log in to Github
+
+Also note: we do have Volume support, just click on Volume in "Chapter/Volume Progress"

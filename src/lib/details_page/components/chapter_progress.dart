@@ -80,7 +80,7 @@ class ChapterProgressTitle extends StatelessWidget {
   const ChapterProgressTitle(this.hasVolumes, this.setHasVolumes);
 
   Color getSelectedColor(bool hasVolumes, String chapterOrVolume) {
-    Color dullColor = textColor.withOpacity(0.8);
+    Color dullColor = textColor.withOpacity(0.7);
     Color brightColor = textColor;
 
     if (chapterOrVolume == 'Chapter') {
@@ -192,6 +192,7 @@ class VolumeOrChapterProgress extends StatelessWidget {
             chapterNum: currVolume.toString(),
             width: 30,
             onTextChanged: (String text) {
+              if (text == '') text = '0';
               NovelData.isChanged = true;
               NovelData.novel.currVolume = int.parse(text);
               markIfComplete();

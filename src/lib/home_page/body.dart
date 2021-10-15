@@ -25,7 +25,7 @@ class _HomePageState extends State<HomePage> {
   Preferences preferences;
   String sortOption = 'Sort';
 
-  List searchList = [];
+  List displayList = [];
   List novelList = [];
 
   @override
@@ -45,7 +45,8 @@ class _HomePageState extends State<HomePage> {
 
     if (preferences.exportAutomatically) autoSave();
 
-    searchList.addAll(novelList);
+    displayList.clear();
+    displayList.addAll(novelList);
     sortBy(preferences.sortBy);
   }
 
@@ -53,9 +54,9 @@ class _HomePageState extends State<HomePage> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String seenVersion = prefs.getString('seenVersion') ?? '0';
 
-    if (seenVersion != '1.3.0') {
+    if (seenVersion != '1.3.1') {
       showChangeDialog(context);
-      prefs.setString('seenVersion', '1.3.0');
+      prefs.setString('seenVersion', '1.3.1');
     }
   }
 
@@ -92,9 +93,9 @@ class _HomePageState extends State<HomePage> {
                   physics: const NeverScrollableScrollPhysics(),
                   scrollDirection: Axis.vertical,
                   shrinkWrap: true,
-                  itemCount: novelList.length,
+                  itemCount: displayList.length,
                   itemBuilder: (BuildContext context, int index) {
-                    return NovelTile(novel: novelList[index]);
+                    return NovelTile(novel: displayList[index]);
                   },
                 ),
                 const SizedBox(height: 10),
@@ -107,24 +108,24 @@ class _HomePageState extends State<HomePage> {
   void sortBy(String option) {
     switch (option) {
       case 'Alphabetical':
-        novelList.sort((novel1, novel2) {
+        displayList.sort((novel1, novel2) {
           return novel1.title
               .toLowerCase()
               .compareTo(novel2.title.toLowerCase());
         });
         break;
       case 'Most Recent':
-        novelList.sort((novel1, novel2) {
+        displayList.sort((novel1, novel2) {
           return novel2.lastEdited.compareTo(novel1.lastEdited);
         });
         break;
       case 'Rating':
-        novelList.sort((novel1, novel2) {
+        displayList.sort((novel1, novel2) {
           return novel2.novelRating.compareTo(novel1.novelRating);
         });
         break;
       case 'Ongoing':
-        novelList.sort((novel1, novel2) {
+        displayList.sort((novel1, novel2) {
           int sortValue = 0;
           if (novel1.novelStatus == novel2.novelStatus) {
             sortValue = novel2.lastEdited.compareTo(novel1.lastEdited);
@@ -138,7 +139,7 @@ class _HomePageState extends State<HomePage> {
         });
         break;
       case 'Complete':
-        novelList.sort((novel1, novel2) {
+        displayList.sort((novel1, novel2) {
           int sortValue = 0;
           if (novel1.novelStatus == novel2.novelStatus) {
             sortValue = novel2.lastEdited.compareTo(novel1.lastEdited);
@@ -152,7 +153,7 @@ class _HomePageState extends State<HomePage> {
         });
         break;
       case 'To Read':
-        novelList.sort((novel1, novel2) {
+        displayList.sort((novel1, novel2) {
           int sortValue = 0;
           if (novel1.novelStatus == novel2.novelStatus) {
             sortValue = novel2.lastEdited.compareTo(novel1.lastEdited);
@@ -184,14 +185,14 @@ class _HomePageState extends State<HomePage> {
       }
 
       setState(() {
-        novelList.clear();
-        novelList.addAll(dummyListData);
+        displayList.clear();
+        displayList.addAll(dummyListData);
       });
       return;
     } else {
       setState(() {
-        novelList.clear();
-        novelList.addAll(searchList);
+        displayList.clear();
+        displayList.addAll(novelList);
       });
     }
   }
