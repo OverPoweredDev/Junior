@@ -27,4 +27,5 @@ flutter analyze .
 - [OverPoweredDev](https://github.com/OverPoweredDev)
 - [Neha62-lit](https://github.com/Neha62-lit)
 - [prabhav-pandya](https://github.com/prabhav-pandya)
+- [Power-PP](https://github.com/Power-PP)
 - [Always looking for more!](https://github.com/OverPoweredDev/Junior/compare)
