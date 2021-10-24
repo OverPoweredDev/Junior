@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:junior/home_page/components/add_novel_button.dart';
+import 'package:junior/home_page/components/novel_count.dart';
 import 'package:junior/home_page/components/novel_tile.dart';
 import 'package:junior/home_page/components/searchbar.dart';
 import 'package:junior/home_page/components/sort_options.dart';
@@ -99,6 +100,8 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
                 const SizedBox(height: 10),
+                NovelCount(displayList.length),
+                const SizedBox(height: 20),
               ],
             ),
           )),
