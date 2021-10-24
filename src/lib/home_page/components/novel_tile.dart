@@ -40,6 +40,7 @@ class NovelTile extends StatelessWidget {
                   RatingAndLink(
                     link: novel.novelLink,
                     rating: novel.novelRating,
+                    currChapter: novel.currChapter,
                   ),
                   NovelTags(novel.novelTags),
                   getSpacing(novel.novelTags),
@@ -66,10 +67,32 @@ Widget getSpacing(List tags) {
 
 class RatingAndLink extends StatelessWidget {
   final String link;
+  final int currChapter;
   final int rating;
 
   // ignore: sort_constructors_first
-  const RatingAndLink({this.link, this.rating});
+  const RatingAndLink({this.link, this.rating, this.currChapter});
+
+  String getFormattedLink() {
+    RegExp numNoPadding = RegExp(r"(<num>)");
+    RegExp numPadding = RegExp(r"(<num-[1-9]>)");
+    String replace = currChapter.toString();
+
+    String newLink = '';
+    newLink = link.replaceAllMapped(numNoPadding, (match) {
+      return replace;
+    });
+
+    newLink = newLink.replaceAllMapped(numPadding, (match) {
+      int numChars = int.parse(match.group(0)[5]);
+
+      int numZeros = numChars - replace.length;
+      return ('0'*numZeros) + replace;
+    });
+
+    print(newLink);
+    return link;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -94,7 +117,7 @@ class RatingAndLink extends StatelessWidget {
             ),
           ),
           onTap: () {
-            launch(link);
+            launch(getFormattedLink());
           },
         ),
       ));
