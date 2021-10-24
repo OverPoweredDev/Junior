@@ -206,7 +206,7 @@ class _SettingsPageState extends State<SettingsPage> {
                           title: 'View Changelog',
                           titleTextStyle: TextStyle(color: textColor),
                           leading: Icon(
-                            Icons.article,
+                            Icons.track_changes,
                             color: linkColor,
                           ),
                           onPressed: (context) {

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:junior/theme.dart';
 
 class NovelCount extends StatelessWidget {
-  const NovelCount(this.numNovels);
+  const NovelCount({Key key, this.numNovels}) : super(key: key);
   final int numNovels;
 
   @override

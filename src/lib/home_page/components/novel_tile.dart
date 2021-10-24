@@ -87,7 +87,7 @@ class RatingAndLink extends StatelessWidget {
       int numChars = int.parse(match.group(0)[5]);
 
       int numZeros = numChars - replace.length;
-      return ('0'*numZeros) + replace;
+      return ('0' * numZeros) + replace;
     });
 
     print(newLink);

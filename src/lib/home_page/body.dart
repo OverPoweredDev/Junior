@@ -100,7 +100,7 @@ class _HomePageState extends State<HomePage> {
                   },
                 ),
                 const SizedBox(height: 10),
-                NovelCount(displayList.length),
+                NovelCount(numNovels: displayList.length),
                 const SizedBox(height: 20),
               ],
             ),
