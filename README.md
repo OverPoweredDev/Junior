@@ -35,26 +35,24 @@ personal rating and any chapter notes for the current novel. There's a demonstra
 
 ## Installation
 
-To install Junior you can find the [current release on the Play Store](https://play.google.com/store/apps/details?id=com.overpowereddev.junior.src). If you want
-to make it harder for yourself, you can also download the apk
-from [this drive folder](https://drive.google.com/drive/folders/1rwawC45TR2Fu8pQFKax5P_FVzVsjeiHa?usp=sharing) and install it on your phone.
-
-The app as it is right now is only available on Android and in dark mode. To request additional features or report a bug in the app,
-just [create an issue on the repository](https://github.com/OverPoweredDev/Junior/issues/new/choose).
+To install Junior you can find the [current release on the Play Store](https://play.google.com/store/apps/details?id=com.overpowereddev.junior.src). The app as it is right now is only available on Android. To request additional features or report a bug in the app, just [create an issue](https://github.com/OverPoweredDev/Junior/issues/new/choose).
 
 <br>
 
 ## Usage
 
 As it is right now the app lets you View your reading list in a far better way than any notepad would. The initial homescreen shows your novel list and sort
-order (Alphabetical, Most Recent or Rating). You can also search for a particular entry with the search bar.
+order (Alphabetical, Most Recent, Rating or by Novel Status). You can also search for a particular entry with the search bar.
 
 The Details you can log for any novel are:
 
 - Title
 - Current and Total Chapters
+- Current and Total Volumes
+- Novel Status (Ongong, Complete, To Read, On Hiatus)
 - Personal Rating
-- Link to the Current Chapter
+- Link to the Novel/Current Chapter
+- Novel Tags (CN, EN, JP, KR, Xianxia, etc. you get the point)
 - Chapter Notes or Novel Review
 
 <br>
