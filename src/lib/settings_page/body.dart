@@ -10,7 +10,9 @@ import 'package:url_launcher/url_launcher.dart';
 
 // ignore: always_use_package_imports
 import '../theme.dart';
+
 // ignore: always_use_package_imports
+import 'components/faq_screen.dart';
 import 'components/title.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -223,6 +225,20 @@ class _SettingsPageState extends State<SettingsPage> {
                           onPressed: (context) {
                             launch(
                                 'https://gitreports.com/issue/OverPoweredDev/Junior');
+                          },
+                        ),
+                        SettingsTile(
+                          title: 'Frequently Asked Questions',
+                          titleTextStyle: TextStyle(color: textColor),
+                          leading: Icon(
+                            Icons.question_answer_rounded,
+                            color: linkColor,
+                          ),
+                          onPressed: (context) {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const FAQScreen()));
                           },
                         ),
                         SettingsTile(
