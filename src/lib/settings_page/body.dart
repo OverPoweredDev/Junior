@@ -17,7 +17,6 @@ import 'components/faq_screen.dart';
 // ignore: always_use_package_imports
 import 'components/title.dart';
 
-
 class SettingsPage extends StatefulWidget {
   const SettingsPage({Key key}) : super(key: key);
 
