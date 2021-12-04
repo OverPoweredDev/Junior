@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:junior/theme.dart';
 
-class FrequentlyAskedQuestions extends StatefulWidget {
-  const FrequentlyAskedQuestions(
+class FAQCard extends StatefulWidget {
+  const FAQCard(
       {Key key, @required this.title, @required this.data})
       : super(key: key);
   final String title;
   final String data;
 
   @override
-  State<FrequentlyAskedQuestions> createState() => _FrequentlyAskedQuestions();
+  State<FAQCard> createState() => _FrequentlyAskedQuestions();
 }
 
-class _FrequentlyAskedQuestions extends State<FrequentlyAskedQuestions> {
+class _FrequentlyAskedQuestions extends State<FAQCard> {
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
@@ -22,8 +22,6 @@ class _FrequentlyAskedQuestions extends State<FrequentlyAskedQuestions> {
           color: linkColor,
         ),
       ),
-      // leading: const Icon(Icons.add),
-      // trailing: const Icon(Icons.add),
       children: [
         Container(
           padding: const EdgeInsets.only(

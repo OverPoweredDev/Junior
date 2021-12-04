@@ -74,8 +74,8 @@ class RatingAndLink extends StatelessWidget {
   const RatingAndLink({this.link, this.rating, this.currChapter});
 
   String getFormattedLink() {
-    RegExp numNoPadding = RegExp(r"(<num>)");
-    RegExp numPadding = RegExp(r"(<num-[1-9]>)");
+    RegExp numNoPadding = RegExp(r"<num>");
+    RegExp numPadding = RegExp(r"<num-[1-9]>");
     String replace = currChapter.toString();
 
     String newLink = '';
@@ -91,7 +91,7 @@ class RatingAndLink extends StatelessWidget {
     });
 
     print(newLink);
-    return link;
+    return newLink;
   }
 
   @override
