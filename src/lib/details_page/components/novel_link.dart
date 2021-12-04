@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:junior/faq_page/body.dart';
 import 'package:junior/theme.dart';
 
 // ignore: always_use_package_imports
@@ -61,31 +62,63 @@ class NovelLink extends StatelessWidget {
 }
 
 String linkInfo = """
-Dynamic Links are also supported. A lot of novel websites use a simple
-
-name.com/novel/chapterNum
-
-format. So you can simply replace the chapterNum part with <num> or <num-d> to pad with zero's and the app automatically updates the link from your chapter Count
-
-Example:
-https://boxnovel.com/novel/super-gene-boxnovel/chapter-<num>/
-
-becomes
-
-https://boxnovel.com/novel/super-gene-boxnovel/chapter-3460/
-
-if your chapter progress is 3460""";
+Dynamic Links are also supported. The explanation for those won't fit here so I'd advise you to
+""";
 
 showLinkInfo(BuildContext context) {
   showDialog(
     context: context,
     builder: (BuildContext context) => AlertDialog(
-      content: Text(
-        linkInfo,
-        style: TextStyle(color: textColor),
+      content: Column(
+        children: [
+          Text(
+            linkInfo,
+            style: TextStyle(color: textColor),
+          ),
+          const SizedBox(height: 10),
+          const FindMoreButton(),
+        ],
       ),
       backgroundColor: tileColor.withAlpha(255),
       scrollable: true,
     ),
   );
+}
+
+class FindMoreButton extends StatelessWidget {
+  // ignore: use_key_in_widget_constructors
+  const FindMoreButton();
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 15, right: 15),
+      child: Material(
+        color: tileColor,
+        borderRadius: BorderRadius.circular(6.0),
+        child: InkWell(
+          onTap: () {
+            Navigator.pop(context);
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const FAQScreen()),
+            );
+          },
+          child: Container(
+            padding: const EdgeInsets.all(8),
+            width: double.infinity,
+            child: Text(
+              'LEARN MORE',
+              style: TextStyle(
+                fontSize: 16,
+                color: textColor,
+                fontWeight: FontWeight.w600,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }
