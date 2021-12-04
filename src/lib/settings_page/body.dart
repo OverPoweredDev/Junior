@@ -9,10 +9,10 @@ import 'package:settings_ui/settings_ui.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // ignore: always_use_package_imports
-import '../theme.dart';
+import '../faq_page/body.dart';
 
 // ignore: always_use_package_imports
-import 'components/faq_screen.dart';
+import '../theme.dart';
 
 // ignore: always_use_package_imports
 import 'components/title.dart';
@@ -91,6 +91,20 @@ class _SettingsPageState extends State<SettingsPage> {
                               setLightMode();
                             }
 
+                            setState(() {});
+                          },
+                        ),
+                        SettingsTile.switchTile(
+                          title: 'Enable Reading Lists',
+                          titleTextStyle: TextStyle(color: textColor),
+                          leading: Icon(
+                            Icons.format_list_bulleted,
+                            color: linkColor,
+                          ),
+                          switchValue: preferences.enableReadingLists,
+                          onToggle: (bool toggle) {
+                            preferences.enableReadingLists = toggle;
+                            saveReadingListsOption(toggle);
                             setState(() {});
                           },
                         ),
@@ -218,6 +232,22 @@ class _SettingsPageState extends State<SettingsPage> {
                           },
                         ),
                         SettingsTile(
+                          title: 'Frequently Asked Questions',
+                          titleTextStyle: TextStyle(color: textColor),
+                          leading: Icon(
+                            Icons.question_answer_rounded,
+                            color: linkColor,
+                          ),
+                          onPressed: (context) {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) => const FAQScreen(),
+                              ),
+                            );
+                          },
+                        ),
+                        SettingsTile(
                           title: 'Report a bug',
                           titleTextStyle: TextStyle(color: textColor),
                           leading: Icon(
@@ -227,20 +257,6 @@ class _SettingsPageState extends State<SettingsPage> {
                           onPressed: (context) {
                             launch(
                                 'https://gitreports.com/issue/OverPoweredDev/Junior');
-                          },
-                        ),
-                        SettingsTile(
-                          title: 'Frequently Asked Questions',
-                          titleTextStyle: TextStyle(color: textColor),
-                          leading: Icon(
-                            Icons.question_answer_rounded,
-                            color: linkColor,
-                          ),
-                          onPressed: (context) {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const FAQScreen()));
                           },
                         ),
                         SettingsTile(

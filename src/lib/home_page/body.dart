@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:junior/home_page/components/add_novel_button.dart';
 import 'package:junior/home_page/components/novel_count.dart';
 import 'package:junior/home_page/components/novel_tile.dart';
+import 'package:junior/home_page/components/reading_lists.dart';
 import 'package:junior/home_page/components/searchbar.dart';
 import 'package:junior/home_page/components/sort_options.dart';
 import 'package:junior/home_page/components/title.dart';
 import 'package:junior/model/changelog.dart';
 import 'package:junior/model/novel.dart';
 import 'package:junior/model/preferences.dart';
+import 'package:junior/model/reading_list.dart';
 import 'package:junior/settings_page/components/export_data.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -25,6 +27,7 @@ class _HomePageState extends State<HomePage> {
   TextEditingController editingController;
   Preferences preferences;
   String sortOption = 'Sort';
+  String readingList = 'All Novels';
 
   List displayList = [];
   List novelList = [];
@@ -41,10 +44,15 @@ class _HomePageState extends State<HomePage> {
   // FutureBuilder is more 'right' but it completely breaks searching
   // and sorting.
   loadData() async {
+    readingLists.clear();
     novelList = await getNovelList();
     preferences = await loadPreferences();
 
     if (preferences.exportAutomatically) autoSave();
+    if (preferences.enableReadingLists) {
+      readingLists = generateReadingLists();
+      readingList = 'All Novels';
+    }
 
     displayList.clear();
     displayList.addAll(novelList);
@@ -55,9 +63,9 @@ class _HomePageState extends State<HomePage> {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String seenVersion = prefs.getString('seenVersion') ?? '0';
 
-    if (seenVersion != '1.3.1') {
+    if (seenVersion != '1.4.0') {
       showChangeDialog(context);
-      prefs.setString('seenVersion', '1.3.1');
+      prefs.setString('seenVersion', '1.4.0');
     }
   }
 
@@ -66,45 +74,53 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: backgroundColor,
       body: RefreshIndicator(
-          color: textColor,
-          backgroundColor: backgroundColor,
-          onRefresh: () async => await loadData(),
-          displacement: 20,
-          child: SingleChildScrollView(
-            physics: const AlwaysScrollableScrollPhysics(),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const SizedBox(height: 60),
-                const HomePageTitle(),
-                const SizedBox(height: 80),
-                SearchBar(
-                  onSearch: filterSearchResults,
-                  editingController: editingController,
-                ),
-                const SizedBox(height: 20),
-                const AddNovelButton(),
-                const SizedBox(height: 20),
-                SortOptions(
-                  sortBy: sortBy,
-                  sortOption: sortOption,
-                ),
-                ListView.builder(
-                  //otherwise there's two Scrollables and we can't scroll the list
-                  physics: const NeverScrollableScrollPhysics(),
-                  scrollDirection: Axis.vertical,
-                  shrinkWrap: true,
-                  itemCount: displayList.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    return NovelTile(novel: displayList[index]);
-                  },
-                ),
-                const SizedBox(height: 10),
-                NovelCount(numNovels: displayList.length),
-                const SizedBox(height: 20),
-              ],
-            ),
-          )),
+        color: textColor,
+        backgroundColor: backgroundColor,
+        onRefresh: () async => await loadData(),
+        child: SingleChildScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const SizedBox(height: 60),
+              const HomePageTitle(),
+              const SizedBox(height: 80),
+              SearchBar(
+                onSearch: filterSearchResults,
+                editingController: editingController,
+              ),
+              const SizedBox(height: 20),
+              const AddNovelButton(),
+              const SizedBox(height: 20),
+              SortOptions(
+                sortBy: sortBy,
+                sortOption: sortOption,
+              ),
+              ReadingListTiles(
+                onSearch: fillReadingList,
+                setSelectedOption: setSelectedList,
+                selectedOption: readingList,
+                renameList: renameReadingList,
+                deleteList: deleteReadingList,
+                loadData: loadData,
+              ),
+              ListView.builder(
+                //otherwise there's two Scrollables and we can't scroll the list
+                physics: const NeverScrollableScrollPhysics(),
+                scrollDirection: Axis.vertical,
+                shrinkWrap: true,
+                itemCount: displayList.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return NovelTile(novel: displayList[index]);
+                },
+              ),
+              const SizedBox(height: 10),
+              NovelCount(numNovels: displayList.length),
+              const SizedBox(height: 20),
+            ],
+          ),
+        ),
+      ),
     );
   }
 
@@ -171,8 +187,8 @@ class _HomePageState extends State<HomePage> {
         break;
     }
 
+    sortOption = option;
     setState(() {
-      sortOption = option;
     });
   }
 
@@ -191,6 +207,32 @@ class _HomePageState extends State<HomePage> {
         displayList.clear();
         displayList.addAll(dummyListData);
       });
+
+      return;
+
+    } else {
+      setState(() {
+        displayList.clear();
+        displayList.addAll(novelList);
+      });
+    }
+  }
+
+  void fillReadingList(String query) {
+    List dummySearchList = [];
+    dummySearchList.addAll(novelList);
+    if (query.isNotEmpty) {
+      List dummyListData = [];
+      for (var item in dummySearchList) {
+        if (item.isInList(query)) {
+          dummyListData.add(item);
+        }
+      }
+
+      setState(() {
+        displayList.clear();
+        displayList.addAll(dummyListData);
+      });
       return;
     } else {
       setState(() {
@@ -198,6 +240,39 @@ class _HomePageState extends State<HomePage> {
         displayList.addAll(novelList);
       });
     }
+  }
+
+  void renameReadingList(String original, String newName) {
+    for(var novel in novelList){
+        int idx = novel.novelTags.indexWhere((tag) => tag == original);
+        if(idx != -1){
+          novel.novelTags.removeAt(idx);
+          novel.novelTags.insert(idx, newName);
+        }
+    }
+
+    saveNovelList(novelList);
+    setState(() {});
+  }
+
+
+  void deleteReadingList(String original) {
+    for(var novel in novelList){
+        int idx = novel.novelTags.indexWhere((tag) => tag == original);
+        if(idx != -1){
+          novel.novelTags.removeAt(idx);
+          novel.novelTags;
+        }
+    }
+
+    saveNovelList(novelList);
+    setState(() {});
+  }
+
+  void setSelectedList(String listName) {
+    setState(() {
+      readingList = listName;
+    });
   }
 
   void autoSave() async {

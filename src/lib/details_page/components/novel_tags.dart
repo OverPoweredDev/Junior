@@ -13,11 +13,24 @@ class NovelTags extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          'Novel Tags',
-          style: TextStyle(color: textColor, fontSize: 16),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              'Novel Tags / Reading Lists',
+              style: TextStyle(color: textColor, fontSize: 16),
+            ),
+            IconButton(
+              icon: Icon(
+                Icons.info_outline,
+                size: 16,
+                color: textColor.withOpacity(0.7),
+              ),
+              splashRadius: 12,
+              onPressed: () => showLinkInfo(context),
+            )
+          ],
         ),
-        const SizedBox(height: 10),
         Container(
           decoration: BoxDecoration(
               color: const Color.fromRGBO(255, 255, 255, 0.2),
@@ -51,4 +64,23 @@ class NovelTags extends StatelessWidget {
       ],
     );
   }
+}
+
+String linkInfo = """
+All Tags now also work as reading lists and will show up at the top of the homescreen if enabled in Settings.Novels having a similar tag are treated as being in the same list
+
+Basically, all the tags you enter double as Reading Lists.""";
+
+showLinkInfo(BuildContext context) {
+  showDialog(
+    context: context,
+    builder: (BuildContext context) => AlertDialog(
+      content: Text(
+        linkInfo,
+        style: TextStyle(color: textColor),
+      ),
+      backgroundColor: tileColor.withAlpha(255),
+      scrollable: true,
+    ),
+  );
 }

@@ -186,16 +186,24 @@ class NovelTags extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (tags.isNotEmpty) {
+      List newTags = [];
+
+      for(var tag in tags){
+        if(tag == null || tag == '') continue;
+        newTags.add(tag);
+      }
+
       return Tags(
-        itemCount: tags.length,
+        itemCount: newTags.length,
         horizontalScroll: true,
         itemBuilder: (int index) {
+          if(newTags[index] == null || newTags[index] == '') return Container();
           return ItemTags(
             key: Key(index.toString()),
             elevation: 0,
             activeColor: textColor.withOpacity(0.2),
             index: index,
-            title: tags[index],
+            title: newTags[index],
             textStyle: const TextStyle(
               fontSize: 14,
             ),

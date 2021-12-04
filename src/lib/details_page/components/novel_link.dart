@@ -23,15 +23,14 @@ class NovelLink extends StatelessWidget {
             IconButton(
               icon: Icon(
                 Icons.info_outline,
-                size: 18,
-                color: textColor.withOpacity(0.8),
+                size: 16,
+                color: textColor.withOpacity(0.7),
               ),
               splashRadius: 12,
               onPressed: () => showLinkInfo(context),
             )
           ],
         ),
-        const SizedBox(height: 10),
         Container(
           decoration: BoxDecoration(
               color: const Color.fromRGBO(255, 255, 255, 0.2),
@@ -75,8 +74,7 @@ becomes
 
 https://boxnovel.com/novel/super-gene-boxnovel/chapter-3460/
 
-if your chapter progress is 3460
-""";
+if your chapter progress is 3460""";
 
 showLinkInfo(BuildContext context) {
   showDialog(

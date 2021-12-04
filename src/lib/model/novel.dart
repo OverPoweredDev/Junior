@@ -70,7 +70,7 @@ class Novel {
         currVolume = getFromJson(json, 'currVolume', 0),
         totalVolumes = getFromJson(json, 'totalVolumes', 0),
         novelRating = getFromJson(json, 'novelRating', 0),
-        novelTags = getFromJson(json, 'novelTags', []),
+        novelTags = filterNovelTags(getFromJson(json, 'novelTags', [])),
         novelStatus = getFromJson(json, 'novelStatus', 'Ongoing'),
         isComplete = getFromJson(json, 'isComplete', false),
         novelLink = getFromJson(json, 'novelLink', '');
@@ -82,6 +82,19 @@ class Novel {
     } else {
       return defaultValue;
     }
+  }
+
+  // deleting a tag through the homepage left some null's in the list
+  // so I needed this to remove them at some point during saving/ loading
+  static List filterNovelTags(List tags) {
+    List newTags = [];
+
+    for (var tag in tags) {
+      if (tag == null || tag == '') continue;
+      newTags.add(tag);
+    }
+
+    return newTags;
   }
 
   updateNovelStatus() {
@@ -148,6 +161,16 @@ class Novel {
     text = join(text, novelTags.join(' '));
 
     return text.toLowerCase().contains(query.toLowerCase());
+  }
+
+  bool isInList(String list) {
+    for (var tag in novelTags) {
+      if (tag == list) {
+        return true;
+      }
+    }
+
+    return false;
   }
 
   String join(String text, String concat) {
