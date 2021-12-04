@@ -188,8 +188,7 @@ class _HomePageState extends State<HomePage> {
     }
 
     sortOption = option;
-    setState(() {
-    });
+    setState(() {});
   }
 
   void filterSearchResults(String query) {
@@ -209,7 +208,6 @@ class _HomePageState extends State<HomePage> {
       });
 
       return;
-
     } else {
       setState(() {
         displayList.clear();
@@ -243,26 +241,25 @@ class _HomePageState extends State<HomePage> {
   }
 
   void renameReadingList(String original, String newName) {
-    for(var novel in novelList){
-        int idx = novel.novelTags.indexWhere((tag) => tag == original);
-        if(idx != -1){
-          novel.novelTags.removeAt(idx);
-          novel.novelTags.insert(idx, newName);
-        }
+    for (var novel in novelList) {
+      int idx = novel.novelTags.indexWhere((tag) => tag == original);
+      if (idx != -1) {
+        novel.novelTags.removeAt(idx);
+        novel.novelTags.insert(idx, newName);
+      }
     }
 
     saveNovelList(novelList);
     setState(() {});
   }
 
-
   void deleteReadingList(String original) {
-    for(var novel in novelList){
-        int idx = novel.novelTags.indexWhere((tag) => tag == original);
-        if(idx != -1){
-          novel.novelTags.removeAt(idx);
-          novel.novelTags;
-        }
+    for (var novel in novelList) {
+      int idx = novel.novelTags.indexWhere((tag) => tag == original);
+      if (idx != -1) {
+        novel.novelTags.removeAt(idx);
+        novel.novelTags;
+      }
     }
 
     saveNovelList(novelList);

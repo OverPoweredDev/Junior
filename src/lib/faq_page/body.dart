@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:junior/faq_page/components/faq_card.dart';
 import 'package:junior/faq_page/components/faq_list.dart';
 import 'package:junior/theme.dart';
 
@@ -29,4 +28,3 @@ class FAQScreen extends StatelessWidget {
     );
   }
 }
-

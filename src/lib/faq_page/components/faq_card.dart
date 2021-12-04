@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:junior/theme.dart';
 
 class FAQCard extends StatefulWidget {
-  const FAQCard(
-      {Key key, @required this.title, @required this.data})
+  const FAQCard({Key key, @required this.title, @required this.data})
       : super(key: key);
   final String title;
   final String data;

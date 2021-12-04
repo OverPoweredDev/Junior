@@ -1,5 +1,6 @@
 import 'package:junior/faq_page/components/faq_card.dart';
 
+//ignore:constant_identifier_names
 const List<FAQCard> FAQList = [
   FAQCard(
     title: "What are dynamic links?",
@@ -11,8 +12,7 @@ const List<FAQCard> FAQList = [
   ),
 ];
 
-const String dynamicLinksAnswer =
-"""A lot of novel websites use a simple
+const String dynamicLinksAnswer = """A lot of novel websites use a simple
 
 name.com/novel/chapterNum
 
@@ -29,7 +29,7 @@ Similarly, <num-6> would turn into .../chapter-003460. Not useful in this case b
 """;
 
 const String novelTagsAnswer =
-"""Alright Tags are easy enough to understand, they're just the tags or genres like say 'CN' you would assign to a novel. Apart form those, you can also tag a novel as part of your 'Favourites' or 'Top 10'.
+    """Alright Tags are easy enough to understand, they're just the tags or genres like say 'CN' you would assign to a novel. Apart form those, you can also tag a novel as part of your 'Favourites' or 'Top 10'.
 
 What the Reading Lists update does is it turns these tags into lists. That is, it'll automatically add all novels with the 'Favourites' tag to Reading List titled 'Favourites'. Naturally, it's the same for 'CN' or 'Top 10' or any other tag you have.
 """;

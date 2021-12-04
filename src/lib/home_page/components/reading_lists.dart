@@ -12,14 +12,13 @@ class ReadingListTiles extends StatelessWidget {
   final String selectedOption;
 
   // ignore: sort_constructors_first, use_key_in_widget_constructors
-  const ReadingListTiles({
-    this.onSearch,
-    this.setSelectedOption,
-    this.selectedOption,
-    this.renameList,
-    this.deleteList,
-    this.loadData
-  });
+  const ReadingListTiles(
+      {this.onSearch,
+      this.setSelectedOption,
+      this.selectedOption,
+      this.renameList,
+      this.deleteList,
+      this.loadData});
 
   ButtonStyle getStyle(String option) {
     if (option == selectedOption) {
@@ -177,7 +176,7 @@ class ReadingListTiles extends StatelessWidget {
           itemBuilder: (BuildContext context, int index) {
             String option = readingLists[index].listName;
 
-            if(option == '' || option == null) return Container();
+            if (option == '' || option == null) return Container();
 
             return Padding(
               padding: const EdgeInsets.only(right: 10),

@@ -1,5 +1,6 @@
 import 'package:junior/model/novel.dart';
 
+//ignore: prefer_collection_literals
 Set<String> allTags = Set<String>();
 List readingLists = [];
 
@@ -17,7 +18,7 @@ List generateReadingLists() {
     for (var tag in novel.novelTags) {
       allTags.add(tag);
       int idx = readingLists.indexWhere((list) => list.listName == tag);
-      if(idx != -1){
+      if (idx != -1) {
         readingLists[idx].numNovels += 1;
       } else {
         readingLists.add(

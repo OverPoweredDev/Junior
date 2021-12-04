@@ -188,8 +188,8 @@ class NovelTags extends StatelessWidget {
     if (tags.isNotEmpty) {
       List newTags = [];
 
-      for(var tag in tags){
-        if(tag == null || tag == '') continue;
+      for (var tag in tags) {
+        if (tag == null || tag == '') continue;
         newTags.add(tag);
       }
 
@@ -197,7 +197,9 @@ class NovelTags extends StatelessWidget {
         itemCount: newTags.length,
         horizontalScroll: true,
         itemBuilder: (int index) {
-          if(newTags[index] == null || newTags[index] == '') return Container();
+          if (newTags[index] == null || newTags[index] == '') {
+            return Container();
+          }
           return ItemTags(
             key: Key(index.toString()),
             elevation: 0,
