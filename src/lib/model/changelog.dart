@@ -4,16 +4,22 @@ import 'package:flutter/painting.dart';
 // ignore: always_use_package_imports
 import '../theme.dart';
 
-String versionName = "Version 1.3.1";
+String versionName = "Version 1.4.0";
 
 String changeLog = """
-𝗥𝗲𝗹𝗼𝗮𝗱 𝗕𝘂𝘁𝘁𝗼𝗻 ( 𝗝𝘂𝘀𝘁 𝗦𝘄𝗶𝗽𝗲 𝗨𝗽 )
-I got a lot of complaints of the app suddenly not showing any novels and only working when opened again. I've tried to fix the underlying issues too but as a hotfix, just swipe up to reload your novel data
+Sorry for the delay folks, Exam season where I live right now. Anyways, big update, this one. We got:
 
-𝗨𝗽𝗱𝗮𝘁𝗲𝗱 𝗕𝘂𝗴 𝗥𝗲𝗽𝗼𝗿𝘁 𝗟𝗶𝗻𝗸𝘀
-The Bug Report and Feature Request Links now don't need you to log in to Github
+𝗥𝗲𝗮𝗱𝗶𝗻𝗴 𝗟𝗶𝘀𝘁𝘀!!! 
+All tags now double as reading lists. So you can group novels together by those if you want to. Detailed explanation (as with the others) in the FAQ's
 
-Also note: we do have Volume support, just click on Volume in "Chapter/Volume Progress"
+𝗗𝘆𝗻𝗮𝗺𝗶𝗰 𝗟𝗶𝗻𝗸𝘀
+Links are now dynamic! A lot of novel websites use a simple 𝘯𝘢𝘮𝘦.𝘤𝘰𝘮/𝘯𝘰𝘷𝘦𝘭/𝘤𝘩𝘢𝘱𝘵𝘦𝘳𝘕𝘶𝘮 format. So the basic idea is to automatically (dynamically) replace the 𝘤𝘩𝘢𝘱𝘵𝘦𝘳𝘕𝘶𝘮 part with your progress entered. Check the FAQ page for more details.
+
+𝗙𝗔𝗤 𝗣𝗮𝗴𝗲
+New FAQ page, down in the settings menu. Check it out! I'd actually love some design input on that, looks kinda plain to me...
+
+𝗡𝗼𝘃𝗲𝗹 𝗘𝘅𝗽𝗼𝗿𝘁 𝗜𝘀𝘀𝘂𝗲
+There's an issue with some folks regarding this setting. Check the FAQ page from Settings for that.
 """;
 
 showChangeDialog(BuildContext context) {
